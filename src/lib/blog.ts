@@ -5156,6 +5156,7 @@ export const BLOG_POSTS: BlogPost[] = [
     relatedPosts: ['how-to-calculate-position-size-forex', 'what-is-spread-in-forex', 'what-is-a-stop-loss-in-forex'],
     faqs: [],
     sections: [],
+    callToAction: { text: 'Calculate your exact position size for any forex trade.', href: '/calculators/position-size-calculator', label: 'Open Position Size Calculator ->' },
   },
 
   {
@@ -5174,6 +5175,7 @@ export const BLOG_POSTS: BlogPost[] = [
     relatedPosts: ['what-is-pip-value-how-to-calculate', 'how-to-calculate-position-size-forex', 'what-is-a-pip-in-forex'],
     faqs: [],
     sections: [],
+    callToAction: { text: 'Calculate exact pip value for USD/JPY and any other pair.', href: '/calculators/pip-value-calculator', label: 'Open Pip Value Calculator ->' },
   },
 
   {
@@ -5192,6 +5194,7 @@ export const BLOG_POSTS: BlogPost[] = [
     relatedPosts: ['how-to-calculate-position-size-forex', 'forex-risk-management-complete-guide', 'what-is-a-stop-loss-in-forex'],
     faqs: [],
     sections: [],
+    callToAction: { text: 'Stay within your prop firm daily loss limit with every trade.', href: '/calculators/daily-loss-limit-calculator', label: 'Open Daily Loss Limit Calculator ->' },
   },
 
 ];
