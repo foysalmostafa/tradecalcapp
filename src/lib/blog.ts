@@ -5197,6 +5197,44 @@ export const BLOG_POSTS: BlogPost[] = [
     callToAction: { text: 'Stay within your prop firm daily loss limit with every trade.', href: '/calculators/daily-loss-limit-calculator', label: 'Open Daily Loss Limit Calculator ->' },
   },
 
+  {
+    slug: 'gbpusd-bank-of-england-decision-position-sizing',
+    draft: true,
+    title: 'GBP/USD Position Sizing Around Bank of England Decisions',
+    shortTitle: 'GBPUSD BoE Position Sizing',
+    description: 'Trading GBP/USD around a Bank of England rate decision? Learn pip value, spread widening and how to size positions and stops for central bank volatility.',
+    category: 'guide',
+    tags: [],
+    keywords: ['gbpusd position size', 'bank of england trading', 'gbpusd pip value', 'central bank decision trading risk', 'boe rate decision forex'],
+    publishedAt: '2026-11-04',
+    updatedAt: '2026-11-04',
+    readingTimeMin: 15,
+    relatedCalculators: ['position-size-calculator', 'pip-value-calculator', 'spread-cost-calculator'],
+    relatedPosts: ['how-to-calculate-position-size-forex', 'what-is-pip-value-how-to-calculate', 'what-is-spread-in-forex'],
+    faqs: [],
+    sections: [],
+    callToAction: { text: 'Calculate exact position size for GBP/USD and any other pair.', href: '/calculators/position-size-calculator', label: 'Open Position Size Calculator ->' },
+  },
+
+  {
+    slug: 'event-risk-volatility-stop-loss-guide',
+    draft: true,
+    title: 'How to Set Stop-Losses During High-Volatility Events (Elections, Jobs Data, Central Banks)',
+    shortTitle: 'Event Volatility Stop-Loss',
+    description: 'Elections, jobs data and central bank meetings spike volatility. Use ATR to widen stops and shrink position size so one event cannot wreck your account.',
+    category: 'guide',
+    tags: [],
+    keywords: ['stop loss high volatility', 'atr stop loss news events', 'trading election volatility forex', 'event risk position sizing', 'reduce position size volatility'],
+    publishedAt: '2026-11-04',
+    updatedAt: '2026-11-04',
+    readingTimeMin: 15,
+    relatedCalculators: ['atr-stop-loss-calculator', 'position-size-calculator', 'risk-reward-calculator'],
+    relatedPosts: ['atr-stop-loss-guide', 'what-is-a-stop-loss-in-forex', 'forex-risk-management-complete-guide'],
+    faqs: [],
+    sections: [],
+    callToAction: { text: 'Set an ATR-based stop-loss that fits current volatility.', href: '/calculators/atr-stop-loss-calculator', label: 'Open ATR Stop-Loss Calculator ->' },
+  },
+
 ];
 
 // ─── Lookup helpers ───────────────────────────────────────────────────────────
