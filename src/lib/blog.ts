@@ -1677,88 +1677,327 @@ export const BLOG_POSTS: BlogPost[] = [
 
   // ── TIER 1 GUIDE #12 ──────────────────────────────────────────────────────
   {
-    slug: 'pip-to-dollar-how-much-is-a-pip-worth',
-    draft: true,
-    title: 'Pip to Dollar: How Much Is a Pip Actually Worth?',
-    shortTitle: 'Pip to Dollar Guide',
-    description: 'Complete reference for pip-to-dollar values across all major and minor forex pairs. How pip value changes with lot size, account currency, and current exchange rate.',
-    category: 'guide',
-    tags: ['pip value', 'forex basics', 'pip to dollar'],
-    keywords: ['how much is a pip worth', 'pip to dollar conversion', 'pip value usd all pairs', 'forex pip dollar value', 'pip to dollar calculator guide'],
-    publishedAt: BLOG_DATE,
-    updatedAt: BLOG_DATE,
-    readingTimeMin: 9,
-    relatedCalculators: ['pip-to-dollar-calculator', 'pip-value-calculator', 'position-size-calculator'],
-    relatedPosts: ['what-is-pip-value-how-to-calculate', 'how-to-calculate-position-size-forex', 'how-to-calculate-profit-loss-forex'],
-    howToSteps: [
-      { name: 'Check if USD is the quote currency', text: 'EUR/USD, GBP/USD, AUD/USD, NZD/USD — USD is quote. Pip value = $10/pip (standard lot). Fixed and simple.' },
-      { name: 'For USD-base pairs, divide by current rate', text: 'USD/JPY: (0.01 ÷ current rate) × Lot Size. At 150.50: (0.01 ÷ 150.50) × 100,000 = $6.64/pip standard lot.' },
-      { name: 'For cross pairs, convert via quote currency', text: 'EUR/GBP: pip value in GBP = 0.0001 × Lot Size. Convert to USD: × GBP/USD rate. At GBP/USD 1.27: (0.0001 × 100,000) × 1.27 = $12.70/pip.' },
-      { name: 'Scale by lot size', text: 'Any standard lot value ÷ 10 = mini lot value. ÷ 100 = micro lot value. Linear relationship makes scaling straightforward.' },
+    "slug": "pip-to-dollar-how-much-is-a-pip-worth",
+    "title": "Pip to Dollar: How Much Is a Pip Actually Worth?",
+    "shortTitle": "Pip to Dollar Guide",
+    "description": "Pip to dollar conversion explained: a pip is $10 on a standard EUR/USD lot, but only $6.65 on USD/JPY. Formulas, full lookup table and worked examples.",
+    "category": "guide",
+    "tags": [
+      "pip value",
+      "forex basics",
+      "pip to dollar",
+      "position sizing"
     ],
-    faqs: [
-      { q: 'How much is 1 pip worth for EUR/USD?', a: '$10 per pip for a standard lot (100,000 units). $1 for a mini lot (10,000 units). $0.10 for a micro lot (1,000 units). EUR/USD is USD-quoted with a pip size of 0.0001: 0.0001 × 100,000 = $10. This value is fixed and does not change with market rates.' },
-      { q: 'How much is 1 pip worth for USD/JPY?', a: 'Approximately $6.64 per pip (standard lot) at a rate of 150.50. Formula: (0.01 ÷ 150.50) × 100,000 = $6.64. This value decreases as USD/JPY rises and increases as it falls. Always recalculate for your specific entry rate. Mini lot ≈ $0.664, micro ≈ $0.0664.' },
-      { q: 'How much is 10 pips worth in EUR/USD?', a: '10 pips × $10/pip = $100 on a standard lot. $10 on a mini lot. $1 on a micro lot. Multiply the per-pip value by the number of pips. For a 20-pip stop on a mini lot: 20 × $1 = $20 risk.' },
-      { q: 'Why does USD/JPY have a lower pip value than EUR/USD?', a: "USD/JPY's pip size is 0.01 (not 0.0001) and the formula divides by the exchange rate (~150). Result: (0.01 ÷ 150) × 100,000 = $6.67 per pip. EUR/USD uses 0.0001 with no rate division: 0.0001 × 100,000 = $10. The JPY's higher nominal rate per dollar is the cause of the lower per-pip value." },
-      { q: 'How many pips equals $100 on EUR/USD?', a: 'At $10/pip per standard lot: $100 ÷ $10 = 10 pips. At mini lot ($1/pip): 100 pips. At micro lot ($0.10/pip): 1,000 pips. To reverse-engineer pip counts from dollar targets: Pips = Dollar Target ÷ (Pip Value × Lots). A $100 target on 0.5 lots at $10/pip: 100 ÷ 5 = 20 pips. Useful for setting take-profit levels based on dollar targets rather than arbitrary pip numbers.' },
-      { q: 'Why might my actual pip value be slightly different from published reference values?', a: 'Reference pip values (like $10 for EUR/USD standard lot) are exact for USD-quoted pairs and fixed. For USD-base pairs and cross pairs, published values are approximations based on a snapshot rate. Your broker calculates the actual pip value in real time using the live rate at the moment the trade is open or closed. Small discrepancies of 1–5% are normal for variable pip-value pairs — this is why a pip value calculator that accepts the current rate produces a more accurate result than a reference table.' },
-      { q: 'Does pip value change while my trade is open?', a: 'For EUR/USD, GBP/USD, AUD/USD, NZD/USD — no, pip value is fixed throughout the trade. For all other pairs, pip value changes continuously as the exchange rate moves. USD/JPY at 148 has a higher pip value than at 152 (because you divide by the exchange rate). For short-duration intraday trades, this difference is negligible. For long-duration swing trades on USD/JPY or cross pairs, the pip value at entry and exit may differ by 2–5%.' },
+    "keywords": [
+      "pip to dollar",
+      "how much is a pip worth",
+      "pip to dollar conversion",
+      "pip to dollar calculator",
+      "pip value usd all pairs",
+      "how much is 1 pip in dollars",
+      "pip value formula",
+      "forex pip dollar value",
+      "pip value standard lot",
+      "pip value mini lot",
+      "pip value micro lot",
+      "pip value USD/JPY",
+      "pip value EUR/GBP",
+      "pip value cross pairs",
+      "how to convert pips to dollars",
+      "pip value by lot size",
+      "pip value account currency",
+      "pip value calculator",
+      "pips to dollars chart",
+      "pipette vs pip",
+      "how many pips is $100",
+      "how much is 10 pips worth",
+      "how much is 50 pips worth",
+      "how much is 100 pips worth",
+      "pip value changes with exchange rate",
+      "exit rate rule pip value",
+      "lot size from risk and pips",
+      "pip value gold XAUUSD",
+      "EUR account pip value"
     ],
-    sections: [
-      {
-        heading: 'Pip-to-Dollar Reference for All Major Pairs',
-        body: [
-          'USD-quoted pairs (pip value fixed at $10/pip standard lot): EUR/USD = $10.00 | GBP/USD = $10.00 | AUD/USD = $10.00 | NZD/USD = $10.00. These four pairs are the simplest to work with because the pip value never changes regardless of market rate. A 50-pip trade on a standard lot always means $500 of P&L on any of these pairs.',
-          'USD-base pairs (variable pip value, approximate at current rates): USD/JPY ≈ $6.64 | USD/CAD ≈ $7.30 | USD/CHF ≈ $11.20. These differ because the calculation divides by the current USD/pair rate, which fluctuates throughout the session. The values above are approximations — always recalculate with the live rate for precision.',
-          'Cross pairs (variable, two-rate calculation): EUR/JPY ≈ $6.64 | GBP/JPY ≈ $6.64 | EUR/GBP ≈ $12.70 | AUD/JPY ≈ $6.64. Cross pair pip values require converting from the quote currency to USD. EUR/GBP pip value = (0.0001 × lot size) × GBP/USD rate. At GBP/USD 1.27 and 1 standard lot: $12.70/pip. As GBP/USD changes, this value changes proportionally.',
-        ],
-      },
-      {
-        heading: 'Why Pip Value Matters More Than Traders Realize',
-        body: [
-          'A common mistake in risk management: assuming that a "25-pip stop" represents the same dollar risk regardless of pair. It does not. 25 pips on EUR/USD standard lot = $250. 25 pips on USD/JPY standard lot = $166. 25 pips on EUR/GBP standard lot = $318. The same lot size and same pip count produces 91% more dollar risk on EUR/GBP than on USD/JPY. Traders who mentally anchor to EUR/USD pip values for all pairs are systematically miscalculating risk on non-EUR/USD trades.',
-          'For scalpers, pip value is especially critical because the economics of tight targets depend on the dollar amount per pip. A scalper targeting 5 pips on a mini lot: EUR/USD = $5 gross. USD/JPY = $3.32 gross. At $2 round-trip cost, EUR/USD nets $3; USD/JPY nets $1.32 — 56% less. The same strategy applied identically to both pairs has very different economics. Use the [pip-to-dollar calculator](/calculators/pip-to-dollar-calculator) to verify your target dollar amount for each specific pair before sizing.',
-        ],
-      },
-      {
-        heading: 'Complete Pip Value Reference by Lot Size',
-        body: [
-          'EUR/USD, GBP/USD, AUD/USD, NZD/USD (fixed, USD-quoted): Standard lot = $10.00/pip | Mini lot = $1.00/pip | Micro lot = $0.10/pip. These values never change regardless of market movement — they are purely a function of lot size and are the simplest to work with.',
-          'USD/JPY (variable, approximate at rate 150.50): Standard = $6.64/pip | Mini = $0.664/pip | Micro = $0.0664/pip. USD/CAD (approximate at 1.370): Standard = $7.30/pip | Mini = $0.73/pip | Micro = $0.073/pip. USD/CHF (approximate at 0.892): Standard = $11.21/pip | Mini = $1.121/pip | Micro = $0.1121/pip.',
-          'Cross pairs (approximate at current rates): EUR/JPY ≈ $6.64/pip standard | GBP/JPY ≈ $6.64/pip | EUR/GBP ≈ $12.70/pip | AUD/JPY ≈ $6.64/pip | GBP/CHF ≈ $11.20/pip. Cross pair pip values require two exchange rates and change continuously. For any cross pair trade, always verify the current pip value using the [pip value calculator](/calculators/pip-value-calculator) rather than relying on approximations.',
-        ],
-        list: [
-          'EUR/USD standard lot: exactly $10.00/pip (fixed)',
-          'GBP/USD standard lot: exactly $10.00/pip (fixed)',
-          'USD/JPY standard lot: ≈$6.64/pip (variable)',
-          'EUR/GBP standard lot: ≈$12.70/pip (variable)',
-          'USD/CHF standard lot: ≈$11.21/pip (variable)',
-          'All mini lot values = standard ÷ 10 | All micro lot values = standard ÷ 100',
-        ],
-      },
-      {
-        heading: 'How Exchange Rate Movements Change Pip Value Over Time',
-        body: [
-          'For USD-base pairs (USD/JPY, USD/CAD, USD/CHF), pip value in USD moves inversely with the exchange rate. As USD/JPY rises (USD strengthens), each pip becomes worth fewer dollars: at 140.00, standard lot pip value = $7.14. At 155.00, pip value = $6.45. A 10% rise in USD/JPY reduces pip value by approximately 9%. This means the same lot size produces less dollar P&L per pip during periods of USD strength.',
-          "For cross pairs, pip value changes with both the pair's own rate and the quote currency's USD rate. EUR/GBP pip value = (0.0001 × lot size) × GBP/USD rate. When GBP/USD rises from 1.25 to 1.30 (GBP strengthens 4%), EUR/GBP pip value rises proportionally: from $12.50 to $13.00 per pip. Holding a EUR/GBP position through a significant GBP/USD move changes the USD value of each pip even if EUR/GBP stays flat.",
-          'Practical implications: for intraday trades (1–8 hours), exchange rate pip value drift is negligible — the difference in dollar value between opening and closing pip calculations will be pennies. For swing trades held 3–10 days, recalculate once at entry and once before closing if the market has moved significantly. For position trades held weeks or months, factor pip value drift into your ongoing position sizing and P&L monitoring.',
-        ],
-      },
-      {
-        heading: 'Pip Value Economics for Scalpers vs Swing Traders',
-        body: [
-          'Scalpers target 3–10 pips per trade and need to know the exact dollar value of each pip because their gross-to-net cost ratio is highest in this style. EUR/USD at $10/pip standard lot, 5-pip target = $50 gross. Subtract 1-pip spread ($10) and $7 commission: net = $33. The 34% cost-to-gross ratio means a scalper needs to win roughly 60% of 1:1 trades just to break even after costs. Compare USD/JPY at the same lot size and pip count: $6.64/pip × 5 pips = $33.20 gross. After the same $17 in costs: $16.20 net — only half the EUR/USD net. Scalpers should model these numbers explicitly for each pair they trade.',
-          'Swing traders, by contrast, target 50–200+ pips and the cost-to-gross ratio is much smaller. A 100-pip EUR/USD trade on a standard lot = $1,000 gross. Same $17 in costs = 1.7% of gross. Pip value differences between pairs matter for position sizing (different pip values mean different lot sizes for the same dollar risk) but the cost economics are not materially different between EUR/USD and USD/JPY at this scale.',
-          'The key number every trader should know for each pair they actively trade: (Pip Value per Lot) × (Average Stop Size in Pips) = Dollar Risk per Standard Lot. EUR/USD at $10/pip with a 25-pip stop: $250/lot risk. USD/JPY at $6.64/pip with a 25-pip stop: $166/lot risk. EUR/GBP at $12.70/pip with a 25-pip stop: $317.50/lot risk. The same 25-pip stop and same lot size produces a 91% difference in dollar risk between the lowest (USD/JPY) and highest (EUR/GBP) pairs. This is exactly the knowledge that separates precise risk management from guesswork.',
-        ],
-      },
+    "publishedAt": "2026-11-04",
+    "updatedAt": "2026-11-04",
+    "readingTimeMin": 25,
+    "relatedCalculators": [
+      "pip-to-dollar-calculator",
+      "pip-value-calculator",
+      "position-size-calculator"
     ],
-    callToAction: {
-      text: 'Get the exact pip-to-dollar value for your pair, lot size, and current rate.',
-      href: '/calculators/pip-to-dollar-calculator',
-      label: 'Open Pip-to-Dollar Calculator →',
-    },
+    "relatedPosts": [
+      "what-is-pip-value-how-to-calculate",
+      "how-to-calculate-position-size-forex",
+      "how-to-calculate-profit-loss-forex",
+      "how-to-calculate-pips-between-prices",
+      "forex-risk-management-complete-guide",
+      "what-is-a-pip-in-forex",
+      "forex-lot-sizes-explained",
+      "mt4-position-size-calculator",
+      "what-is-a-stop-loss-in-forex",
+      "what-is-spread-in-forex"
+    ],
+    "howToSteps": [
+      {
+        "name": "Check if USD is the quote currency",
+        "text": "EUR/USD, GBP/USD, AUD/USD, NZD/USD: pip value is $10 per standard lot, fixed."
+      },
+      {
+        "name": "For USD-base pairs, divide by the current rate",
+        "text": "USD/JPY: (0.01 ÷ 150.50) × 100,000 = $6.645 per pip on a standard lot."
+      },
+      {
+        "name": "For cross pairs, convert via the quote currency",
+        "text": "EUR/GBP: £10 per standard lot × GBP/USD 1.27 = $12.70 per pip."
+      },
+      {
+        "name": "Scale by lot size and pips",
+        "text": "Mini lot = standard ÷ 10, micro lot = standard ÷ 100. Multiply by the number of pips to get dollars."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How much is 1 pip worth in dollars?",
+        "a": "It depends on the pair and lot size. On EUR/USD, GBP/USD, AUD/USD and NZD/USD, one pip is $10 per standard lot (100,000 units), $1 per mini lot and $0.10 per micro lot. On USD/JPY at 150.50 it is about $6.65 per standard lot, and on EUR/GBP at GBP/USD 1.27 it is $12.70."
+      },
+      {
+        "q": "How much is a pip worth on EUR/USD?",
+        "a": "Exactly $10 per standard lot, $1 per mini lot and $0.10 per micro lot. EUR/USD is quoted in dollars with a pip size of 0.0001, so 0.0001 × 100,000 = $10. The value does not change with the exchange rate."
+      },
+      {
+        "q": "How much is a pip worth on USD/JPY?",
+        "a": "About $6.65 per standard lot at a rate of 150.50, from (0.01 ÷ 150.50) × 100,000. It falls as USD/JPY rises: $7.14 at 140.00 and $6.45 at 155.00. Mini lot is one tenth and micro lot one hundredth of that."
+      },
+      {
+        "q": "How do I convert pips to dollars?",
+        "a": "Multiply the pip size (0.0001, or 0.01 for JPY pairs) by your position size in units to get the pip value in the quote currency, convert that to USD, then multiply by the number of pips. For EUR/USD, 40 pips on 0.5 lots is 40 × $5 = $200."
+      },
+      {
+        "q": "What is the pip to dollar formula?",
+        "a": "Pip Value in USD = (Pip Size × Units) × Conversion Rate. The conversion rate is 1 for USD-quoted pairs, 1 ÷ the pair's rate for USD-base pairs, and the USD value of the quote currency for cross pairs."
+      },
+      {
+        "q": "How many pips is $100?",
+        "a": "Pips = $100 ÷ (Pip Value per Lot × Lots). On EUR/USD with 1 standard lot that is 10 pips, with 0.1 lots 100 pips, and with 0.01 lots 1,000 pips. On USD/JPY with 1 standard lot at 150.50 it is about 15 pips."
+      },
+      {
+        "q": "How much is 10 pips worth?",
+        "a": "On EUR/USD, 10 pips is $100 on a standard lot, $10 on a mini lot and $1 on a micro lot. On USD/JPY at 150.50, 10 pips is about $66.45 on a standard lot."
+      },
+      {
+        "q": "How much is 50 pips worth in dollars?",
+        "a": "On a standard lot of EUR/USD, 50 pips is $500. On a mini lot it is $50 and on a micro lot $5. On USD/JPY at 150.50, 50 pips on a standard lot is about $332.25."
+      },
+      {
+        "q": "How much is 100 pips worth?",
+        "a": "On EUR/USD, 100 pips is $1,000 per standard lot, $100 per mini lot and $10 per micro lot. On EUR/GBP at GBP/USD 1.27, 100 pips on a standard lot is $1,270."
+      },
+      {
+        "q": "Why is a pip worth different amounts on different pairs?",
+        "a": "Because the pip is a fixed price increment in the quote currency, and each quote currency has a different dollar value. A yen pip is 1,000 yen per standard lot (about $6.65), while a pound pip is £10 (about $12.70 at 1.27)."
+      },
+      {
+        "q": "Does pip value change while my trade is open?",
+        "a": "For USD-quoted pairs no. For every other pair, yes, because the conversion rate moves with the market. The change is usually small intraday but can reach 5% to 10% on multi-week trades."
+      },
+      {
+        "q": "How do I calculate pip value for a EUR account?",
+        "a": "Calculate the pip value in the quote currency, then convert it into EUR. For EUR/USD with EUR/USD at 1.0800, one standard lot pip is $10 ÷ 1.0800 = €9.26."
+      },
+      {
+        "q": "What is the difference between a pip and a pipette?",
+        "a": "A pipette (or point) is one tenth of a pip: the fifth decimal on 4-decimal pairs and the third decimal on JPY pairs. Ten pipettes equal one pip. Do not read the last digit as a pip."
+      },
+      {
+        "q": "How do I calculate lot size from pips and risk?",
+        "a": "Lots = Risk in Dollars ÷ (Stop in Pips × Pip Value per Lot). With $50 risk, a 20-pip stop and $10 per pip, lots = 50 ÷ 200 = 0.25."
+      },
+      {
+        "q": "Is a pip always $10 per standard lot?",
+        "a": "No. That is only true for pairs where USD is the quote currency. Pairs quoted in JPY, CAD, CHF, GBP and others have a variable dollar value that depends on the exchange rate."
+      },
+      {
+        "q": "How much is a pip on gold (XAU/USD)?",
+        "a": "Gold does not follow forex pip rules. Brokers define a pip or point differently: commonly $0.10 or $0.01 price movement. On 1 standard lot (100 oz), a $1 move is typically $100. Check your broker's contract specification."
+      },
+      {
+        "q": "Which pairs have the highest pip value per lot?",
+        "a": "Among majors and common crosses, EUR/GBP (about $12.70), GBP/CHF and USD/CHF (about $11.20) exceed $10 per standard lot, while JPY pairs (about $6.65) are among the lowest."
+      },
+      {
+        "q": "What is the easiest way to check my pip value?",
+        "a": "Open a demo position at your intended size and read the pip value shown by your platform, or use a free pip to dollar calculator and compare. The two should agree to within a few cents."
+      },
+      {
+        "q": "Why is my realised loss slightly different from my planned loss?",
+        "a": "Because the quote-currency loss is converted to dollars at the exit rate, not the entry rate. On a 200-pip USD/JPY long stopped at 148.50 from 150.50, the loss is about $1,347 instead of $1,329."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What Is Pip to Dollar Conversion? (Definition)",
+        "body": [
+          "Pip to dollar conversion is the process of turning a price movement measured in pips into a profit or loss measured in US dollars. One pip is the standard unit of price change in forex (0.0001 for most pairs, 0.01 for yen pairs). On a standard lot of EUR/USD, one pip equals exactly $10; on a mini lot $1; on a micro lot $0.10.",
+          "That one-sentence answer is where most articles stop, and it is exactly why so many traders blow through their risk limits. The $10 figure is only true for pairs where the US dollar is the quote currency, such as EUR/USD, GBP/USD, AUD/USD and NZD/USD. For USD/JPY, USD/CAD, USD/CHF and every cross pair, the dollar value of a pip changes with the exchange rate and must be recalculated.",
+          "Think of the pip as a ruler and the dollar value as the price of one centimetre on that ruler. The ruler is the same length on every pair, but the price per centimetre depends on the currency, the size of your position and the current exchange rate. A trader who knows only the ruler can say a trade moved 40 pips. A trader who knows the pip to dollar value can say it made or lost $400, $266 or $508.",
+          "This guide gives you the complete pip to dollar reference: the formula for every pair type, a full lookup table, two worked examples with real account sizes, the mistakes that quietly distort risk, and one rule most guides never mention (the exit-rate rule in Section 8). Every number below uses the stated rate so you can verify it yourself with a calculator.",
+          "For a quick mental check, remember the three anchor values: $10 for USD-quoted pairs, roughly $6.65 for yen pairs at current levels, and $12.70 for pound-quoted crosses. Any pip to dollar answer far from those anchors deserves a second look. Traders who memorise these anchors catch input errors, such as a wrong lot size typed into a platform, within seconds rather than after the trade is already open and the stop is already too large for the account."
+        ]
+      },
+      {
+        "heading": "How Pip to Dollar Conversion Works Step by Step",
+        "body": [
+          "Every pip to dollar conversion follows the same three-stage logic. First, find the pip size: 0.0001 for pairs like EUR/USD and GBP/CHF, and 0.01 for any pair with JPY as the quote currency. Second, multiply the pip size by the number of units in your position to get the pip value in the quote currency. Third, convert that quote-currency amount into US dollars (or your account currency).",
+          "For USD-quoted pairs, the third stage is free because the quote currency already is the dollar. EUR/USD: 0.0001 × 100,000 units = $10. No conversion needed, and the answer is fixed no matter where the market trades. This is why EUR/USD and GBP/USD are the easiest pairs for beginners to size correctly.",
+          "For every other pair, the third stage needs an exchange rate. USD/JPY: 0.01 × 100,000 = 1,000 yen per pip. To express 1,000 yen in dollars you divide by the USD/JPY rate. At 150.50, that is 1,000 ÷ 150.50 = $6.645 per pip. Same logic for USD/CAD: 0.0001 × 100,000 = 10 CAD ÷ 1.370 = $7.30.",
+          "Cross pairs add one more link in the chain. EUR/GBP has GBP as the quote currency, so the pip value is first calculated in pounds (0.0001 × 100,000 = £10) and then converted using GBP/USD. At GBP/USD 1.27 that is £10 × 1.27 = $12.70. The rule never changes: pip size × units, then convert the quote currency into dollars.",
+          "A useful way to remember the order of operations is Size, Scale, Switch. Size means find the pip size for the pair. Scale means multiply by the units you are trading. Switch means convert the quote currency into dollars if it is not already dollars. Running those three steps in order on every trade, even the ones that feel obvious, builds a habit that eliminates the lazy assumption that every pip is worth ten dollars."
+        ]
+      },
+      {
+        "heading": "The Pip to Dollar Formula (With Every Variable Defined)",
+        "body": [
+          "The master formula is: Pip Value in USD = (Pip Size × Position Size in Units) × Conversion Rate. Pip Size is 0.0001 or 0.01. Position Size in Units is lots × 100,000 for standard lots (mini = 10,000, micro = 1,000). Conversion Rate is the number of US dollars one unit of the quote currency buys. For USD-quoted pairs the Conversion Rate is 1.",
+          "For USD-base pairs the Conversion Rate is 1 ÷ the pair's own rate, which gives the familiar shortcut: Pip Value = (Pip Size ÷ Current Rate) × Position Size. Worked check on USD/JPY at 150.50: (0.01 ÷ 150.50) × 100,000 = 6.645. Worked check on USD/CHF at 0.892: (0.0001 ÷ 0.892) × 100,000 = 11.21.",
+          "For cross pairs the Conversion Rate is the USD value of the quote currency, taken from a second pair. EUR/GBP uses GBP/USD. EUR/JPY and GBP/JPY use 1 ÷ USD/JPY. AUD/CAD uses 1 ÷ USD/CAD. Example: EUR/JPY on one standard lot with USD/JPY at 150.50 is (0.01 × 100,000) ÷ 150.50 = $6.645 per pip, even though the EUR/JPY rate itself (say 163.00) never enters the formula.",
+          "To go from dollars back to pips, rearrange: Pips = Dollar Amount ÷ (Pip Value per Lot × Lots). A $200 target on 0.5 lots of EUR/USD is $200 ÷ ($10 × 0.5) = 40 pips. And to size a position from a risk budget: Lots = Risk in Dollars ÷ (Stop in Pips × Pip Value per Lot). These two rearrangements are all you need for daily trading.",
+          "One more variant worth knowing is the units-based shortcut, used by brokers that quote position size in units rather than lots. Pip Value = Pip Size × Units × Conversion Rate. If you trade 37,000 units of USD/JPY at 150.50, the pip value is 0.01 × 37,000 ÷ 150.50 = $2.458. This is the same answer as 0.37 lots, which confirms that lots are only a convenient wrapper around units and the formula never changes between platforms."
+        ]
+      },
+      {
+        "heading": "Step-by-Step Guide: How to Convert Pips to Dollars",
+        "body": [
+          "Step 1: Identify the quote currency of your pair (the second currency). If it is USD, your pip value per standard lot is $10 and you can skip to Step 4. If it is JPY, the pip size is 0.01. If it is anything else, you will need one extra exchange rate.",
+          "Step 2: Compute the pip value in the quote currency for your lot size. One standard lot of any pair with a 0.0001 pip is 10 units of the quote currency per pip; with a 0.01 pip (JPY pairs) it is 1,000 yen per pip. Multiply by your number of lots. For 0.30 lots of GBP/CHF, that is 10 CHF × 0.30 = 3 CHF per pip.",
+          "Step 3: Convert to dollars. Multiply by the quote currency's USD rate, or divide by USD/quote. For the 3 CHF per pip above, with USD/CHF at 0.892, the value is 3 ÷ 0.892 = $3.36 per pip. Always pull the rate live from your platform; do not use numbers from an article, including this one, for real trades.",
+          "Step 4: Multiply by pips. A 35-pip move at $3.36 per pip equals $117.60. Step 5: Sanity-check against your platform. Open a demo position at your intended size and read the pip value your broker displays. If it differs by more than a few cents, check your lot definition, contract size and whether the platform is quoting in your account currency.",
+          "A final check before sending the order: multiply your pip value by your stop distance and compare it to your risk budget. If the product exceeds the budget, reduce the lot size; if it falls far below, you may have mis-typed the lot size or the pair. This ten-second step catches the majority of fat-finger errors, and it is cheaper than any stop loss because it prevents the oversized position from ever existing."
+        ]
+      },
+      {
+        "heading": "Worked Example #1: Pip to Dollar on a $5,000 Account",
+        "body": [
+          "Account: $5,000. Risk rule: 1% per trade = $50. Setup: long EUR/USD with a 20-pip stop. Pip value per standard lot is $10, so risk per standard lot is 20 × $10 = $200. Position size = $50 ÷ $200 = 0.25 lots (25,000 units). The pip value of this position is 0.25 × $10 = $2.50 per pip. Check: 20 pips × $2.50 = $50 risk. Exactly 1%.",
+          "Now take the same $50 risk and the same 20-pip stop but trade USD/JPY at 150.50. Pip value per standard lot is $6.645, so risk per standard lot is 20 × $6.645 = $132.90. Position size = $50 ÷ $132.90 = 0.376 lots, rounded down to 0.37 lots (37,000 units). Pip value of the position = 0.37 × $6.645 = $2.459 per pip. Risk = 20 × $2.459 = $49.17, which is 0.98% of the account.",
+          "Notice what happened. The stop distance (20 pips) and the dollar risk ($50) were identical, yet the position was 0.25 lots on EUR/USD and 0.37 lots on USD/JPY, a 48% bigger lot size. A trader who used the EUR/USD lot size on USD/JPY would have risked only 0.25 × 6.645 × 20 = $33.23 (0.66%), under-using their risk budget, and a trader who did the reverse in the other direction would have over-risked.",
+          "Profit side: if EUR/USD hits a 40-pip target (a 2R trade), profit is 40 × $2.50 = $100, or 2% of the account. On USD/JPY, 40 pips × $2.459 = $98.36, 1.97%. The tiny gap is the rounding of the lot size. Both trades deliver a clean 2R because the lot was sized from the pip to dollar value rather than guessed.",
+          "A good habit is to write the full line in your trade journal: pair, rate, lots, pip value, stop in pips, dollar risk, percentage risk. For this trade it reads EUR/USD, 0.25 lots, $2.50 per pip, 20-pip stop, $50 risk, 1.0%. Reviewing a hundred such lines shows you whether your sizing is consistent. If the percentage column wanders between 0.5% and 2%, your pip to dollar process is leaking, even when your win rate looks fine."
+        ]
+      },
+      {
+        "heading": "Worked Example #2: Cross-Pair Pip to Dollar on a $25,000 Account",
+        "body": [
+          "Account: $25,000. Risk rule: 0.5% per trade = $125. Setup: long EUR/GBP with a 30-pip stop and a 60-pip target. GBP/USD is trading at 1.2700. Pip value per standard lot in pounds is 0.0001 × 100,000 = £10. In dollars: £10 × 1.2700 = $12.70 per pip.",
+          "Risk per standard lot = 30 pips × $12.70 = $381.00. Position size = $125 ÷ $381.00 = 0.328 lots, rounded down to 0.32 lots (32,000 units). Pip value of the position = 0.32 × $12.70 = $4.064 per pip. Actual risk = 30 × $4.064 = $121.92, which is 0.488% of the account.",
+          "Target math: 60 pips × $4.064 = $243.84 profit, a 2R reward. Now suppose GBP/USD rises to 1.3000 while the trade is open. The pip value of the position becomes 0.32 × £10 × 1.3000 = $4.16 per pip, so the same 60-pip target is now worth $249.60. A 2.4% move in GBP/USD changed the target by $5.76. That is small, but on larger positions or longer holds the drift compounds.",
+          "The lesson of both examples: you cannot size cross pairs from memory. EUR/GBP at $12.70 per pip is 27% more valuable per pip than EUR/USD at $10, so a 30-pip stop that looks identical on the chart carries 27% more dollar risk per lot. Traders who trade EUR/USD and EUR/GBP side by side with the same lot size are silently running two different risk levels.",
+          "Also note the spread. A 1.4-pip spread on EUR/GBP costs 1.4 × $4.064 = $5.69 on this position, which is 4.6% of the $125 risk before price even moves. Cross pairs often carry wider spreads, and because their pip value is higher, the dollar cost of the spread is higher too. Always include the spread in your pip to dollar planning, particularly when your profit target is small relative to your stop."
+        ]
+      },
+      {
+        "heading": "Pip to Dollar Reference Table for All Major Pairs",
+        "body": [
+          "The table below shows the approximate pip to dollar value per lot for the most traded pairs at the stated reference rates. USD-quoted pairs are exact; all others are snapshots and move with the market. Mini lot values are standard ÷ 10 and micro lot values are standard ÷ 100.",
+          "| Pair | Reference rate | Standard lot (100k) | Mini lot (10k) | Micro lot (1k) |\n|---|---|---|---|---|\n| EUR/USD | any | $10.00 | $1.00 | $0.10 |\n| GBP/USD | any | $10.00 | $1.00 | $0.10 |\n| AUD/USD | any | $10.00 | $1.00 | $0.10 |\n| NZD/USD | any | $10.00 | $1.00 | $0.10 |\n| USD/JPY | 150.50 | $6.65 | $0.66 | $0.07 |\n| USD/CAD | 1.3700 | $7.30 | $0.73 | $0.07 |\n| USD/CHF | 0.8920 | $11.21 | $1.12 | $0.11 |\n| EUR/GBP | GBP/USD 1.27 | $12.70 | $1.27 | $0.13 |\n| EUR/JPY | USD/JPY 150.50 | $6.65 | $0.66 | $0.07 |\n| GBP/JPY | USD/JPY 150.50 | $6.65 | $0.66 | $0.07 |",
+          "Read the table by quote currency, not by pair name. Every pair quoted in JPY lands near $6.65 per standard lot at USD/JPY 150.50, because the pip is 1,000 yen and only the USD/JPY rate matters. Every pair quoted in CHF lands near $11.21 and every pair quoted in GBP near $12.70. Learn five quote currencies (USD, JPY, CAD, CHF, GBP) and you can estimate any cross pair in your head.",
+          "Do not copy these figures into a live risk calculation. They are reference points for building intuition and for checking that a calculator output is in the right ballpark. If your tool says EUR/USD is $9 per pip or USD/JPY is $15 per pip, something is wrong, and now you know it immediately.",
+          "To use the table in practice, find your pair, choose the column matching your lot size, and multiply by pips. A 35-pip target on 0.20 lots of USD/CHF is 35 × (0.20 × $11.21) = $78.47. A 12-pip stop on 1.5 lots of EUR/USD is 12 × (1.5 × $10) = $180. Once you have done it twenty times, you will rarely need to look at the table at all, and the calculator becomes a verification step rather than a crutch."
+        ]
+      },
+      {
+        "heading": "How Exchange Rates Change the Pip to Dollar Value (The Exit-Rate Rule)",
+        "body": [
+          "For USD-base pairs the pip value moves inversely with the exchange rate. On one standard lot of USD/JPY, the pip is worth $7.14 at 140.00, $6.67 at 150.00 and $6.45 at 155.00. A 10% rise in USD/JPY from 150 to 165 cuts the pip value from $6.67 to $6.06, a drop of 9.1%. The stronger the dollar versus the quote currency, the less each pip is worth in dollars.",
+          "Here is the insight most pip guides skip: your realised dollar result is settled at the exit rate, not the entry rate. Suppose you go long one standard lot of USD/JPY at 150.50 with a 200-pip stop at 148.50. You sized the trade assuming $6.645 per pip, so you expected a loss of 200 × $6.645 = $1,329. But the loss of 200,000 yen is converted to dollars at the exit rate: 200,000 ÷ 148.50 = $1,347. That is $18 (1.35%) more than planned.",
+          "On a short USD/JPY the effect reverses: your stop sits above entry, the rate is higher at exit, the pip is worth less, and your actual loss is slightly smaller than planned. For a long USD/JPY or any long USD-base pair, the stop-out loss is always slightly larger than your entry-rate calculation. For 20-pip scalps the difference is under a cent; for 200-pip swing stops it is over 1%.",
+          "The practical fix is simple. For stops wider than about 100 pips on non-USD-quoted pairs, size using the pip value at your stop price rather than at entry (the more conservative number for the direction that loses more). This tiny habit keeps your realised risk at or below your stated risk, and it is something none of the typical top-ranking pip value pages mention.",
+          "Volatile weeks make the exit-rate effect larger because stops are wider and rates move further. During a central bank surprise, USD/JPY can move 300 pips in an hour, which shifts the pip value by about 2%. This does not change the trade you took, but it changes the dollar size of a fixed-pip move, so a trailing stop measured in pips represents a slightly different dollar amount every time the rate ticks."
+        ]
+      },
+      {
+        "heading": "Common Pip to Dollar Mistakes Traders Make",
+        "body": [
+          "Mistake 1: using $10 per pip for every pair. This is by far the most common error. On USD/JPY a standard lot pip is $6.65, so a trader who assumes $10 overestimates both risk and reward by 50%. If they size by the wrong value, they end up with positions far too small, or, in the opposite direction on a pair like EUR/GBP, positions too large.",
+          "Mistake 2: confusing pip with pipette (point). Most brokers now quote a fifth decimal on 4-decimal pairs and a third on JPY pairs. A move of 0.00010 is one pip; a move of 0.00001 is a tenth of a pip. Reading the last digit as a pip makes you think a 12-pip stop is 120 pips, and vice versa. Always count from the fourth decimal (or second for yen).",
+          "Mistake 3: ignoring the account currency. If your account is in EUR, GBP or INR, every pip value above must be converted once more into that currency. A EUR account trading EUR/USD at $10 per pip with EUR/USD at 1.0800 has a pip value of €9.26, not €10. Mistake 4: forgetting that gold, silver, indices and crypto CFDs have their own pip or point definitions that bear no relation to forex.",
+          "Mistake 5: rounding the lot size up. If the formula says 0.376 lots, trade 0.37, not 0.38. Rounding up gives you more than your stated risk, and over hundreds of trades that adds up. Mistake 6: forgetting the spread. A 1.2-pip spread on 0.37 lots of USD/JPY costs 1.2 × $2.46 = $2.95 before the trade moves at all.",
+          "Finally, remember that a stop-loss can slip. In fast markets the fill may be several pips worse than the stop price, and the extra pips are multiplied by the same pip value. On 0.50 lots of EUR/USD, 4 pips of slippage costs 4 × $5 = $20. Building a small buffer into the dollar risk, say 5% below your maximum, turns pip to dollar arithmetic into a robust process rather than a perfect-world estimate."
+        ]
+      },
+      {
+        "heading": "Pip to Dollar for Day Traders vs Swing Traders vs Position Traders",
+        "body": [
+          "Day traders and scalpers live and die by small pip to dollar differences. A scalper targeting 6 pips on a 1.0 lot EUR/USD position makes $60 gross. If the spread plus commission is 1.4 pips ($14), the net is $46 and costs eat 23% of the gross. On USD/JPY the same 6 pips is $39.90 gross and the same 1.4-pip cost is $9.30, so the ratio is identical, but the absolute dollars are 33% lower, which matters for scalpers who need a fixed daily dollar target.",
+          "Swing traders hold for days and use 50 to 200 pip stops. For them, the exit-rate effect from Section 8 starts to matter, and so does swap. A 120-pip stop on 0.20 lots of USD/CAD at 1.3700 is 120 × (0.20 × $7.30) = $175.20. If the rate moves to 1.3900 by the time the stop is hit, the pip value falls to $7.19 per standard lot and the loss to 120 × 0.20 × $7.19 = $172.56. Small, but worth knowing.",
+          "Position traders hold weeks or months and think in hundreds of pips. Over a 600-pip move, the pip value of a non-USD-quoted pair can drift 5% to 10%, so a profit target quoted in pips is not a stable dollar target. A position trader should state targets in dollars or R-multiples and use pips only for chart distance.",
+          "Across all three styles the discipline is the same: define risk in dollars first, measure stop distance in pips second, and let the pip to dollar value for that specific pair at that specific rate decide the lot size. The style changes how often you recalculate, not whether you do.",
+          "Style also affects how much the conversion matters for fees. A swing trader paying a swap of 0.4 pips per night on a 0.30-lot position pays 0.4 × (0.30 × $10) = $1.20 per night on EUR/USD, and the same 0.4 pips costs $0.80 on USD/JPY. Over a 10-day hold, the pip to dollar value of the financing cost becomes a real line item that belongs in the trade plan."
+        ]
+      },
+      {
+        "heading": "Advanced Pip to Dollar Strategies Experienced Traders Use",
+        "body": [
+          "Normalise risk across pairs. Experienced traders maintain a risk-per-trade percentage and never a fixed lot size. Fixed lots across EUR/USD, USD/JPY and EUR/GBP produce wildly different dollar risks for the same stop distance. A volatility-adjusted approach goes one step further: size by ATR-based stops and the live pip value so that every position risks the same percentage regardless of pair.",
+          "Use a pip-value cheat sheet for correlation checks. If you are long EUR/USD and long GBP/USD, both at $10 per pip, a 1% risk on each is 2% of the account riding on dollar weakness. If you add a long EUR/GBP, the pip value is higher ($12.70), so the same pip stop carries more dollar risk. Seeing everything in dollars makes stacked exposure obvious.",
+          "Convert targets into R-multiples. A 60-pip target on a 30-pip stop is 2R on any pair, but the dollar target differs by pair only through lot size. Tracking R instead of pips or dollars makes performance comparable across pairs and account sizes, and it avoids the trap of judging a trade by pip count.",
+          "Automate the conversion. Spreadsheet formulas, calculators and platform scripts remove arithmetic from your decision loop, which is when mistakes sneak in. The TradeCalc pip to dollar calculator and position size calculator do the conversion with live-style inputs so you can focus on whether the setup is worth taking, not on dividing by 150.50 in your head.",
+          "Prop firm traders benefit especially, because daily drawdown rules are in dollars while stops are in pips. On a $100,000 funded account with a 5% daily limit ($5,000), a 4-trade day at 1% each uses 80% of the limit if every stop is hit. Converting every stop to dollars with the correct pip value is the only way to know how close you are to a violation before the next entry."
+        ]
+      },
+      {
+        "heading": "Pip to Dollar Calculators and Tools You Can Use Free",
+        "body": [
+          "TradeCalc offers a free pip to dollar calculator on tradecalcapp.com. Enter the pair, lot size, account currency and current rate, and it returns the dollar value per pip and for any number of pips. It runs in your browser, needs no signup and works for USD-quoted pairs, USD-base pairs and crosses.",
+          "The pip value calculator is the same engine with a lot-size lookup, useful when you want to see standard, mini and micro values side by side. The position size calculator goes one step further: enter account balance, risk percent and stop distance, and it works out the lot size using the correct pip to dollar value for the pair.",
+          "Why use a tool when you can do the maths? Because the maths is easy but the inputs go stale. A rate that was right at 9:00 is wrong by 14:00 on a news day. A calculator that makes you type the live rate each time also reminds you to check it, which prevents the entire class of mistakes in Section 9.",
+          "Whichever tool you use, test it once against the values in the reference table. Enter EUR/USD (should return $10 per standard lot), USD/JPY at 150.50 (should return about $6.65) and EUR/GBP at GBP/USD 1.27 (should return $12.70). If a calculator passes those three checks, you can trust it for everything else.",
+          "If you want to automate further, a simple spreadsheet works: columns for pair, rate, units, pip size and conversion rate, with a formula for pip value and another for lots from risk. Google Sheets can pull live rates with its finance functions. A sheet like this takes ten minutes to build and removes the temptation to guess, which is where nearly every pip to dollar error begins."
+        ]
+      },
+      {
+        "heading": "Pip to Dollar Decision Framework: Which Pair Costs What?",
+        "body": [
+          "Use the framework below to decide, before entering, how much a given stop distance will cost you in dollars per standard lot, and how much you can trade at a $100 risk. All figures use the same reference rates as the lookup table and a 25-pip stop.",
+          "| Pair | Pip value / std lot | Risk per std lot (25-pip stop) | Lots for $100 risk | Units for $100 risk |\n|---|---|---|---|---|\n| EUR/USD | $10.00 | $250.00 | 0.40 | 40,000 |\n| USD/JPY | $6.65 | $166.25 | 0.60 | 60,000 |\n| USD/CAD | $7.30 | $182.50 | 0.55 | 55,000 |\n| USD/CHF | $11.21 | $280.25 | 0.35 | 35,000 |\n| EUR/GBP | $12.70 | $317.50 | 0.31 | 31,000 |",
+          "The pattern is clear: higher pip value means smaller position for the same risk. The same $100 risk and the same 25-pip stop gives you 60,000 units of USD/JPY but only 31,000 of EUR/GBP, almost twice as many. Neither is better; they carry the same dollar risk. But it explains why traders who copy lot sizes from one pair to another get surprises.",
+          "Decision rule: if the pip value of a pair is above $10, expect smaller lots and, usually, higher spreads in dollar terms; if it is below $10, expect larger lots. In both cases confirm with the calculator, never with this table alone, because rates have moved since the figures were calculated.",
+          "A related shortcut for the framework: dollar risk per standard lot is simply Pip Value × Stop. Divide your risk budget by that number to get lots, no matter the pair. If you keep one small card on your desk with the pip values of your five most-traded pairs, you can size almost any trade in under ten seconds and double-check the result in the calculator before clicking buy or sell."
+        ]
+      },
+      {
+        "heading": "How Foysal Mostafa Uses Pip to Dollar Values in Live Trading",
+        "body": [
+          "I have traded forex for over ten years, and the pip to dollar conversion is the first thing I check before every order, not the last. My routine is simple: decide the stop from the chart, decide the dollar risk from the account, then let the pip value for that pair at the current rate set the lot size. I never pick a lot size first and see what the risk turns out to be.",
+          "Early in my trading I used $10 per pip on everything. A USD/JPY trade I sized by feel looked like a small 0.50-lot position, but my real risk per pip was $3.32, not the $5 I imagined, and my profits were 33% smaller than my plan said. It cost me nothing in dollars that day but it taught me that my risk statistics were fiction. I rebuilt my journal with dollar risk calculated from the correct pip value, and my R-multiples finally made sense.",
+          "Today, when I swing-trade USD/JPY with wider stops, I apply the exit-rate rule from Section 8: I size from the pip value at the stop price, which is the more conservative figure on a long. It shaves a fraction of a lot, but my realised losses now match my stated losses within a few dollars, which is the whole point of risk management.",
+          "My advice to beginners is to practise the conversion by hand for a week. Do ten calculations for EUR/USD, ten for USD/JPY and ten for a cross like EUR/GBP, then check them with the calculator. After that, you will recognise wrong numbers instantly, and that instinct protects your account better than any indicator.",
+          "I also keep a monthly review where I compare planned dollar risk against realised dollar risk for every closed trade. If the gap is over 3%, I look for the cause: slippage, wide stops on yen pairs, or a wrong rate. This review is where the exit-rate rule first showed up for me, and it is the reason I trust my numbers when I scale position size up."
+        ]
+      },
+      {
+        "heading": "Key Takeaways: Pip to Dollar in 7 Rules",
+        "body": [
+          "1. One pip equals $10 per standard lot, $1 per mini lot and $0.10 per micro lot only when USD is the quote currency (EUR/USD, GBP/USD, AUD/USD, NZD/USD). 2. For USD-base pairs divide the pip size by the current rate: USD/JPY at 150.50 is about $6.65 per standard lot. 3. For cross pairs convert the quote currency to dollars: EUR/GBP at GBP/USD 1.27 is $12.70.",
+          "4. Lots = Risk in Dollars ÷ (Stop in Pips × Pip Value per Lot). A $50 risk with a 20-pip stop on EUR/USD is 0.25 lots. 5. The same stop distance carries different dollar risk on different pairs, so never reuse a lot size across pairs. 6. Realised results are converted at the exit rate, so for wide stops on non-USD-quoted pairs size from the stop-price pip value. 7. Round lot sizes down, count only the fourth decimal (second for JPY) as the pip, and verify any calculator against known values."
+        ]
+      },
+      {
+        "heading": "Next Steps and Related Pip to Dollar Resources",
+        "body": [
+          "Start by opening the pip to dollar calculator and running the three check values from Section 11. Then run your own most-traded pair and compare it with the pip value your broker platform shows for a demo position. If both agree, your inputs are right.",
+          "Next, read our guide on what pip value is and how to calculate it for the full theory, and our guide to calculating position size in forex to turn pip values into lot sizes. For the other side of the trade, see how to calculate profit and loss in forex and how to calculate pips between prices.",
+          "To go deeper on risk, read the forex risk management complete guide, the stop-loss guide and the lot sizes explained article. If you trade MetaTrader, the MT4 position size calculator guide shows how to bring these numbers directly into your platform.",
+          "Everything on tradecalcapp.com is free and runs in your browser. Bookmark the calculators, recalculate whenever rates move materially, and treat every pip as the specific dollar amount it is on the specific pair you trade. That is the difference between guessing and managing risk."
+        ]
+      }
+    ],
+    "callToAction": {
+      "text": "Get the exact pip-to-dollar value for your pair, lot size, and current rate.",
+      "href": "/calculators/pip-to-dollar-calculator",
+      "label": "Open Pip-to-Dollar Calculator →"
+    }
   },
 
   // ══════════════════════════════════════════════════════════════════════════
