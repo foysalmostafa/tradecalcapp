@@ -43,6 +43,43 @@ function parseLinks(text: string): React.ReactNode {
   return parts.length === 1 ? parts[0] : <>{parts}</>;
 }
 
+// ─── Markdown table renderer ───────────────────────────────────────────────────
+function renderParagraph(text: string, key: number): React.ReactNode {
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  const isTable = lines.length >= 2 && lines[0].startsWith('|') && lines[1].replace(/[\s|:-]/g, '') === '';
+  if (!isTable) return <p key={key}>{parseLinks(text)}</p>;
+
+  const headers = lines[0].split('|').slice(1, -1).map(h => h.trim());
+  const rows = lines.slice(2).map(row => row.split('|').slice(1, -1).map(c => c.trim()));
+
+  return (
+    <div key={key} className="overflow-x-auto my-4">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="bg-amber-50 dark:bg-amber-900/20">
+            {headers.map((h, i) => (
+              <th key={i} className="px-3 py-2 text-left font-semibold text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 whitespace-nowrap">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr key={ri} className={ri % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800/50'}>
+              {row.map((cell, ci) => (
+                <td key={ci} className="px-3 py-2 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                  {parseLinks(cell)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 // ─── Static params ─────────────────────────────────────────────────────────────
 export function generateStaticParams() {
   return PUBLISHED_POSTS.map(p => ({ slug: p.slug }));
@@ -223,9 +260,7 @@ export default async function BlogPostPage(
                   </h2>
 
                   <div className="space-y-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {section.body.map((para, pi) => (
-                      <p key={pi}>{parseLinks(para)}</p>
-                    ))}
+                    {section.body.map((para, pi) => renderParagraph(para, pi))}
                   </div>
 
                   {section.list && section.list.length > 0 && (
