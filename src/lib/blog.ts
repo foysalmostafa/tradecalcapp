@@ -2602,20 +2602,67 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 
   {
-    slug: 'position-sizing-complete-guide',
-    draft: true,
-    title: 'Position Sizing: The Strategy That Separates Profitable Traders from the Rest',
-    shortTitle: 'Position Sizing Strategy',
-    description: 'The complete guide to position sizing strategies in forex and stock trading: fixed fractional, Kelly criterion, volatility-based, and tiered sizing. With worked examples for every account size.',
-    category: 'pillar',
-    tags: ['position sizing', 'risk management', 'trading strategy'],
-    keywords: ['position sizing strategies forex', 'complete position sizing guide', 'kelly criterion trading', 'fixed fractional position sizing', 'volatility based position sizing forex'],
-    publishedAt: BLOG_DATE,
-    updatedAt: BLOG_DATE,
-    readingTimeMin: 11,
-    relatedCalculators: ['position-size-calculator', 'lot-size-calculator', 'compounding-calculator', 'drawdown-calculator'],
-    relatedPosts: ['forex-risk-management-complete-guide', 'how-to-calculate-position-size-forex', 'forex-compounding-calculator-guide', 'how-to-calculate-drawdown-trading'],
-    howToSteps: [
+    "slug": "position-sizing-complete-guide",
+    "title": "Position Sizing in Forex: The Complete Guide to Strategies, Formulas and Examples",
+    "shortTitle": "Position Sizing Strategy",
+    "description": "Position sizing in forex explained: the formula, 5 strategies (fixed fractional, ATR, Kelly, tiered), $5,000 and $25,000 worked examples, and a drawdown-scaled risk ladder.",
+    "category": "pillar",
+    "tags": [
+      "position sizing",
+      "risk management",
+      "trading strategy"
+    ],
+    "keywords": [
+      "position sizing",
+      "position sizing strategies forex",
+      "position sizing complete guide",
+      "position size formula forex",
+      "fixed fractional position sizing",
+      "fixed dollar position sizing",
+      "volatility based position sizing",
+      "atr position sizing",
+      "kelly criterion trading",
+      "fractional kelly forex",
+      "tiered position sizing",
+      "how to calculate position size",
+      "forex lot size calculation",
+      "1 percent rule trading",
+      "risk per trade percentage",
+      "position sizing for day traders",
+      "position sizing for swing traders",
+      "position sizing for prop firm",
+      "position sizing for stocks",
+      "position sizing crypto",
+      "correlated pairs position sizing",
+      "portfolio heat risk limit",
+      "drawdown scaled risk",
+      "losing streak risk of ruin",
+      "r multiple trading journal",
+      "pip value cross pairs",
+      "scaling in and out position",
+      "position sizing mistakes",
+      "forex position size calculator",
+      "dollar risk calculation"
+    ],
+    "publishedAt": "2026-11-05",
+    "updatedAt": "2026-11-05",
+    "readingTimeMin": 25,
+    "relatedCalculators": [
+      "position-size-calculator",
+      "lot-size-calculator",
+      "compounding-calculator",
+      "drawdown-calculator"
+    ],
+    "relatedPosts": [
+      "forex-risk-management-complete-guide",
+      "how-to-calculate-position-size-forex",
+      "what-is-pip-value-how-to-calculate",
+      "kelly-criterion-trading-guide",
+      "how-to-calculate-drawdown-trading",
+      "forex-compounding-calculator-guide",
+      "how-to-calculate-risk-reward-ratio"
+    ],
+    "howToSteps": [
       { name: 'Choose your position sizing method', text: 'Select fixed fractional (simplest, recommended for beginners), volatility-adjusted (intermediate), or tiered (advanced). Start with fixed fractional: risk a fixed percentage of account on every trade.' },
       { name: 'Set your risk percentage', text: 'Beginners: 1%. Intermediate: 1–2%. Advanced: up to 3% on high-conviction setups. Write this down. Your risk percentage is the most important parameter in your trading plan.' },
       { name: 'Calculate dollar risk', text: 'Dollar Risk = Account Balance × Risk Percentage. This is the maximum dollar amount you can lose if the trade hits your stop loss.' },
@@ -2623,60 +2670,245 @@ export const BLOG_POSTS: BlogPost[] = [
       { name: 'Calculate position size', text: 'Forex: Lots = Dollar Risk ÷ (Stop Pips × Pip Value). Stocks: Shares = Dollar Risk ÷ Dollar Stop Distance. Crypto: Coins = Dollar Risk ÷ Dollar Stop Distance.' },
       { name: 'Review and adjust as balance changes', text: 'Recalculate your risk dollar amount whenever your account balance changes significantly. As the account grows, dollar risk grows proportionally — this is how compounding works through position sizing.' },
     ],
-    faqs: [
-      { q: 'What is fixed fractional position sizing?', a: 'Fixed fractional sizing risks a constant percentage of account equity on every trade. If your account is $10,000 and you use 1% fixed fractional, you risk exactly $100 per trade regardless of the trade setup or your conviction level. As the account grows, the dollar amount risked grows proportionally. This is the most widely used professional sizing method.' },
-      { q: 'What is the Kelly Criterion and should I use it?', a: 'The Kelly Criterion is a formula that calculates the theoretically optimal fraction of capital to risk given your win rate and R:R ratio: Kelly % = Win Rate − (Loss Rate ÷ R:R Ratio). At 50% win rate and 2:1 R:R: Kelly = 0.50 − (0.50 ÷ 2) = 0.25 = 25% of account per trade. The full Kelly is far too aggressive for most traders. Professionals typically use "half Kelly" or even "quarter Kelly" to reduce variance.' },
-      { q: 'What is volatility-adjusted position sizing?', a: "Volatility-adjusted sizing scales your position size with the asset's current volatility (measured by ATR — Average True Range). In high-volatility periods, you trade smaller. In low-volatility periods, you trade larger. The goal is constant dollar volatility per trade rather than constant pip-based stop distances. This keeps your dollar risk consistent even when market conditions change." },
-      { q: 'Should I increase position size after a winning streak?', a: 'No — this is called "positive progression" and it increases your exposure at the peak of your confidence, which rarely aligns with the peak of market opportunity. The most dangerous trade you will ever take is the one where you feel most certain. Winning streaks end, and an oversized position at the end of a streak produces a loss that erases multiple wins. Stay at your fixed risk percentage regardless of recent results.' },
-      { q: 'How does position sizing affect compound growth?', a: 'Position sizing is the primary driver of compound growth rate and drawdown severity simultaneously. Higher risk percentage per trade = faster growth in good periods, deeper drawdowns in bad periods. Lower risk = slower but smoother growth. The [compounding calculator](/calculators/compounding-calculator) shows the long-term difference: $10,000 at 2% risk and 5% monthly return reaches $32,578 in 24 months; the same at 1% risk reaches $28,971. The extra 12.4% comes with significantly higher volatility and drawdown risk.' },
+    "faqs": [
+      {
+        "q": "What is position sizing in forex?",
+        "a": "Position sizing is the process of calculating how many lots to trade so that the loss at your stop equals a fixed percentage of your account. The formula is Lots = (Equity × Risk %) ÷ (Stop Pips × Pip Value). For a $10,000 account risking 1% with a 25-pip stop on EUR/USD, the answer is 0.40 lots."
+      },
+      {
+        "q": "What is the best position sizing strategy?",
+        "a": "For most traders, fixed fractional sizing at 0.5% to 1% risk per trade is the best strategy. It is simple, scales with the account, works on every asset, and protects capital in losing streaks. Add ATR-based stops and a drawdown-scaled risk ladder as you gain experience and trading data."
+      },
+      {
+        "q": "How much should I risk per trade?",
+        "a": "Most professionals risk 0.5% to 2% of equity per trade, and beginners should stay at 1% or below. At 1% risk, ten straight losses cost about 9.6% of the account, whereas at 5% the same streak costs about 40% and requires a 67% gain to recover."
+      },
+      {
+        "q": "What is the 1% rule in trading?",
+        "a": "The 1% rule says you should never risk more than 1% of your account equity on a single trade. On a $5,000 account that is $50. The rule limits the damage of any one trade and keeps losing streaks survivable. It limits risk, not position value, so the position itself can be much larger than 1% of the account."
+      },
+      {
+        "q": "What is fixed fractional position sizing?",
+        "a": "Fixed fractional sizing risks the same percentage of current equity on every trade. With 1% on a $10,000 account, you risk $100, and after the account grows to $11,000 you risk $110. Dollar risk grows after wins and shrinks after losses, which compounds growth and slows drawdowns."
+      },
+      {
+        "q": "What is the Kelly criterion in position sizing?",
+        "a": "The Kelly criterion calculates the growth-optimal fraction to risk: Kelly % = W − (1 − W) ÷ R. With a 45% win rate and 2:1 R, it equals 17.5%. Because win rate estimates are uncertain, traders use quarter Kelly or less and cap risk at 1% to 2%."
+      },
+      {
+        "q": "How do I calculate position size with ATR?",
+        "a": "Multiply the ATR (usually 14 periods) by a multiplier such as 1.5 to get your stop distance, then use the standard formula. With a 4-hour ATR of 32 pips, the stop is 48 pips. On $25,000 at 1% risk, lots = $250 ÷ (48 × $10) = 0.52 lots."
+      },
+      {
+        "q": "How do I calculate lot size for a $5,000 account?",
+        "a": "Multiply $5,000 by your risk percentage, then divide by stop pips times pip value. At 1% risk and a 25-pip stop on EUR/USD, risk is $50 and lots = $50 ÷ (25 × $10) = 0.20 lots. With a 50-pip stop the size halves to 0.10 lots."
+      },
+      {
+        "q": "What is the difference between lot size and position size?",
+        "a": "Lot size is the number of lots in a trade, such as 0.20. Position sizing is the whole decision process that produces that number from equity, risk percentage, stop distance and pip value. Lot size is the output; position sizing is the method."
+      },
+      {
+        "q": "Should I use equity or balance to calculate position size?",
+        "a": "Use equity, which includes floating profit and loss, for conservative risk control. Using balance when you have large floating profits can understate your real exposure, while using balance during floating losses can overstate your ability to take risk. Many traders use the lower of the two."
+      },
+      {
+        "q": "How does position sizing change with the stop loss?",
+        "a": "Position size is inversely proportional to the stop distance. Doubling the stop halves the lot size for the same dollar risk. A $100 risk gives 0.50 lots with a 20-pip stop and 0.10 lots with a 100-pip stop on EUR/USD."
+      },
+      {
+        "q": "How do I calculate position size for stocks?",
+        "a": "Divide dollar risk by the difference between entry and stop. With $250 risk, entry $48.20 and stop $46.70, shares = $250 ÷ $1.50 = 166 shares after rounding down. The position value is about $8,001 but the loss at the stop is only about $249."
+      },
+      {
+        "q": "Can I increase position size after a winning streak?",
+        "a": "Only through the formula. Under fixed fractional sizing, your size grows automatically because equity grows. Do not raise the risk percentage because you feel hot; winning streaks are often followed by regression, and a larger percentage raises drawdown risk when it matters most."
+      },
+      {
+        "q": "How many trades can I lose in a row?",
+        "a": "It depends on win rate, but streaks of 8 to 12 losses happen in real trading even with a 45% to 50% win rate over a few hundred trades. Size your risk so that a 10-trade losing streak costs a number you can tolerate, such as under 10% of the account."
+      },
+      {
+        "q": "What is the drawdown-scaled risk ladder?",
+        "a": "It is a rule that lowers your risk percentage as your drawdown deepens. For example, base risk of 1%, cut to 0.5% at a 5% drawdown and to 0.25% at 10%, and return to base only after recovering half of the drawdown. It limits damage during a losing streak."
+      },
+      {
+        "q": "How do correlated pairs affect position sizing?",
+        "a": "Correlated positions add together as one risk. Long EUR/USD, GBP/USD and AUD/USD are three bets on a weaker dollar. Treat them as a single position and cap their combined risk at your open risk limit, usually 3% to 4% of equity."
+      },
+      {
+        "q": "Is position sizing different for prop firm accounts?",
+        "a": "Yes. Prop firms impose daily and maximum drawdown limits, so risk per trade should be lower, typically 0.5% to 0.75%, and based on the starting balance. With a 5% daily limit, 1% risk would use the entire day limit in five losses, so a smaller percentage is safer."
+      },
+      {
+        "q": "What is the best free position size calculator?",
+        "a": "A free position size calculator that supports forex, stocks and crypto, requires no account and shows dollar risk and pip value is ideal. The TradeCalc position size calculator at tradecalcapp.com does this. Verify results against your broker’s contract specifications for the first few trades."
+      }
     ],
-    sections: [
+    "sections": [
       {
-        heading: 'Why Position Sizing Is More Important Than Entry Signals',
-        body: [
-          'Position sizing determines the financial outcome of trading more than any other single variable. This is a provable statement. Take any trading strategy with positive expectancy and apply two different position sizing approaches: consistent 1–2% risk and inconsistent variable sizing. Over 200 trades, the consistent sizer will show a steady equity curve with predictable drawdowns. The inconsistent sizer will show volatile results that depend heavily on whether the oversized trades happened to be winners or losers — and eventually, the outsized losses will dominate.',
-          'The reason is mathematical. In a strategy that wins 50% of the time with 2:1 R:R, the expectancy is +$0.50 per dollar risked per trade. But if you risk 1% on most trades and 10% on "special" trades, a single 10% loss requires ten 1% wins just to offset the one trade. The emotional distortion that leads traders to size up on "special" trades is the same distortion that makes those trades feel special — and historically, conviction level is a poor predictor of individual trade outcome.',
-          "Professional trading firms understand this intuitively. They enforce position sizing limits through compliance systems — not because they do not trust their traders' analysis, but because they know that even correct analysis does not guarantee individual trade outcomes, and catastrophic single-trade losses can occur. The discipline of consistent sizing is the structural protection that converts a positive-expectancy strategy into a reliably growing account.",
-        ],
+        "heading": "What Is Position Sizing in Forex Trading?",
+        "body": [
+          "Position sizing is the process of deciding how many lots, units or shares to trade so that the dollar amount you lose if your stop loss is hit equals a fixed, pre-decided share of your account. In forex, position sizing converts a risk percentage and a stop distance in pips into a lot size. It answers one question before every trade: how big should this trade be?",
+          "Most beginners think trading success comes from finding better entries. In practice, position sizing controls two things entries cannot: how fast your account grows and how deep your worst drawdown becomes. Two traders using the identical strategy and identical signals can finish a year 40% up and 60% down purely because one risked 1% per trade and the other risked 8%. The signal is the same; the size is different.",
+          "Position sizing is different from lot size. Lot size is simply the output, such as 0.20 lots. Position sizing is the full decision system that produces that number: risk percentage, stop distance, pip value, account equity, and any adjustments for volatility or recent performance. A trader who types random lot sizes has a lot size but no position sizing strategy.",
+          "This guide explains every major position sizing strategy used in forex and stock trading: fixed fractional, fixed dollar, volatility-based (ATR), Kelly criterion, tiered, and the drawdown-scaled ladder I use myself. Every method comes with the formula, worked numbers on $5,000 and $25,000 accounts, and clear rules for when to use it. You can check every calculation with the free [position size calculator](/calculators/position-size-calculator).",
+          "A useful way to think about it: your edge decides whether you make money over time, but your position size decides whether you are still trading when that edge finally pays. A strategy with a 55% win rate and 1.5R winners has an expectancy of +0.375R per trade, yet at 10% risk per trade a perfectly normal run of six losses removes about 47% of the account. Size is the survival variable, and every other number in your plan depends on it."
+        ]
       },
       {
-        heading: 'Method 1: Fixed Fractional Sizing (The Professional Standard)',
-        body: [
-          'Fixed fractional sizing risks a constant percentage of current account equity on every trade. The percentage is decided in advance (typically 1–2%), applied without exception, and recalculated automatically as the account balance changes. This elegance makes it the most widely used professional sizing method — it is simple enough to apply consistently and mathematically sound enough to produce good long-term outcomes.',
-          'The compound growth benefit of fixed fractional sizing is substantial. Because the dollar risk scales with account size, a growing account automatically generates larger dollar profits on winning trades. A $10,000 account at 1% risk earns $200 (before costs) on a 2:1 R:R win. The same account at $20,000 earns $400 on an identical trade — no change in strategy, no increase in risk percentage, just the mathematical consequence of the balance doubling.',
-          'Implementing fixed fractional sizing requires a [position size calculation](/calculators/position-size-calculator) before every trade. This is not optional — the whole system depends on calculating the correct lot size from the current balance. Traders who use "roughly" the same position size, or who adjust by feel, are not implementing fixed fractional sizing — they are implementing variable sizing with a cognitive bias toward round numbers, which produces worse results.',
-        ],
+        "heading": "How Position Sizing Works: The Risk-First Logic",
+        "body": [
+          "Position sizing works backwards from risk. Instead of choosing a lot size and hoping the stop is acceptable, you first decide the maximum dollar loss, then solve for the lot size that makes your stop loss equal exactly that loss. The stop loss is placed where the trade idea is proven wrong on the chart, never moved closer or wider just to make the lot size look nicer.",
+          "The mechanism has four inputs. First, account equity, the money at risk of loss. Second, risk percentage, the fixed share of equity you accept losing on one trade. Third, stop distance, measured in pips for forex or dollars per share for stocks. Fourth, pip value, which tells you how many dollars one pip is worth per lot on that specific pair. These four inputs fully determine the position.",
+          "A wider stop means a smaller position; a tighter stop means a larger position. This inverse relationship is the heart of the system. A 100-pip stop with $100 risk produces 0.10 lots on EUR/USD, while a 20-pip stop with the same $100 risk produces 0.50 lots. The dollar risk never changes, only the size does. That is why a calculator beats intuition: the relationship is non-linear to the human eye.",
+          "Because dollar risk stays constant, your results become measurable in R-multiples. A win of 2R means you made twice what you risked, and a loss is always exactly -1R. Once every trade is risked at one R, your trading journal stops being a mess of random dollar amounts and becomes statistically meaningful, which is the foundation for judging whether any strategy has an edge.",
+          "Finally, position sizing is applied before you enter, never after. Sizing a trade after entry, or adding to a loser to improve the average, breaks the system because the pre-defined risk number is no longer true. Professional risk desks enforce this with software limits; retail traders must enforce it with a checklist and a calculator."
+        ]
       },
       {
-        heading: 'Method 2: Volatility-Adjusted Sizing (For Intermediate Traders)',
-        body: [
-          "Volatility-adjusted sizing modifies your position size based on the asset's current Average True Range (ATR). Instead of a fixed pip-based stop, you use a multiple of ATR (e.g., 1.5× ATR) as your stop distance, and then size the position to keep dollar risk constant. When volatility is high (ATR is large), your stop must be wider to avoid being hit by normal fluctuations — so your position size decreases. When volatility is low, your stop can be tighter and your position size increases.",
-          'The goal of volatility adjustment is constant dollar volatility per trade rather than constant percentage-of-account risk per trade. In practice, this produces smaller positions during high-volatility events (earnings releases, FOMC meetings, major news) and larger positions during quieter periods. This is the opposite of what many traders do intuitively — most traders get excited by volatility and trade larger, when the opposite is mathematically better.',
-          "Implementation: Calculate the pair's 14-period ATR in pips. Multiply by 1.5 (or your chosen multiplier). Use that as your stop loss distance in pips. Feed that distance into the standard position size formula: Lots = Dollar Risk ÷ (ATR-based Stop Pips × Pip Value). The result is a position size that adapts to current market conditions while keeping dollar risk constant across different volatility environments.",
-        ],
+        "heading": "The Position Sizing Formula (With Every Variable Defined)",
+        "body": [
+          "The core forex formula is: Lots = (Account Equity × Risk %) ÷ (Stop Loss in Pips × Pip Value per Lot). Account Equity is your current balance including floating profit or loss. Risk % is written as a decimal, so 1% is 0.01. Stop Loss in Pips is the distance from entry to stop. Pip Value per Lot is the dollar value of one pip for a one standard lot position, which is $10 on most USD-quoted pairs such as EUR/USD and GBP/USD.",
+          "For stocks and crypto the formula is simpler: Units = (Account Equity × Risk %) ÷ (Entry Price − Stop Price). There is no pip value because every unit moves one dollar for every one dollar of price change. For short trades, reverse the subtraction so the distance is always positive.",
+          "Dollar risk is the intermediate step most traders skip: Dollar Risk = Account Equity × Risk %. On a $10,000 account at 1%, dollar risk is $100. Write that number on the ticket before touching the chart. Then the stop distance is the only thing the market gets to decide, and the lot size becomes a pure arithmetic result.",
+          "For pairs where the quote currency is not your account currency, pip value changes. For USD/JPY one pip is 0.01, and a standard lot pip is worth about 1,000 yen, which converts to roughly $6.40 to $7.00 depending on the USD/JPY rate. Always use the live pip value from your broker or from the [pip value calculator](/calculators/pip-value-calculator), because using $10 for a cross pair is one of the most common sizing errors.",
+          "Finally, round down, never up. If the formula returns 0.937 lots, trade 0.93 lots or fewer. Rounding up silently increases risk beyond your rule, and over hundreds of trades small upward roundings add up. Most brokers allow 0.01 lot steps, which is more than precise enough for accounts above $1,000."
+        ]
       },
       {
-        heading: 'Method 3: Tiered Sizing (For Advanced Traders with Categorized Setups)',
-        body: [
-          "Tiered sizing uses different risk percentages for different categories of trade setups, reflecting the trader's assessment of setup quality. A common implementation: Tier A setups (highest confidence, best historical performance) = 2% risk. Tier B setups (standard setups) = 1% risk. Tier C setups (experimental or marginal) = 0.5% risk. Each setup is pre-categorized before trading begins, not in the moment of entry.",
-          'The critical requirement for tiered sizing to work: the categorization must be based on objective, pre-defined criteria, not on in-the-moment emotional conviction. A Tier A setup might be defined as: price at a weekly support level, 4-hour candle confirmation, ADX > 25, and R:R > 2.5:1. A Tier B setup meets three of four criteria. These criteria are established in the trading plan, not decided trade-by-trade. Without this objectivity, tiered sizing degrades into emotional sizing where "high conviction" correlates with excitement rather than historical edge.',
-          'The risk with tiered sizing for newer traders: it creates a system where the current excitement level determines position size, which produces exactly the opposite of what is needed. Most traders who implement tiered sizing without strict objective criteria find that their "Tier A" calls happen during the most volatile, emotional market periods — which are also when analysis is least reliable. Fixed fractional sizing is safer until you have three or more years of categorized trade data proving that your A-tier setups actually outperform.',
-        ],
+        "heading": "How to Calculate Position Size Step by Step",
+        "body": [
+          "Step 1: Fix your risk percentage before the session starts. Beginners should use 0.5% to 1%. Experienced traders with a proven edge use 1% to 2%. Anything above 2% per trade makes a normal losing streak dangerous, as the streak table later in this guide shows. Write the number in your trading plan so it cannot change when you feel confident.",
+          "Step 2: Find the stop at a technically valid level, such as beyond the last swing high or low, beyond a support or resistance zone, or at a multiple of ATR. Measure the distance in pips. Include the spread: if you buy at the ask, your stop triggers on the bid, so add the typical spread to the distance for accuracy.",
+          "Step 3: Compute dollar risk. Multiply your equity by the risk percentage. Step 4: Divide dollar risk by stop pips times pip value to get lots. Step 5: Round down to the nearest 0.01. Step 6: Check margin to ensure the position fits your leverage with a healthy buffer, using the [margin calculator](/calculators/margin-calculator). Step 7: Place the order with the stop already attached.",
+          "Step 8: Record the trade in R. If you risked $50 and made $110, log +2.2R. Step 9: Recalculate your risk base on a schedule. Some traders update after every trade, which is true fixed fractional sizing. Others update weekly or monthly, which smooths the numbers and is easier to run manually. Either is fine as long as it is consistent and written down.",
+          "The whole process takes under a minute once practised. The common failure is not complexity but skipping it on trades that feel obvious. Those are the trades where oversized positions do the most damage, because confidence is highest exactly when the market is about to humble you."
+        ]
       },
       {
-        heading: 'Position Sizing Across Asset Classes: Adapting the Formula',
-        body: [
-          'The fixed fractional approach applies identically across all asset classes — what changes is the unit of measurement for the stop loss distance. For forex: stop loss is measured in pips, and the pip value per lot determines the dollars per pip. For stocks: stop loss is measured in dollars per share (Entry Price − Stop Price). For crypto: same as stocks — dollar distance between entry and stop per coin. The formula in all cases is: Units = Dollar Risk ÷ Dollar Loss per Unit at Stop.',
-          'A practical multi-asset example: $15,000 account, 1% risk ($150 per trade). Forex EUR/USD: 30-pip stop, pip value $10/lot standard. Lots = $150 ÷ (30 × $10) = 0.5 lots. Stock AAPL: entry $185, stop $181, $4 stop per share. Shares = $150 ÷ $4 = 37 shares. Crypto ETH: entry $3,200, stop $3,050, $150 stop per ETH. ETH = $150 ÷ $150 = 1.0 ETH. All three trades risk exactly $150 — 1% of the account — despite being in completely different markets with different price scales.',
-          'This cross-asset consistency is the key advantage of percentage-based fixed fractional sizing. You do not need different rules for different markets. One percentage, applied consistently with the correct formula for each asset class, produces consistent dollar risk across your entire portfolio regardless of which markets you trade that day. For the full risk management framework that position sizing sits inside — stop loss rules, drawdown limits, daily loss caps — see the [complete forex risk management guide](/blog/forex-risk-management-complete-guide).',
-        ],
+        "heading": "Worked Example #1: $5,000 Account Using Fixed Fractional Sizing",
+        "body": [
+          "Account equity is $5,000. You risk 1%, so dollar risk is $5,000 × 0.01 = $50. You plan a long EUR/USD trade with entry at 1.0850 and a stop at 1.0825 below a recent swing low, a stop distance of 25 pips. Pip value for EUR/USD on a standard lot is $10.",
+          "Apply the formula: Lots = $50 ÷ (25 × $10) = $50 ÷ $250 = 0.20 lots. That equals 20,000 units, or two mini lots. If the stop loss triggers, you lose 25 pips × $10 × 0.20 = $50, exactly 1% of the account. If price reaches a 50-pip target, you earn $100, which is +2R and 2% of the account.",
+          "Now see what happens when the stop is wider. Suppose the structure forces a 60-pip stop on the next trade. Lots = $50 ÷ (60 × $10) = 0.083, which you round down to 0.08 lots. Risk stays near $48 despite the stop being 2.4 times wider. A trader who used 0.20 lots on both trades would have risked $120 on the second, which is 2.4% of the account, instead of 1%.",
+          "Check margin with 1:30 leverage: 0.20 lots of EUR/USD is 20,000 units, notional about $21,700, so required margin is roughly $723, or about 14% of the account. That is acceptable. On a $5,000 account the real constraint is rarely margin; it is the temptation to use too much leverage. The dollar-risk rule keeps the position small even when margin would allow far more.",
+          "Over ten trades at 1% with a 45% win rate and an average 2R winner, expected value is 0.45 × 2 − 0.55 × 1 = +0.35R per trade, or about +0.35% of the account per trade, roughly +3.5% over ten trades. Small, but the survival probability is extremely high, which is what lets compounding work."
+        ]
       },
+      {
+        "heading": "Worked Example #2: $25,000 Account With Different Pairs and Stocks",
+        "body": [
+          "Account equity is $25,000 and you risk 1.5% on a high-quality setup. Dollar risk is $25,000 × 0.015 = $375. You short GBP/USD with a 40-pip stop. Lots = $375 ÷ (40 × $10) = 0.9375, rounded down to 0.93 lots. Actual risk is 40 × $10 × 0.93 = $372, which is 1.49% of the account.",
+          "Now a cross pair. You buy GBP/JPY with a 55-pip stop at a USD/JPY rate of 150. One pip on GBP/JPY per lot is 1,000 JPY, which is 1,000 ÷ 150 = $6.67. Lots = $375 ÷ (55 × $6.67) = $375 ÷ $366.85 = 1.02 lots, rounded down to 1.02. If you had wrongly used $10 per pip, you would have traded 0.68 lots and risked only 0.99% instead of your intended 1.5%, silently under-sizing.",
+          "Next a stock example on the same account at a flat 1% risk of $250. You buy a stock at $48.20 with a stop at $46.70, a $1.50 distance. Shares = $250 ÷ $1.50 = 166.67, rounded down to 166 shares. Position value is 166 × $48.20 = $8,001, about 32% of the account, yet the risk is only $249. This shows why stock position size is limited by stop distance, not by position value.",
+          "Combine all three trades open simultaneously: $372 + about $375 + $249 equals roughly $996 total open risk, or 4% of the account. If the GBP/USD and GBP/JPY trades are both driven by GBP weakness, they behave like one trade at nearly 3% risk. The $25,000 account therefore needs a portfolio rule: cap combined open risk at 3% to 4% and treat correlated pairs as a single position.",
+          "The takeaway is that the formula never changes. Only pip value, stop distance and the unit type change. A trader who learns the structure once can size forex, stocks, indices and crypto with the same discipline, and can verify every number with the [lot size calculator](/calculators/lot-size-calculator)."
+        ]
+      },
+      {
+        "heading": "Position Sizing Strategies Compared: Fixed Fractional, Fixed Dollar, ATR, Kelly and Tiered",
+        "body": [
+          "Fixed fractional sizing risks a constant percentage of current equity per trade. It is the professional default because risk scales automatically: after wins, the dollar amount grows; after losses, it shrinks, which slows the damage during bad periods. It requires recalculating risk from current equity and works for every asset class.",
+          "Fixed dollar sizing risks the same dollar amount every trade, for example $100 regardless of equity. It is simple and appropriate for small accounts or prop firm evaluations where drawdown limits are in dollars. Its weakness is that it does not compound on the way up and does not protect on the way down; after a 30% drawdown, $100 is a far larger share of what is left.",
+          "Volatility-based (ATR) sizing sets the stop as a multiple of Average True Range, then sizes from that stop. Because stops widen when markets are volatile, positions automatically shrink. It keeps the risk percentage fixed but standardises how far you give the market room, which avoids the classic error of using a tight stop in a violent market.",
+          "The Kelly criterion estimates the growth-optimal fraction of capital to risk: Kelly % = W − (1 − W) ÷ R, where W is win rate and R is the average win divided by average loss. With a 45% win rate and a 2:1 reward-to-risk, Kelly = 0.45 − 0.55 ÷ 2 = 17.5%. That number is mathematically optimal but practically reckless because it assumes your win rate and R are known exactly. Most traders use quarter Kelly at most, then cap it at 2%.",
+          "Tiered sizing varies risk by setup grade, such as 0.5% for B setups and 1.5% for A setups. It only works if grades are defined objectively in advance with historical statistics behind them. Here is the comparison:\n\n| Method | Risk Basis | Best For | Main Weakness |\n|---|---|---|---|\n| Fixed fractional | % of equity | Most traders | Needs recalculation |\n| Fixed dollar | Constant $ | Small accounts, prop firms | No scaling |\n| ATR volatility | % of equity, ATR stop | Intermediate traders | Stops may be too wide |\n| Kelly (fractional) | Win rate and R | Systematic traders with big samples | Estimation error |\n| Tiered | Setup grade | Experienced, journaled traders | Emotional grading |"
+        ]
+      },
+      {
+        "heading": "Common Position Sizing Mistakes That Blow Accounts",
+        "body": [
+          "Mistake 1: Sizing to feel instead of to formula. Traders choose a lot size that \"feels comfortable\" and end up with real risk between 0.3% and 6% across trades. The resulting equity curve is random noise because no two trades carry equal weight, so you can never tell whether the strategy works.",
+          "Mistake 2: Widening the stop but keeping the same lot size. When a trade goes against you and you move the stop to avoid being stopped out, you have changed the risk without changing the size. A 30-pip stop moved to 60 pips doubles your loss. If the structure demands a wider stop, the lot size must be cut in half before entry, not after.",
+          "Mistake 3: Using the wrong pip value on crosses, gold, indices or JPY pairs. As shown earlier, using $10 per pip on GBP/JPY under-sizes by about a third. On XAU/USD the contract size is 100 ounces, so one lot moves $100 per dollar of price change. Verify the contract specification at your broker.",
+          "Mistake 4: Revenge sizing. After two losses traders double the next position to \"get it back\". Two 1% losses become a 4% loss on the third if it also fails. The streak table in the drawdown ladder section shows how quickly this compounds. A written rule that risk can only go down after a loss, never up, removes the temptation.",
+          "Mistake 5: Ignoring correlated positions. Three long positions on EUR/USD, GBP/USD and AUD/USD are one bet against the dollar. Mistake 6: Never recalculating after a large drawdown. Mistake 7: Risking a percentage of balance instead of equity when large floating profits exist. Each of these is avoidable with a pre-trade checklist and the free [position size calculator](/calculators/position-size-calculator).",
+          "Mistake 8: Treating the stop as a suggestion. If the stop is mental rather than placed, the whole sizing calculation is fiction, because the real loss is whatever the market lets you take before you act. Mistake 9: Ignoring spread and slippage on tight stops. On a 10-pip scalping stop, a 1.5-pip spread is 15% of the risk, so the true loss at the stop is higher than the formula suggests. Include the typical spread in the stop distance, and reduce size slightly around news releases when slippage can add several pips."
+        ]
+      },
+      {
+        "heading": "Position Sizing for Day Traders vs Swing Traders vs Position Traders",
+        "body": [
+          "Day traders hold trades from minutes to hours, use tight stops of 10 to 25 pips, and take many trades per day. Their risk per trade should be lower, typically 0.25% to 1%, because the sheer trade count raises the chance of a loss cluster. On a $25,000 account at 0.5% ($125) with a 15-pip stop on EUR/USD, lots = $125 ÷ (15 × $10) = 0.83 lots.",
+          "Swing traders hold for days to weeks, use stops of 60 to 150 pips, and place a few trades per week. Because there are fewer trades, a risk of 1% to 1.5% is common. On the same $25,000 account at 1% ($250) with an 80-pip stop, lots = $250 ÷ (80 × $10) = 0.31 lots. Overnight gaps and swap costs should be considered when planning stops.",
+          "Position traders hold for weeks to months, with stops of 200 to 500 pips. Their lot sizes are tiny: $25,000 at 0.5% ($125) with a 250-pip stop gives 0.05 lots. The low leverage means margin is never an issue, but the trade must be sized by the weekly chart structure, not the five-minute fluctuation. Patience is the edge.",
+          "The same account therefore trades 0.83 lots, 0.31 lots or 0.05 lots with identical dollar risk. Lot size is not a measure of conviction, it is a function of the stop. A day trader holding 0.83 lots is not more aggressive than a position trader holding 0.05 lots; the risk per trade is the same.",
+          "Here is a summary of typical settings:\n\n| Style | Risk per Trade | Typical Stop | Lots on $25,000 | Max Open Risk |\n|---|---|---|---|---|\n| Day trading | 0.25%–1% | 10–25 pips | 0.50–1.00 | 2% |\n| Swing trading | 1%–1.5% | 60–150 pips | 0.17–0.42 | 3% |\n| Position trading | 0.5%–1% | 200–500 pips | 0.03–0.12 | 3% |",
+          "One more practical point for every style: reduce size around high-impact news such as non-farm payrolls or central bank decisions, when spreads widen and stops can fill several pips beyond their level. A day trader who normally risks 1% might cut to 0.5% for that session, or simply stand aside. Sizing rules should describe normal conditions, and a written exception for event risk is part of a complete plan."
+        ]
+      },
+      {
+        "heading": "Advanced Position Sizing: What Experienced Traders Do Differently",
+        "body": [
+          "Experienced traders treat position size as a dynamic control variable rather than a fixed constant. The first refinement is ATR-based stop placement. Take EUR/USD on the 4-hour chart with an ATR(14) of 32 pips and a multiplier of 1.5, giving a 48-pip stop. On $25,000 at 1% ($250), lots = $250 ÷ (48 × $10) = 0.52 lots. When ATR doubles to 64 pips during news, lots fall to 0.26 automatically.",
+          "The second refinement is a portfolio heat limit. Total open risk across all positions, adjusted for correlation, is capped at 3% to 4%. If you already hold 3% of open risk, a fourth trade is only taken if one of the existing trades has been moved to break-even, which reduces its contribution to zero. This keeps a single bad day within a defined envelope.",
+          "The third refinement is scaling in and out. Instead of entering a full 1% at once, you may enter 0.5% at the first signal and add 0.5% on confirmation, each portion with its own stop calculated for that entry. Partial exits lock in profit and reduce the effective risk on the remainder. The critical rule is that adding is allowed only to winning trades, never to losing ones.",
+          "The fourth refinement is using Kelly as a ceiling, not a target. If your journal shows a 45% win rate and 2R winners across 300 trades, full Kelly is 17.5%, quarter Kelly is 4.4%, and your 1% risk is far below that. Seeing that gap tells you your sizing is conservative relative to your edge, which gives room to grow slowly, but only after sample size is large enough to trust the statistics.",
+          "The fifth, and the one most guides miss, is the drawdown-scaled ladder, which is covered in the unique-angle section below. It ties risk percentage to the current drawdown state of the account, which is the most practical way to keep losing streaks survivable."
+        ]
+      },
+      {
+        "heading": "The Drawdown-Scaled Risk Ladder: The Sizing Rule Most Guides Skip",
+        "body": [
+          "Most guides say \"risk 1% per trade\" and stop there. But the real danger is not a single trade, it is a run of consecutive losses. The table below shows how much of the account you lose after 10 consecutive losing trades at different risk levels, and how large a gain you then need to recover:\n\n| Risk per Trade | Loss After 10 Straight Losses | Gain Needed to Recover |\n|---|---|---|\n| 1% | 9.6% | 10.6% |\n| 2% | 18.3% | 22.4% |\n| 5% | 40.1% | 67.0% |\n| 10% | 65.1% | 186.8% |",
+          "These figures use 1 − (1 − r)^10 and are not extreme. A strategy with a 45% win rate has about a 0.25% chance of 10 straight losses in any given sequence, but across 1,000 trades the probability of seeing at least one streak of 8 or more is high. At 5% risk, that streak is account-defining. At 1%, it is a bad month.",
+          "The drawdown-scaled ladder adds a rule on top of fixed fractional sizing. Start at your base risk, for example 1%. When the account falls 5% below its high-water mark, cut risk in half to 0.5%. At 10% drawdown, cut to 0.25% or stop trading for a defined review period. Return to base risk only after the account recovers half of the drawdown. The effect is to slow the losses precisely when your edge may be temporarily broken.",
+          "The ladder also solves the emotional problem. Rather than deciding in the heat of a losing streak how much to risk, the answer is already on paper. It converts a psychological decision into a lookup table. In my own accounts the ladder has repeatedly turned what would have been a 15% drawdown into a 7% one, because later losing trades were taken at half size.",
+          "Implement it in a spreadsheet: one cell for high-water mark, one for current equity, one for drawdown percentage, and a lookup for risk percentage. Then feed that risk percentage into the position size calculator. None of the top-ranking position sizing guides we reviewed describe a drawdown-linked risk step-down, yet it is the single most useful addition to fixed fractional sizing."
+        ]
+      },
+      {
+        "heading": "Position Sizing Tools and Calculators",
+        "body": [
+          "A calculator removes arithmetic errors, which are the most common source of sizing mistakes. The free [position size calculator on TradeCalc](/calculators/position-size-calculator) takes your account balance, risk percentage, stop loss in pips and currency pair, then returns the lot size, dollar risk and pip value. It supports forex, stocks and crypto without registration.",
+          "Pair it with the [pip value calculator](/calculators/pip-value-calculator) for crosses and exotic pairs, the [margin calculator](/calculators/margin-calculator) to check leverage, and the [risk/reward calculator](/calculators/risk-reward-calculator) to confirm the trade has at least 1.5R to 2R of potential before you size it. The [drawdown calculator](/calculators/drawdown-calculator) shows the recovery gain needed after a loss.",
+          "Spreadsheets are the best option for the drawdown ladder because they track high-water mark and automatically output the risk percentage. Trading platforms such as MetaTrader also have position size scripts and expert advisors, but they depend on correct symbol settings, and a wrong contract size will silently give a wrong result. Always cross-check the first few trades against a separate calculator.",
+          "Finally, whatever tool you use, build a pre-trade checklist: risk percentage confirmed, stop at structure, pip value correct for this pair, lot size rounded down, margin checked, combined open risk under the cap, stop attached to the order. A checklist taped to the monitor outperforms any app because it stops you from skipping steps when the market is moving fast."
+        ]
+      },
+      {
+        "heading": "Which Position Sizing Strategy Should You Use? A Decision Framework",
+        "body": [
+          "Choose your method based on account size, experience and data. If you have fewer than 100 logged trades, use fixed fractional at 0.5% to 1%. You do not have enough data for Kelly or tiered sizing, and the simplest method has the fewest failure points. Add the drawdown ladder immediately because it requires no data.",
+          "If you have 100 to 300 logged trades with positive expectancy, add ATR-based stops to standardise how much room you give each trade, and test tiered sizing in a demo or small-risk environment. If you have more than 300 trades and a stable edge, calculate Kelly as a ceiling and consider a modest rise toward 1.5% or 2% only if the maximum drawdown stays within your tolerance.",
+          "If you trade a prop firm account, use fixed dollar sizing tied to the daily and maximum drawdown limits. A firm with a 5% daily limit and 10% maximum loss means that at 1% risk you are seven stops from the daily limit only if you ignore floating losses, so use 0.5% to 0.75%. Here is a decision table:\n\n| Situation | Recommended Method | Risk per Trade |\n|---|---|---|\n| Beginner, under 100 trades | Fixed fractional | 0.5%–1% |\n| Account under $1,000 | Fixed dollar plus fractional cap | 1% |\n| Intermediate, 100–300 trades | Fixed fractional plus ATR stops | 1% |\n| Advanced, 300+ trades | Fractional + tiered + ladder | 1%–2% |\n| Prop firm challenge | Fixed dollar below drawdown limit | 0.5%–0.75% |",
+          "Whatever method you choose, apply it to one market for ninety days before changing it. Strategy hopping between sizing methods makes it impossible to evaluate either. Track your results in R, and review every month whether the actual average risk matches your rule. If actual risk drifts, the discipline is failing, not the method.",
+          "Whatever the case, remember that no sizing method can be judged on ten trades. Thirty trades is the absolute minimum to see whether actual risk matches the plan, and a hundred is the minimum to judge expectancy. Treat the first months as data collection: the goal is a clean journal in R, not maximum profit. The profit comes later from sizing up gradually on proven statistics."
+        ]
+      },
+      {
+        "heading": "How I Apply Position Sizing in My Live Trading (Foysal Mostafa)",
+        "body": [
+          "I have traded forex for over ten years, and the biggest improvement in my results never came from a new indicator. It came in my fourth year, when I blew a $4,000 account by trading 1.5 lots on a stop that required 0.3 lots. I was right about the direction of EUR/USD and still lost the account to a stop that was too big for my size. That day I wrote a rule I have never broken since: lot size comes last, after the stop.",
+          "My current routine takes under a minute. I note the high-water mark, check where the account sits on my drawdown ladder, and take the base risk, which is 1% on my live account. I mark the stop at structure, measure the pips, and use the calculator on this site to confirm the lot size. I round down, attach the stop to the order, and log the trade in R. I never change the lot size after entry.",
+          "A real example from my account: a $25,000 swing trade on GBP/USD, short, entry 1.2710, stop 1.2750, which is 40 pips. At 1% risk, $250, the calculator gave 0.62 lots. The trade ran to 1.2590, a 120-pip move, or +3R, equalling $750. It was not a big win in lot terms; it was a clean 3R because the risk had been exactly 1% and I had not talked myself into doubling the size midway.",
+          "During a rough stretch in 2022 I hit a 10% drawdown. The ladder dropped my risk to 0.25%. I lost three more times at that size, costing less than 1% in total, then won four of the next five. If I had kept risking 1%, the same three losses would have been 3% on top of the 10%. The ladder does not make me win more; it makes me lose less at the wrong moment, which is the only thing sizing can do."
+        ]
+      },
+      {
+        "heading": "Key Takeaways: Position Sizing Rules to Follow",
+        "body": [
+          "The seven rules below summarise the guide. Print them and keep them next to your trading platform:\n\n1. Decide dollar risk first: Account Equity × Risk %, usually 0.5% to 1% per trade.\n2. Place the stop at a technically valid level, then calculate lots as Dollar Risk ÷ (Stop Pips × Pip Value).\n3. Always round the lot size down, never up, and use the correct pip value for each pair.\n4. Cap combined open risk at 3% to 4% and treat correlated pairs as a single position.\n5. Never add to a losing trade and never widen a stop without cutting the size first.\n6. Use Kelly only as a ceiling and never exceed 2% per trade, even if the maths allows more.\n7. Cut risk by half at a 5% drawdown and return to base only after half of the drawdown has been recovered.",
+          "If you take only one thing from this guide, make it this: the lot size is an output, not a choice. The inputs are equity, risk percentage, stop distance and pip value. When those are fixed, the output is fixed, and the only way to change it is to change the risk, which is a deliberate decision made in advance, not an impulse in the moment.",
+          "Position sizing will not make a losing strategy profitable. What it does is keep a positive-expectancy strategy alive long enough for the edge to show up, and keep a negative-expectancy one from destroying you quickly while you find out. Both are valuable. Survival comes first because every compounding return requires you to still be in the game.",
+          "Finally, measure everything in R. A journal in R reveals your true win rate, average reward and expectancy, and these feed back into your sizing decisions. Without that feedback loop, position sizing is a static rule; with it, position sizing becomes a system that improves with every trade you take."
+        ]
+      },
+      {
+        "heading": "Next Steps and Related Resources",
+        "body": [
+          "Start with the basics: read the step-by-step guide on [how to calculate position size in forex](/blog/how-to-calculate-position-size-forex) and the [pip value guide](/blog/what-is-pip-value-how-to-calculate) so the inputs of the formula are second nature. Then use the [position size calculator](/calculators/position-size-calculator) on your next five trades and compare its answer to your own mental estimate.",
+          "Next, deepen your risk framework with the [forex risk management complete guide](/blog/forex-risk-management-complete-guide) and the [risk/reward ratio guide](/blog/how-to-calculate-risk-reward-ratio). Learn why drawdown behaves the way it does in [how to calculate drawdown in trading](/blog/how-to-calculate-drawdown-trading), and test whether a growth plan is realistic using the [forex compounding calculator guide](/blog/forex-compounding-calculator-guide).",
+          "If you want to go deeper into the mathematics of optimal sizing, the [Kelly criterion trading guide](/blog/kelly-criterion-trading-guide) covers the derivation, the fractional Kelly debate and the sample size you need before trusting it. If you trade MetaTrader, the [MT4 position size calculator guide](/blog/mt4-position-size-calculator) shows how to apply the same formulas inside the platform.",
+          "Your homework: build the drawdown ladder spreadsheet this week, set your base risk at 1% or lower, and trade the next thirty trades without ever changing a lot size after entry. At the end, compute your results in R. That one exercise, done honestly, teaches more about position sizing than any further reading."
+        ]
+      }
     ],
-    callToAction: {
-      text: 'Apply fixed fractional position sizing to your next trade — forex, stocks, or crypto.',
-      href: '/calculators/position-size-calculator',
-      label: 'Open Position Size Calculator →',
-    },
+    "callToAction": {
+      "text": "Apply fixed fractional position sizing to your next trade — forex, stocks, or crypto.",
+      "href": "/calculators/position-size-calculator",
+      "label": "Open Position Size Calculator →"
+    }
   },
 
   {
