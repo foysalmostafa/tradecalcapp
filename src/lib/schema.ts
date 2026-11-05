@@ -146,7 +146,6 @@ export function organizationSchema() {
     url: SITE.url,
     description: SITE.description,
     foundingDate: '2026',
-    sameAs: [],
   };
 }
 

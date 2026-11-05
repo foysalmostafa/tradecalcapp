@@ -7,9 +7,10 @@ import Breadcrumb from '@/components/Breadcrumb';
 import AdSlot from '@/components/AdSlot';
 import RelatedCalculators from '@/components/RelatedCalculators';
 import { CALCULATORS, getCalculatorBySlug, getRelatedCalculators } from '@/lib/calculators';
+import { getBlogPostsByCalculator } from '@/lib/blog';
 import { SITE, AUTHOR } from '@/lib/seo';
 import { webApplicationSchema, faqSchema, howToSchema, articleSchema, breadcrumbSchema } from '@/lib/schema';
-import { HelpCircle, ListOrdered, Lightbulb, BarChart3 } from 'lucide-react';
+import { HelpCircle, ListOrdered, Lightbulb, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
 import { ASSET_BADGE } from '@/components/CalculatorCard';
 
 // ─── Dynamic imports ─────────────────────────────────────────────────────────
@@ -150,6 +151,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
 
   const CalcComponent = CALC_COMPONENT[slug];
   const related = getRelatedCalculators(slug, 4);
+  const relatedGuides = getBlogPostsByCalculator(slug);
 
   const breadcrumbItems = [
     { name: 'Home', url: SITE.url },
@@ -396,6 +398,29 @@ export default async function CalculatorPage({ params }: { params: Promise<{ slu
               calculators={related}
               title={`More ${calc.assets.includes('forex') ? 'Forex' : calc.assets[0].charAt(0).toUpperCase() + calc.assets[0].slice(1)} Calculators`}
             />
+
+            {/* ── Related guides — blog → calculator internal linking ── */}
+            {relatedGuides.length > 0 && (
+              <section aria-labelledby="related-guides-heading" className="mt-8">
+                <h2 id="related-guides-heading" className="text-base font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-amber-500" aria-hidden="true" />
+                  Related Guides
+                </h2>
+                <ul className="space-y-2">
+                  {relatedGuides.map(post => (
+                    <li key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="flex items-start gap-2 text-sm text-amber-600 dark:text-amber-400 hover:underline"
+                      >
+                        <ArrowRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                        <span>{post.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </article>
 
           {/* ── Sidebar ── */}

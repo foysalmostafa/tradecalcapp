@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { breadcrumbSchema } from '@/lib/schema';
-import { SITE } from '@/lib/seo';
 
 interface BreadcrumbItem {
   label: string;
@@ -13,20 +11,8 @@ interface Props {
 }
 
 export default function Breadcrumb({ items }: Props) {
-  const schemaItems = [
-    { name: 'Home', url: SITE.url },
-    ...items.map(item => ({
-      name: item.label,
-      url: item.href ? `${SITE.url}${item.href}` : SITE.url,
-    })),
-  ];
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(schemaItems)) }}
-      />
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 flex-wrap">
         <Link href="/" className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
           Home

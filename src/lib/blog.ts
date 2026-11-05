@@ -5979,3 +5979,9 @@ export function getRecentPosts(excludeSlug?: string, count = 4): BlogPost[] {
     .filter(p => p.slug !== excludeSlug)
     .slice(0, count);
 }
+
+export function getBlogPostsByCalculator(calcSlug: string, count = 3): BlogPost[] {
+  return PUBLISHED_POSTS
+    .filter(p => p.relatedCalculators.includes(calcSlug))
+    .slice(0, count);
+}

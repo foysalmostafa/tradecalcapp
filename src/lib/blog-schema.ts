@@ -6,7 +6,7 @@ import { SITE, AUTHOR } from './seo';
 export function blogArticleSchema(post: BlogPost) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     url: `${SITE.url}/blog/${post.slug}`,
