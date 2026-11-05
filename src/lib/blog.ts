@@ -2016,7 +2016,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: '2026-07-22',
     readingTimeMin: 6,
     relatedCalculators: ['position-size-calculator', 'pip-value-calculator', 'margin-calculator'],
-    relatedPosts: ['best-forex-position-size-calculators', 'best-risk-management-calculators-forex', 'how-to-calculate-position-size-forex'],
+    relatedPosts: ['best-forex-position-size-calculators', 'how-to-calculate-position-size-forex'],
     howToSteps: undefined,
     faqs: [
       { q: 'Is MyFxBook calculator free?', a: "Yes — MyFxBook's calculator tools are free to access, though some features on their platform require a free account registration. Their calculators cover 14 tools including position size, pip value, margin, and more advanced tools like swap/rollover, risk of ruin, and consistency calculators." },
@@ -2095,7 +2095,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: '2026-07-08',
     readingTimeMin: 7,
     relatedCalculators: ['position-size-calculator', 'lot-size-calculator', 'risk-reward-calculator'],
-    relatedPosts: ['tradecalc-vs-myfxbook-calculator', 'best-risk-management-calculators-forex', 'how-to-calculate-position-size-forex'],
+    relatedPosts: ['tradecalc-vs-myfxbook-calculator', 'how-to-calculate-position-size-forex'],
     howToSteps: undefined,
     faqs: [
       { q: 'What should a good position size calculator include?', a: 'A good position size calculator needs: account balance input, risk percentage setting, stop loss distance input, pip value calculation for the chosen pair, and lot size output. Bonus features include multi-asset support (stocks, crypto), multiple lot size formats (standard/mini/micro), and saved settings. Accuracy of the pip value calculation is the most critical factor.' },
@@ -2527,7 +2527,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: '2026-06-23',
     readingTimeMin: 12,
     relatedCalculators: ['position-size-calculator', 'risk-reward-calculator', 'drawdown-calculator', 'margin-calculator'],
-    relatedPosts: ['how-to-calculate-position-size-forex', 'how-to-calculate-risk-reward-ratio', 'how-to-calculate-drawdown-trading', 'position-sizing-complete-guide'],
+    relatedPosts: ['how-to-calculate-position-size-forex', 'how-to-calculate-risk-reward-ratio', 'how-to-calculate-drawdown-trading'],
     howToSteps: [
       { name: 'Set your maximum risk per trade', text: 'Decide the percentage of your account you will risk on each trade. Use 1–2% as your maximum. Write this down and treat it as a non-negotiable rule, not a guideline.' },
       { name: 'Define your stop loss before entering', text: 'Place your stop loss at a technically valid level before calculating position size. Never set your stop at an arbitrary pip distance — it must reflect where your trade idea is proven wrong.' },
@@ -5202,7 +5202,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updatedAt: '2026-08-25',
     readingTimeMin: 10,
     relatedCalculators: ['pip-difference-calculator', 'pip-value-calculator', 'pip-to-dollar-calculator'],
-    relatedPosts: ['what-is-pip-value-how-to-calculate', 'pip-to-dollar-how-much-is-a-pip-worth', 'forex-trading-for-beginners-guide'],
+    relatedPosts: ['what-is-pip-value-how-to-calculate', 'pip-to-dollar-how-much-is-a-pip-worth'],
     faqs: [
       { q: 'How do you calculate pips between two prices in forex?', a: 'For 4-decimal pairs (EUR/USD, GBP/USD): Pips = |Price2 - Price1| x 10,000. EUR/USD moved from 1.1000 to 1.1075: (1.1075 - 1.1000) x 10,000 = 75 pips. For JPY pairs (2 decimal): Pips = |Price2 - Price1| x 100. USD/JPY 145.00 to 147.50 = 250 pips.' },
       { q: 'How many pips is 100 points in forex?', a: 'Depends on the pair. For standard 4-decimal pairs: 100 points = 10 pips (a point is 1/10 of a pip = a pipette). For JPY pairs: 100 points = 100 pips. The term "point" is often used loosely — always clarify whether someone means pips or pipettes.' },
