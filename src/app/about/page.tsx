@@ -5,7 +5,7 @@ import { TrendingUp, BookOpen, Code2, ShieldCheck } from 'lucide-react';
 import { SITE, AUTHOR } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: `About ${AUTHOR.name} | ${SITE.name}`,
+  title: `About ${AUTHOR.name}`,
   description: `${AUTHOR.name} is a forex trader and software developer who built TradeCalc to solve his own trading calculation problems. Learn about the person behind the tools.`,
   alternates: { canonical: `${SITE.url}/about` },
   openGraph: {

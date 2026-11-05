@@ -10,7 +10,7 @@ import { webPageSchema, itemListSchema, faqSchema, breadcrumbSchema } from '@/li
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Free Forex & Trading Calculators — All Tools | TradeCalc',
+  title: 'Free Forex & Trading Calculators — All Tools',
   description:
     'All free trading calculators in one place — position size, pip value, lot size, margin, risk/reward, drawdown, prop firm rules, futures, and more. No sign-up required.',
   alternates: { canonical: `${SITE.url}/calculators` },

@@ -10,7 +10,7 @@ import { webPageSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Forex Trading Blog — Calculation Guides & Risk Management | TradeCalc',
+  title: 'Forex Trading Blog — Calculation Guides & Risk Management',
   description:
     'Step-by-step guides to position sizing, pip values, risk/reward, margin, drawdown, and every calculation active traders need. Free from TradeCalc.',
   alternates: { canonical: `${SITE.url}/blog` },
