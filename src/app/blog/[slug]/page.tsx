@@ -13,34 +13,37 @@ import { SITE, AUTHOR } from '@/lib/seo';
 
 const DATE_FORMAT: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
-// ─── Inline link parser ────────────────────────────────────────────────────────
-// Converts [anchor text](/path) or [anchor text](https://...) in body copy into
-// <Link> (internal) or <a rel="noopener"> (external) elements.
+// ─── Inline parser: bold, italic, links ────────────────────────────────────────
 function parseLinks(text: string): React.ReactNode {
-  const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const TOKEN_RE = /\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\(([^)]+)\)/g;
   const parts: React.ReactNode[] = [];
   let last = 0;
   let m: RegExpExecArray | null;
 
-  while ((m = LINK_RE.exec(text)) !== null) {
+  while ((m = TOKEN_RE.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index));
-    const [, anchor, href] = m;
-    const isInternal = href.startsWith('/');
-    parts.push(
-      isInternal
-        ? <Link key={m.index} href={href}
-            className="text-amber-600 dark:text-amber-400 hover:underline font-medium">
-            {anchor}
-          </Link>
-        : <a key={m.index} href={href} target="_blank" rel="noopener noreferrer"
-            className="text-amber-600 dark:text-amber-400 hover:underline font-medium">
-            {anchor}
-          </a>
-    );
-    last = LINK_RE.lastIndex;
+    if (m[1] !== undefined) {
+      parts.push(<strong key={m.index} className="font-semibold text-gray-900 dark:text-white">{m[1]}</strong>);
+    } else if (m[2] !== undefined) {
+      parts.push(<em key={m.index}>{m[2]}</em>);
+    } else {
+      const [, , , anchor, href] = m;
+      const isInternal = href.startsWith('/');
+      parts.push(
+        isInternal
+          ? <Link key={m.index} href={href} className="text-amber-600 dark:text-amber-400 hover:underline font-medium">{anchor}</Link>
+          : <a key={m.index} href={href} target="_blank" rel="noopener noreferrer" className="text-amber-600 dark:text-amber-400 hover:underline font-medium">{anchor}</a>
+      );
+    }
+    last = TOKEN_RE.lastIndex;
   }
   if (last < text.length) parts.push(text.slice(last));
   return parts.length === 1 ? parts[0] : <>{parts}</>;
+}
+
+// ─── Heading → anchor ID ───────────────────────────────────────────────────────
+function headingId(heading: string): string {
+  return heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 // ─── Markdown table renderer ───────────────────────────────────────────────────
@@ -246,13 +249,39 @@ export default async function BlogPostPage(
               </div>
             )}
 
+            {/* ── Table of Contents ── */}
+            {post.sections.length >= 4 && (
+              <nav aria-label="Table of contents" className="card p-5 mb-8 bg-amber-50/50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/40">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-3">In this guide</p>
+                <ol className="space-y-1.5">
+                  {post.sections.map((section, si) => (
+                    <li key={si} className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold text-xs mt-0.5 flex-shrink-0 w-4">{si + 1}.</span>
+                      <a href={`#${headingId(section.heading)}`}
+                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors leading-snug">
+                        {section.heading}
+                      </a>
+                    </li>
+                  ))}
+                  {post.faqs.length > 0 && (
+                    <li className="flex items-start gap-2">
+                      <span className="text-amber-400 font-bold text-xs mt-0.5 flex-shrink-0 w-4">{post.sections.length + 1}.</span>
+                      <a href="#faq-heading" className="text-sm text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+                        Frequently Asked Questions
+                      </a>
+                    </li>
+                  )}
+                </ol>
+              </nav>
+            )}
+
             {/* ── Article body ── */}
             <div itemProp="articleBody">
 
               {post.sections.map((section, si) => (
-                <section key={si} aria-labelledby={`section-${si}`} className="mb-8">
+                <section key={si} aria-labelledby={headingId(section.heading)} className="mb-8">
                   <h2
-                    id={`section-${si}`}
+                    id={headingId(section.heading)}
                     className="font-display text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2"
                   >
                     <BookOpen className="w-5 h-5 text-amber-500 flex-shrink-0" />
@@ -353,9 +382,8 @@ export default async function BlogPostPage(
               <AdSlot format="horizontal" className="my-8" />
 
               {/* ── FAQ section ── */}
-              <section aria-labelledby="faq-heading" className="mb-8">
+              <section aria-labelledby="faq-heading" className="mb-8" id="faq-heading">
                 <h2
-                  id="faq-heading"
                   className="font-display text-xl font-bold text-gray-900 dark:text-white mb-5"
                 >
                   Frequently Asked Questions
