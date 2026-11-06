@@ -56,7 +56,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Optional analytics and session recording are disabled until consent handling is configured. */}
+        {/* Google Analytics GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7SKCMXRYL" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-H7SKCMXRYL');`,
+          }}
+        />
         {/* Inline theme init — prevents flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
