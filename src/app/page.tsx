@@ -183,7 +183,7 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-10">
         <div className="max-w-2xl">
-          <span className="inline-block text-xs font-bold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-4">
+          <span className="inline-block text-xs font-bold tracking-widest uppercase text-amber-700 dark:text-amber-400 mb-4">
             Built for Active Traders
           </span>
 
@@ -223,9 +223,9 @@ export default function HomePage() {
           ))}
         </div>
         {/* FIX 2 — Visible E-E-A-T author signal */}
-        <p className="text-xs text-gray-400 dark:text-gray-500 mt-3">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
           Built by{' '}
-          <Link href="/about" className="text-amber-600 dark:text-amber-400 hover:underline font-medium">
+          <Link href="/about" className="text-amber-700 dark:text-amber-400 hover:underline font-medium">
             Foysal Mostafa
           </Link>
           , forex trader &amp; software developer — using the same tools in his own live trading.
@@ -254,7 +254,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/calculators/position-size-calculator"
-              className="text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 shrink-0"
+              className="text-sm font-medium text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1 shrink-0"
             >
               Full page <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -269,13 +269,13 @@ export default function HomePage() {
           <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center">
             Why Traders Choose TradeCalc
           </h2>
-          <p className="text-sm text-gray-400 text-center mb-10">
+          <p className="text-sm text-gray-500 text-center mb-10">
             Built by a forex trader, for traders who want accurate answers fast
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {FEATURES.map(f => (
               <div key={f.title} className="flex flex-col gap-3">
-                <span className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                <span className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 flex items-center justify-center">
                   {f.icon}
                 </span>
                 <h3 className="font-semibold text-gray-900 dark:text-white">{f.title}</h3>
@@ -292,7 +292,7 @@ export default function HomePage() {
           <h2 id="categories-heading" className="font-display text-2xl font-bold text-gray-900 dark:text-white">
             Browse by Market
           </h2>
-          <Link href="/calculators" className="text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+          <Link href="/calculators" className="text-sm font-medium text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1">
             View all <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -309,7 +309,7 @@ export default function HomePage() {
                   <h3 className="font-display text-lg font-bold text-gray-900 dark:text-white">
                     {cat.label}
                   </h3>
-                  <Link href="/calculators" className="text-xs text-amber-600 dark:text-amber-400 hover:underline">
+                  <Link href="/calculators" className="text-xs text-amber-700 dark:text-amber-400 hover:underline">
                     More tools →
                   </Link>
                 </div>
@@ -342,7 +342,7 @@ export default function HomePage() {
           <h2 id="all-heading" className="font-display text-2xl font-bold text-gray-900 dark:text-white">
             All Trading Calculators
           </h2>
-          <Link href="/calculators" className="text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+          <Link href="/calculators" className="text-sm font-medium text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1">
             Full list <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -364,7 +364,7 @@ export default function HomePage() {
           <h2 id="blog-heading" className="font-display text-2xl font-bold text-gray-900 dark:text-white">
             Learn Risk Management
           </h2>
-          <Link href="/blog" className="text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+          <Link href="/blog" className="text-sm font-medium text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1">
             All articles <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -375,13 +375,13 @@ export default function HomePage() {
               href={`/blog/${post.slug}`}
               className="card p-5 hover:border-amber-300 dark:hover:border-amber-700 transition-colors group block"
             >
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 mb-2 block">
+              <span className="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2 block">
                 {post.category}
               </span>
               <h3 className="font-semibold text-gray-900 dark:text-white text-sm leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
                 {post.title}
               </h3>
-              <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+              <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                 {post.desc}
               </p>
             </Link>
@@ -415,7 +415,7 @@ export default function HomePage() {
                 >
                   {q}
                 </h3>
-                <ChevronDown className="w-4 h-4 shrink-0 text-gray-400 transition-transform group-open:rotate-180" />
+                <ChevronDown className="w-4 h-4 shrink-0 text-gray-500 transition-transform group-open:rotate-180" />
               </summary>
               <div
                 className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-3xl"

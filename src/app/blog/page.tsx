@@ -104,7 +104,7 @@ export default function BlogIndexPage() {
 
         {/* ── Page header ── */}
         <div className="mb-10">
-          <span className="inline-block text-xs font-bold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-3">
+          <span className="inline-block text-xs font-bold tracking-widest uppercase text-amber-700 dark:text-amber-400 mb-3">
             Trading Education
           </span>
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3 text-balance">
@@ -160,7 +160,7 @@ export default function BlogIndexPage() {
               <p className="text-gray-500 dark:text-gray-400 mb-5 max-w-lg" itemProp="abstract">
                 {featured.description}
               </p>
-              <div className="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500">
+              <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                 <span className="flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5" />
                   {featured.readingTimeMin} min read
@@ -215,7 +215,7 @@ export default function BlogIndexPage() {
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${CATEGORY_COLOR[post.category]}`}>
                       {CATEGORY_LABEL[post.category]}
                     </span>
-                    <span className="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1">
+                    <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {post.readingTimeMin} min
                     </span>
@@ -285,7 +285,7 @@ export default function BlogIndexPage() {
                   >
                     {q}
                   </h3>
-                  <ChevronDown className="w-4 h-4 shrink-0 text-gray-400 transition-transform group-open:rotate-180" />
+                  <ChevronDown className="w-4 h-4 shrink-0 text-gray-500 transition-transform group-open:rotate-180" />
                 </summary>
                 <div
                   className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-3xl"

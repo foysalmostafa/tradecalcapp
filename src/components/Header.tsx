@@ -89,7 +89,7 @@ export default function Header() {
                 href="/calculators"
                 className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   isCalcsActive
-                    ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                    ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >
@@ -108,7 +108,7 @@ export default function Header() {
                   <div className="p-4 grid grid-cols-6 gap-3 max-h-[70vh] overflow-y-auto">
                     {CALC_GROUPS.map(group => (
                       <div key={group.label}>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 px-1">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2 px-1">
                           {group.label}
                         </p>
                         <ul className="space-y-0.5">
@@ -134,7 +134,7 @@ export default function Header() {
                     <Link
                       href="/calculators"
                       onClick={() => setDropdownOpen(false)}
-                      className="text-xs text-amber-600 dark:text-amber-400 font-medium hover:underline"
+                      className="text-xs text-amber-700 dark:text-amber-400 font-medium hover:underline"
                     >
                       View all calculators →
                     </Link>
@@ -178,12 +178,12 @@ export default function Header() {
         <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 max-h-[80vh] overflow-y-auto">
           <nav className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
             {/* All Calculators section on mobile */}
-            <p className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <p className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
               Calculators
             </p>
             {CALC_GROUPS.map(group => (
               <div key={group.label}>
-                <p className="px-3 py-1 text-xs font-semibold text-gray-400 dark:text-gray-500">
+                <p className="px-3 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400">
                   {group.label}
                 </p>
                 {group.calcs.map(c => (
@@ -193,7 +193,7 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                     className={`px-5 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
                       pathname === `/calculators/${c.slug}`
-                        ? 'text-amber-600 dark:text-amber-400'
+                        ? 'text-amber-700 dark:text-amber-400'
                         : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                   >
@@ -210,7 +210,7 @@ export default function Header() {
                 onClick={() => setMenuOpen(false)}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors block ${
                   pathname === '/blog' || pathname?.startsWith('/blog/')
-                    ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                    ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >

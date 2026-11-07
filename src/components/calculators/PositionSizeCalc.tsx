@@ -91,7 +91,7 @@ export default function PositionSizeCalc() {
               onClick={() => setMode(m)}
               className={`px-4 py-1.5 rounded-lg text-sm font-medium border transition-colors ${
                 mode === m
-                  ? 'bg-amber-500 border-amber-500 text-white'
+                  ? 'bg-amber-700 border-amber-700 text-white'
                   : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-amber-400'
               }`}
             >
@@ -108,7 +108,7 @@ export default function PositionSizeCalc() {
             Account Balance (USD)
           </label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="10000" min="0" />
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function PositionSizeCalc() {
           </label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={risk} onChange={e => setRisk(e.target.value)} placeholder="1" min="0.01" max="100" step="0.1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
 
@@ -146,10 +146,10 @@ export default function PositionSizeCalc() {
                 Pip Value per Std Lot (USD)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={pipVal} onChange={e => setPipVal(e.target.value)} placeholder="10" min="0" step="0.01" />
               </div>
-              <p className="text-xs text-gray-400 mt-1">Enter the current USD pip value. Pair selection is a label only; it does not update this input. Forex results round down to 0.01 lots; check your broker’s minimum and step.</p>
+              <p className="text-xs text-gray-500 mt-1">Enter the current USD pip value. Pair selection is a label only; it does not update this input. Forex results round down to 0.01 lots; check your broker’s minimum and step.</p>
             </div>
           </>
         )}
@@ -161,7 +161,7 @@ export default function PositionSizeCalc() {
                 Stock Entry Price (USD)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={price} onChange={e => setPrice(e.target.value)} placeholder="50" min="0" step="0.01" />
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function PositionSizeCalc() {
                 Stop Loss Distance (USD per share)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={stopLoss} onChange={e => setStopLoss(e.target.value)} placeholder="2" min="0" step="0.01" />
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function PositionSizeCalc() {
                 Current Coin Price (USD)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={cryptoPrice} onChange={e => setCryptoPrice(e.target.value)} placeholder="30000" min="0" />
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function PositionSizeCalc() {
                 Stop Loss Distance (USD)
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={stopLoss} onChange={e => setStopLoss(e.target.value)} placeholder="500" min="0" />
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function PositionSizeCalc() {
       </div>
 
       {/* Results */}
-      <button onClick={reset} className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-amber-500 transition-colors">
+      <button onClick={reset} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-amber-500 transition-colors">
         <RefreshCw className="w-3.5 h-3.5" /> Reset
       </button>
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
@@ -212,8 +212,8 @@ export default function PositionSizeCalc() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {result.map(r => (
             <div key={r.label}>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mb-0.5">{r.label}</p>
-              <p className="font-display text-xl font-bold text-amber-500 dark:text-amber-400 tabular">{r.value}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">{r.label}</p>
+              <p className="font-display text-xl font-bold text-amber-600 dark:text-amber-400 tabular">{r.value}</p>
               <p className="text-xs text-gray-500 dark:text-gray-400">{r.unit}</p>
             </div>
           ))}
@@ -222,7 +222,7 @@ export default function PositionSizeCalc() {
 
       {/* Risk bar */}
       <div>
-        <div className="flex justify-between text-xs text-gray-400 mb-1.5">
+        <div className="flex justify-between text-xs text-gray-500 mb-1.5">
           <span>Risk Level</span>
           <span>{rPct}% of account</span>
         </div>
@@ -234,7 +234,7 @@ export default function PositionSizeCalc() {
             style={{ width: `${Math.min(rPct * 10, 100)}%` }}
           />
         </div>
-        <p className="text-xs text-gray-400 mt-1">
+        <p className="text-xs text-gray-500 mt-1">
           Planned price risk before costs and slippage. Choose a budget appropriate to your circumstances and combined open positions.
         </p>
       </div>

@@ -44,7 +44,7 @@ export function MarginCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Market Price (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={price} onChange={e => setPrice(e.target.value)} step="0.0001" placeholder="1.0850" />
           </div>
         </div>
@@ -57,19 +57,19 @@ export function MarginCalc() {
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Required Margin</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(margin, 2)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">Required Margin</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(margin, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Notional Value</p>
+            <p className="text-xs text-gray-500 mb-0.5">Notional Value</p>
             <p className="font-display text-3xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(notional, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Margin %</p>
+            <p className="text-xs text-gray-500 mb-0.5">Margin %</p>
             <p className="font-semibold text-gray-700 dark:text-gray-300 tabular">{fmt(100 / lev, 2)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Leverage Ratio</p>
+            <p className="text-xs text-gray-500 mb-0.5">Leverage Ratio</p>
             <p className="font-semibold text-gray-700 dark:text-gray-300">1:{lev}</p>
           </div>
         </div>
@@ -136,23 +136,23 @@ export function RiskRewardCalc() {
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">R:R Ratio</p>
+            <p className="text-xs text-gray-500 mb-0.5">R:R Ratio</p>
             <p className={`font-display text-3xl font-bold tabular ${rrColor}`}>1:{fmt(rr, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Risk (pts)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Risk (pts)</p>
             <p className="font-display text-2xl font-bold text-red-500 dark:text-red-400 tabular">{fmt(risk, 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Reward (pts)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Reward (pts)</p>
             <p className="font-display text-2xl font-bold text-green-500 dark:text-green-400 tabular">{fmt(reward, 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Min Win Rate to Break Even</p>
+            <p className="text-xs text-gray-500 mb-0.5">Min Win Rate to Break Even</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(winRate, 1)}%</p>
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">
+        <p className="text-xs text-gray-500 mt-3">
           {'Planned payoff before costs. Profitability also depends on realized win rate and execution.'}
         </p>
       </div>
@@ -196,7 +196,7 @@ export function CompoundingCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Starting Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={startBal} onChange={e => setStartBal(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -204,7 +204,7 @@ export function CompoundingCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Monthly Return (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={monthly} onChange={e => setMonthly(e.target.value)} step="0.1" placeholder="5" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
@@ -214,7 +214,7 @@ export function CompoundingCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Monthly Withdrawal (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={withdraw} onChange={e => setWithdraw(e.target.value)} placeholder="0" />
           </div>
         </div>
@@ -225,15 +225,15 @@ export function CompoundingCalc() {
         <p className="text-xs text-gray-500 mb-3">Withdrawn: ${fmt(withdrawals, 2)}. Total gain includes withdrawals. Constant-return scenario; not a forecast.</p>
         <div className="grid grid-cols-3 gap-5 mb-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Final Balance</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(finalBal, 0)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">Final Balance</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(finalBal, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Gain</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Gain</p>
             <p className="font-display text-2xl font-bold text-green-600 dark:text-green-400 tabular">{totalGain >= 0 ? '+' : ''}${fmt(totalGain, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Return</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Return</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(totalReturn, 1)}%</p>
           </div>
         </div>
@@ -242,7 +242,7 @@ export function CompoundingCalc() {
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
-              <tr className="text-gray-400 border-b border-gray-200 dark:border-gray-700">
+              <tr className="text-gray-500 border-b border-gray-200 dark:border-gray-700">
                 <th className="text-left py-1 pr-3">Month</th>
                 <th className="text-right py-1 pr-3 tabular">Monthly Gain</th>
                 <th className="text-right py-1 tabular">Balance</th>
@@ -258,14 +258,14 @@ export function CompoundingCalc() {
               ))}
               {mo > 12 && (
                 <tr className="border-b border-gray-100 dark:border-gray-800 opacity-50">
-                  <td colSpan={3} className="py-1 text-center text-gray-400">· · ·</td>
+                  <td colSpan={3} className="py-1 text-center text-gray-500">· · ·</td>
                 </tr>
               )}
               {mo > 12 && rows[rows.length - 1] && (
                 <tr className="font-semibold">
                   <td className="py-1 pr-3 text-gray-700 dark:text-gray-300">{rows[rows.length - 1].month}</td>
                   <td className="py-1 pr-3 text-right text-green-600 dark:text-green-400 tabular">{rows[rows.length - 1].gain >= 0 ? '+' : ''}${fmt(rows[rows.length - 1].gain, 2)}</td>
-                  <td className="py-1 text-right text-amber-500 dark:text-amber-400 tabular">${fmt(rows[rows.length - 1].balance, 2)}</td>
+                  <td className="py-1 text-right text-amber-600 dark:text-amber-400 tabular">${fmt(rows[rows.length - 1].balance, 2)}</td>
                 </tr>
               )}
             </tbody>
@@ -302,7 +302,7 @@ export function DrawdownCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Starting Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={startBal} onChange={e => setStartBal(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -310,14 +310,14 @@ export function DrawdownCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Drawdown (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={drawdown} onChange={e => setDrawdown(e.target.value)} step="0.5" min="0" max="99" placeholder="30" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Per Trade (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={lossPerTrade} onChange={e => setLossPerTrade(e.target.value)} step="0.1" min="0.1" placeholder="2" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
       </div>
@@ -326,26 +326,26 @@ export function DrawdownCalc() {
         <p className="section-label mb-4">Drawdown Analysis</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Balance After DD</p>
+            <p className="text-xs text-gray-500 mb-0.5">Balance After DD</p>
             <p className={`font-display text-2xl font-bold tabular ${ddColor}`}>${fmt(afterDD, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Amount Lost</p>
+            <p className="text-xs text-gray-500 mb-0.5">Amount Lost</p>
             <p className="font-display text-2xl font-bold text-red-600 dark:text-red-400 tabular">-${fmt(lostAmt, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Recovery Needed</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">{fmt(recovery, 1)}%</p>
+            <p className="text-xs text-gray-500 mb-0.5">Recovery Needed</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">{fmt(recovery, 1)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Consecutive Losses</p>
+            <p className="text-xs text-gray-500 mb-0.5">Consecutive Losses</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{consec}</p>
           </div>
         </div>
 
         {/* DD severity bar */}
         <div className="mt-4">
-          <div className="flex justify-between text-xs text-gray-400 mb-1">
+          <div className="flex justify-between text-xs text-gray-500 mb-1">
             <span>Drawdown Severity</span>
             <span>{drawdown}%</span>
           </div>
@@ -355,7 +355,7 @@ export function DrawdownCalc() {
               style={{ width: `${Math.min(dd * 100, 100)}%` }}
             />
           </div>
-          <div className="flex justify-between text-2xs text-gray-400 mt-1">
+          <div className="flex justify-between text-2xs text-gray-500 mt-1">
             <span>Healthy (0–10%)</span>
             <span>Moderate (10–25%)</span>
             <span>Danger (50%+)</span>
@@ -392,7 +392,7 @@ export function LotSizeCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -400,7 +400,7 @@ export function LotSizeCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Per Trade (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={risk} onChange={e => setRisk(e.target.value)} step="0.1" placeholder="1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
@@ -410,7 +410,7 @@ export function LotSizeCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip Value per Std Lot (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={pipValue} onChange={e => setPipValue(e.target.value)} step="0.01" placeholder="10" />
           </div>
         </div>
@@ -424,9 +424,9 @@ export function LotSizeCalc() {
             { label: 'Micro Lots',    value: fmt(microLots, 1), note: '1K units' },
           ].map(r => (
             <div key={r.label}>
-              <p className="text-xs text-gray-400 mb-0.5">{r.label}</p>
-              <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">{r.value}</p>
-              <p className="text-xs text-gray-400">{r.note}</p>
+              <p className="text-xs text-gray-500 mb-0.5">{r.label}</p>
+              <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">{r.value}</p>
+              <p className="text-xs text-gray-500">{r.note}</p>
             </div>
           ))}
         </div>
@@ -472,7 +472,7 @@ export function LotSizeCalc() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mt-2">Based on EUR/USD ($10/pip per standard lot). JPY pairs and other pairs differ slightly.</p>
+        <p className="text-xs text-gray-500 mt-2">Based on EUR/USD ($10/pip per standard lot). JPY pairs and other pairs differ slightly.</p>
       </div>
     </CalculatorForm>
   );
@@ -511,7 +511,7 @@ export function AverageDownCalc() {
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Average Buy Price</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={price1} onChange={e => setPrice1(e.target.value)} step="0.01" placeholder="50" />
               </div>
             </div>
@@ -527,7 +527,7 @@ export function AverageDownCalc() {
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">New Buy Price</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
                 <input className="calc-input pl-7" type="number" value={price2} onChange={e => setPrice2(e.target.value)} step="0.01" placeholder="42" />
               </div>
             </div>
@@ -539,19 +539,19 @@ export function AverageDownCalc() {
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">New Average Cost</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(newAvg, 4)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">New Average Cost</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(newAvg, 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Shares</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Shares</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(totalShares, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Cost</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Cost</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(totalCost, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Avg Reduced By</p>
+            <p className="text-xs text-gray-500 mb-0.5">Avg Reduced By</p>
             <p className="font-display text-2xl font-bold text-green-600 dark:text-green-400 tabular">{fmt(reduction, 2)}%</p>
           </div>
         </div>
@@ -601,7 +601,7 @@ export function BreakEvenCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Commission per Lot (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={commission} onChange={e => setCommission(e.target.value)} step="0.01" placeholder="7" />
           </div>
         </div>
@@ -612,7 +612,7 @@ export function BreakEvenCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip Value per Std Lot (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={pipVal} onChange={e => setPipVal(e.target.value)} step="0.01" placeholder="10" />
           </div>
         </div>
@@ -621,19 +621,19 @@ export function BreakEvenCalc() {
         <p className="section-label mb-4">Break-Even Analysis</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Break-Even Price</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">{fmt(bePrice, 5)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">Break-Even Price</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">{fmt(bePrice, 5)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Pips to Break Even</p>
+            <p className="text-xs text-gray-500 mb-0.5">Pips to Break Even</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(pipsNeeded, 1)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Cost</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Cost</p>
             <p className="font-display text-2xl font-bold text-red-500 dark:text-red-400 tabular">${fmt(totalCost, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Spread Cost</p>
+            <p className="text-xs text-gray-500 mb-0.5">Spread Cost</p>
             <p className="font-semibold text-gray-700 dark:text-gray-300 tabular">${fmt(spreadCost, 2)}</p>
           </div>
         </div>
@@ -688,12 +688,12 @@ export function CurrencyConverterCalc() {
       </div>
 
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700 text-center">
-        <p className="text-sm text-gray-400 mb-2">{fmt(amt, 2)} {from} =</p>
-        <p className="font-display text-4xl font-bold text-amber-500 dark:text-amber-400 tabular mb-2">
+        <p className="text-sm text-gray-500 mb-2">{fmt(amt, 2)} {from} =</p>
+        <p className="font-display text-4xl font-bold text-amber-600 dark:text-amber-400 tabular mb-2">
           {fmt(converted, 4)} {to}
         </p>
-        <p className="text-xs text-gray-400">1 {from} = {fmt(rate, 6)} {to} &nbsp;·&nbsp; 1 {to} = {fmt(1/rate, 6)} {from}</p>
-        <p className="text-xs text-gray-400 mt-1">Illustrative sample rates only — not live market quotes. Verify current rates with your provider before making a transaction.</p>
+        <p className="text-xs text-gray-500">1 {from} = {fmt(rate, 6)} {to} &nbsp;·&nbsp; 1 {to} = {fmt(1/rate, 6)} {from}</p>
+        <p className="text-xs text-gray-500 mt-1">Illustrative sample rates only — not live market quotes. Verify current rates with your provider before making a transaction.</p>
       </div>
 
       {/* Quick compare grid */}
@@ -704,7 +704,7 @@ export function CurrencyConverterCalc() {
             .filter(c => c !== from)
             .map(c => (
               <div key={c} className="card px-3 py-2">
-                <p className="text-xs text-gray-400">{c}</p>
+                <p className="text-xs text-gray-500">{c}</p>
                 <p className="font-semibold text-sm text-gray-700 dark:text-gray-300 tabular">
                   {fmt(amt * (RATES[c] / RATES[from]), 2)}
                 </p>
@@ -748,7 +748,7 @@ export function LeverageCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -774,15 +774,15 @@ export function LeverageCalc() {
         <p className="section-label mb-4">Leverage Analysis</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Effective Leverage</p>
+            <p className="text-xs text-gray-500 mb-0.5">Effective Leverage</p>
             <p className={`font-display text-3xl font-bold tabular ${levColor}`}>1:{fmt(effLev, 1)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Notional Value</p>
+            <p className="text-xs text-gray-500 mb-0.5">Notional Value</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(notional, 0)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Exposure</p>
+            <p className="text-xs text-gray-500 mb-0.5">Exposure</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(exposure, 0)}%</p>
           </div>
         </div>
@@ -791,7 +791,7 @@ export function LeverageCalc() {
           <div className={`h-full rounded-full transition-all ${effLev <= 5 ? 'bg-green-500' : effLev <= 10 ? 'bg-amber-500' : 'bg-red-500'}`}
             style={{ width: `${Math.min((effLev / 20) * 100, 100)}%` }} />
         </div>
-        <div className="flex justify-between text-2xs text-gray-400 mt-1">
+        <div className="flex justify-between text-2xs text-gray-500 mt-1">
           <span>Safe (1–5×)</span><span>Moderate (5–10×)</span><span>Danger (10×+)</span>
         </div>
       </div>
@@ -852,45 +852,45 @@ export function RiskOfRuinCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Win Rate (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={winRate} onChange={e => setWinRate(e.target.value)} step="1" min="1" max="99" placeholder="55" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Avg Risk:Reward Ratio</label>
           <input className="calc-input" type="number" value={rr} onChange={e => setRr(e.target.value)} step="0.1" placeholder="1.5" />
-          <p className="text-xs text-gray-400 mt-1">e.g. 1.5 means risk 1 to make 1.5</p>
+          <p className="text-xs text-gray-500 mt-1">e.g. 1.5 means risk 1 to make 1.5</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Per Trade (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={risk} onChange={e => setRisk(e.target.value)} step="0.1" min="0.1" placeholder="1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Loss threshold (% of initial balance)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={ruin} onChange={e => setRuin(e.target.value)} step="1" min="1" placeholder="20" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Prop firm max DD or personal limit</p>
+          <p className="text-xs text-gray-500 mt-1">Prop firm max DD or personal limit</p>
         </div>
       </div>
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Risk Analysis</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Risk of Ruin</p>
+            <p className="text-xs text-gray-500 mb-0.5">Risk of Ruin</p>
             <p className={`font-display text-3xl font-bold tabular ${rorColor}`}>{fmt(ror, 2)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Edge Per Trade</p>
+            <p className="text-xs text-gray-500 mb-0.5">Edge Per Trade</p>
             <p className={`font-display text-2xl font-bold tabular ${edge > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
               {edge >= 0 ? '+' : ''}{fmt(edge * 100, 2)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">EV per $100 Risked</p>
+            <p className="text-xs text-gray-500 mb-0.5">EV per $100 Risked</p>
             <p className={`font-display text-2xl font-bold tabular ${ev > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
               {ev >= 0 ? '+$' : '-$'}{fmt(Math.abs(ev), 2)}
             </p>
@@ -933,7 +933,7 @@ export function KellyCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Win Rate (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={winRate} onChange={e => setWinRate(e.target.value)} step="1" min="1" max="99" placeholder="55" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
@@ -943,7 +943,7 @@ export function KellyCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -964,10 +964,10 @@ export function KellyCalc() {
               { label: '¼ Kelly',    pct: quarterKelly, amt: quarterAmt, note: 'Ultra conservative', color: 'text-blue-500 dark:text-blue-400' },
             ].map(k => (
               <div key={k.label} className={k.label === 'Half Kelly' ? 'bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800' : ''}>
-                <p className="text-xs text-gray-400 mb-0.5">{k.label}</p>
+                <p className="text-xs text-gray-500 mb-0.5">{k.label}</p>
                 <p className={`font-display text-2xl font-bold tabular ${k.color}`}>{fmt(k.pct * 100, 2)}%</p>
                 <p className="font-semibold text-sm text-gray-700 dark:text-gray-300 tabular">${fmt(k.amt, 2)}</p>
-                <p className="text-xs text-gray-400 mt-1">{k.note}</p>
+                <p className="text-xs text-gray-500 mt-1">{k.note}</p>
               </div>
             ))}
           </div>
@@ -1002,13 +1002,13 @@ export function WinRateCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk:Reward Ratio</label>
           <input className="calc-input" type="number" value={rr} onChange={e => setRr(e.target.value)} step="0.1" min="0.1" placeholder="2" />
-          <p className="text-xs text-gray-400 mt-1">e.g. 2 = risk 1 to make 2</p>
+          <p className="text-xs text-gray-500 mt-1">e.g. 2 = risk 1 to make 2</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Actual Win Rate (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={winRate} onChange={e => setWinRate(e.target.value)} step="1" min="1" max="99" placeholder="45" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
       </div>
@@ -1017,19 +1017,19 @@ export function WinRateCalc() {
         <p className="section-label mb-4">Win Rate Analysis</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Break-Even Win Rate</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">{fmt(breakEven, 1)}%</p>
+            <p className="text-xs text-gray-500 mb-0.5">Break-Even Win Rate</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">{fmt(breakEven, 1)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Your Win Rate</p>
+            <p className="text-xs text-gray-500 mb-0.5">Your Win Rate</p>
             <p className={`font-display text-2xl font-bold tabular ${edgeColor}`}>{winRate}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Your Edge</p>
+            <p className="text-xs text-gray-500 mb-0.5">Your Edge</p>
             <p className={`font-display text-2xl font-bold tabular ${edgeColor}`}>{edge >= 0 ? '+' : ''}{fmt(edge * 100, 1)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">EV per $100 Risked</p>
+            <p className="text-xs text-gray-500 mb-0.5">EV per $100 Risked</p>
             <p className={`font-display text-2xl font-bold tabular ${evColor}`}>{ev >= 0 ? '+$' : '-$'}{fmt(Math.abs(ev), 2)}</p>
           </div>
         </div>
@@ -1037,7 +1037,7 @@ export function WinRateCalc() {
 
         {/* Visual bar */}
         <div className="mt-4">
-          <div className="flex justify-between text-xs text-gray-400 mb-1">
+          <div className="flex justify-between text-xs text-gray-500 mb-1">
             <span>Break-Even: {fmt(breakEven, 1)}%</span>
             <span>Your Rate: {winRate}%</span>
           </div>
@@ -1078,14 +1078,14 @@ export function GainLossCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Starting Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={startBal} onChange={e => setStartBal(e.target.value)} placeholder="10000" min="0" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ending Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={endBal} onChange={e => setEndBal(e.target.value)} placeholder="12500" min="0" />
           </div>
         </div>
@@ -1095,25 +1095,25 @@ export function GainLossCalc() {
         <p className={`text-xs font-semibold mb-4 ${pctColor}`}>{statusLabel}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Gain / Loss %</p>
+            <p className="text-xs text-gray-500 mb-0.5">Gain / Loss %</p>
             <p className={`font-display text-2xl font-bold tabular ${pctColor}`}>
               {isGain ? '+' : ''}{fmt(pct, 2)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Dollar Amount</p>
+            <p className="text-xs text-gray-500 mb-0.5">Dollar Amount</p>
             <p className={`font-display text-2xl font-bold tabular ${pctColor}`}>
               {isGain ? '+$' : '-$'}{fmt(Math.abs(diff), 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Ending Balance</p>
+            <p className="text-xs text-gray-500 mb-0.5">Ending Balance</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">
               ${fmt(end, 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">
+            <p className="text-xs text-gray-500 mb-0.5">
               {isGain ? 'Starting Balance' : 'Recovery Needed'}
             </p>
             <p className={`font-display text-2xl font-bold tabular ${isGain ? 'text-gray-800 dark:text-gray-200' : 'text-red-600 dark:text-red-400'}`}>
@@ -1171,14 +1171,14 @@ export function ConsistencyCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Total Profit (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={totalProfit} onChange={e => setTotalProfit(e.target.value)} placeholder="5000" min="0" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Best Single Day Profit (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={bestDay} onChange={e => setBestDay(e.target.value)} placeholder="1800" min="0" />
           </div>
         </div>
@@ -1186,9 +1186,9 @@ export function ConsistencyCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Prop Firm Limit (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={limit} onChange={e => setLimit(e.target.value)} step="1" min="1" max="100" placeholder="30" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Enter the actual rule and profit denominator for your account.</p>
+          <p className="text-xs text-gray-500 mt-1">Enter the actual rule and profit denominator for your account.</p>
         </div>
       </div>
 
@@ -1196,25 +1196,25 @@ export function ConsistencyCalc() {
         <p className={`text-xs font-semibold mb-4 ${scoreColor}`}>{verdict}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Consistency Score</p>
+            <p className="text-xs text-gray-500 mb-0.5">Consistency Score</p>
             <p className={`font-display text-2xl font-bold tabular ${scoreColor}`}>
               {fmt(score, 1)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Firm Limit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Firm Limit</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">
               {fmt(lim, 0)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">{passes ? 'Headroom Left' : 'Over Limit By'}</p>
+            <p className="text-xs text-gray-500 mb-0.5">{passes ? 'Headroom Left' : 'Over Limit By'}</p>
             <p className={`font-display text-2xl font-bold tabular ${scoreColor}`}>
               {passes ? `${fmt(headroom, 1)}%` : `${fmt(score - lim, 1)}%`}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Max Allowed Best Day</p>
+            <p className="text-xs text-gray-500 mb-0.5">Max Allowed Best Day</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">
               ${fmt(maxBestDay, 2)}
             </p>
@@ -1223,7 +1223,7 @@ export function ConsistencyCalc() {
 
         {/* Visual consistency bar */}
         <div className="mt-5">
-          <div className="flex justify-between text-xs text-gray-400 mb-1">
+          <div className="flex justify-between text-xs text-gray-500 mb-1">
             <span>0%</span>
             <span>Limit: {fmt(lim, 0)}%</span>
             <span>100%</span>
@@ -1311,7 +1311,7 @@ export function OptionsProfitCalc() {
           {(['long-call','long-put','short-call','short-put'] as const).map(t => (
             <button key={t} onClick={() => setType(t)}
               className={`py-2 px-3 rounded-lg text-xs font-semibold border transition-colors ${
-                type === t ? 'bg-amber-500 text-white border-amber-500' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
+                type === t ? 'bg-amber-700 text-white border-amber-700' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
               }`}>
               {typeLabels[t]}
             </button>
@@ -1323,26 +1323,26 @@ export function OptionsProfitCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Strike Price</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={strike} onChange={e => setStrike(e.target.value)} placeholder="150" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Premium (per share)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={premium} onChange={e => setPremium(e.target.value)} step="0.01" placeholder="3" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contracts</label>
           <input className="calc-input" type="number" value={contracts} onChange={e => setContracts(e.target.value)} step="1" min="1" placeholder="1" />
-          <p className="text-xs text-gray-400 mt-1">1 contract = 100 shares</p>
+          <p className="text-xs text-gray-500 mt-1">1 contract = 100 shares</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Stock Price at Expiry</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={target} onChange={e => setTarget(e.target.value)} step="0.01" placeholder="160" />
           </div>
         </div>
@@ -1352,21 +1352,21 @@ export function OptionsProfitCalc() {
         <p className={`text-xs font-semibold mb-4 ${pnlColor}`}>{typeLabels[type]} — {isGain ? 'Profitable' : 'Loss'} at ${target}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">P&L at ${target}</p>
+            <p className="text-xs text-gray-500 mb-0.5">P&L at ${target}</p>
             <p className={`font-display text-2xl font-bold tabular ${pnlColor}`}>{isGain?'+$':'-$'}{fmt(Math.abs(pnl),2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Break-Even Price</p>
+            <p className="text-xs text-gray-500 mb-0.5">Break-Even Price</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">${fmt(breakEven,2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Max Loss</p>
+            <p className="text-xs text-gray-500 mb-0.5">Max Loss</p>
             <p className="font-display text-2xl font-bold tabular text-red-600 dark:text-red-400">
               {isFinite(maxLoss) ? `-$${fmt(Math.abs(maxLoss),2)}` : 'Unlimited'}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Cost / Credit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Cost / Credit</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${fmt(totalCost,2)}</p>
           </div>
         </div>
@@ -1405,7 +1405,7 @@ export function PipDifferenceCalc() {
           {(['standard','jpy'] as const).map(t => (
             <button key={t} onClick={() => setPairType(t)}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-semibold border transition-colors ${
-                pairType === t ? 'bg-amber-500 text-white border-amber-500'
+                pairType === t ? 'bg-amber-700 text-white border-amber-700'
                 : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
               }`}>
               {t === 'standard' ? 'Standard (EUR/USD, GBP/USD…)' : 'JPY Pairs (USD/JPY, EUR/JPY…)'}
@@ -1433,22 +1433,22 @@ export function PipDifferenceCalc() {
         <p className="section-label mb-4">Pip Distance</p>
         <div className="grid grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Pip Difference</p>
+            <p className="text-xs text-gray-500 mb-0.5">Pip Difference</p>
             <p className="font-display text-3xl font-bold tabular text-amber-500 dark:text-amber-400">{fmt(pipDiff,1)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">pips</p>
+            <p className="text-xs text-gray-500 mt-0.5">pips</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Dollar Value</p>
+            <p className="text-xs text-gray-500 mb-0.5">Dollar Value</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${fmt(dollarVal,2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">at {lots} lot{parseFloat(lots)!==1?'s':''}</p>
+            <p className="text-xs text-gray-500 mt-0.5">at {lots} lot{parseFloat(lots)!==1?'s':''}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Direction</p>
+            <p className="text-xs text-gray-500 mb-0.5">Direction</p>
             <p className="font-semibold text-sm text-gray-700 dark:text-gray-300 mt-1">{direction}</p>
           </div>
         </div>
         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between text-sm">
-          <span className="text-gray-400">Formula</span>
+          <span className="text-gray-500">Formula</span>
           <span className="text-gray-600 dark:text-gray-400 font-mono text-xs">|{price1} − {price2}| × {mult} = {fmt(pipDiff,1)} pips</span>
         </div>
       </div>
@@ -1490,21 +1490,21 @@ export function CAGRCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Starting Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={startBal} onChange={e => setStartBal(e.target.value)} placeholder="10000" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ending Balance (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={endBal} onChange={e => setEndBal(e.target.value)} placeholder="25000" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Years</label>
           <input className="calc-input" type="number" value={years} onChange={e => setYears(e.target.value)} step="0.5" min="0.25" placeholder="3" />
-          <p className="text-xs text-gray-400 mt-1">6 months = 0.5 · 18 months = 1.5</p>
+          <p className="text-xs text-gray-500 mt-1">6 months = 0.5 · 18 months = 1.5</p>
         </div>
       </div>
 
@@ -1512,20 +1512,20 @@ export function CAGRCalc() {
         <p className={`text-xs font-semibold mb-4 ${cagrColor}`}>{isGain ? '✓ Growing Account' : '✗ Declining Account'}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">CAGR</p>
+            <p className="text-xs text-gray-500 mb-0.5">CAGR</p>
             <p className={`font-display text-3xl font-bold tabular ${cagrColor}`}>{isGain?'+':''}{fmt(cagr,2)}%</p>
-            <p className="text-xs text-gray-400 mt-0.5">per year</p>
+            <p className="text-xs text-gray-500 mt-0.5">per year</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Gain</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Gain</p>
             <p className={`font-display text-2xl font-bold tabular ${cagrColor}`}>{isGain?'+':''}{fmt(totalGain,2)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Net Profit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Net Profit</p>
             <p className={`font-display text-2xl font-bold tabular ${cagrColor}`}>{netProfit>=0?'+$':'-$'}{fmt(Math.abs(netProfit),2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Years</p>
+            <p className="text-xs text-gray-500 mb-0.5">Years</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">{yrs}</p>
           </div>
         </div>
@@ -1541,7 +1541,7 @@ export function CAGRCalc() {
               <div key={b.name} className="flex items-center justify-between bg-gray-50 dark:bg-gray-800/50 rounded-lg px-4 py-2.5 border border-gray-200 dark:border-gray-700">
                 <span className="text-sm text-gray-600 dark:text-gray-400">{b.name}</span>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-gray-400">{b.cagr}%/yr</span>
+                  <span className="text-xs text-gray-500">{b.cagr}%/yr</span>
                   <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${beats ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400'}`}>
                     {beats ? '✓ Beating' : '✗ Below'}
                   </span>
@@ -1589,7 +1589,7 @@ export function DailyLossLimitCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={balance} onChange={e => setBalance(e.target.value)} placeholder="10000" />
           </div>
         </div>
@@ -1597,7 +1597,7 @@ export function DailyLossLimitCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Daily Loss Limit (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={limitPct} onChange={e => setLimitPct(e.target.value)} step="0.5" min="0.5" placeholder="5" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div>
@@ -1608,9 +1608,9 @@ export function DailyLossLimitCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Use % of Limit</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={usePct} onChange={e => setUsePct(e.target.value)} step="5" min="10" max="100" placeholder="80" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Safety buffer</p>
+          <p className="text-xs text-gray-500 mt-1">Safety buffer</p>
         </div>
       </div>
 
@@ -1618,24 +1618,24 @@ export function DailyLossLimitCalc() {
         <p className="section-label mb-4">Your Daily Risk Plan</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Max Risk per Trade</p>
+            <p className="text-xs text-gray-500 mb-0.5">Max Risk per Trade</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">${fmt(riskPerTrade,2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{fmt(riskPct,2)}% of account</p>
+            <p className="text-xs text-gray-500 mt-0.5">{fmt(riskPct,2)}% of account</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Daily Limit ($)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Daily Limit ($)</p>
             <p className="font-display text-2xl font-bold tabular text-red-600 dark:text-red-400">${fmt(dailyLimit,2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">hard limit</p>
+            <p className="text-xs text-gray-500 mt-0.5">hard limit</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Safe Budget</p>
+            <p className="text-xs text-gray-500 mb-0.5">Safe Budget</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${fmt(safeLimit,2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{usePct}% of limit</p>
+            <p className="text-xs text-gray-500 mt-0.5">{usePct}% of limit</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Max Losing Streak</p>
+            <p className="text-xs text-gray-500 mb-0.5">Max Losing Streak</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">{maxConsecLoss}</p>
-            <p className="text-xs text-gray-400 mt-0.5">before hitting budget</p>
+            <p className="text-xs text-gray-500 mt-0.5">before hitting budget</p>
           </div>
         </div>
       </div>
@@ -1700,7 +1700,7 @@ export function FuturesTickCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of Ticks</label>
           <input className="calc-input" type="number" value={ticks} onChange={e => setTicks(e.target.value)} step="1" min="0" placeholder="10" />
-          <p className="text-xs text-gray-400 mt-1">Tick size: {spec.tick} points each</p>
+          <p className="text-xs text-gray-500 mt-1">Tick size: {spec.tick} points each</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of Contracts</label>
@@ -1712,21 +1712,21 @@ export function FuturesTickCalc() {
         <p className="section-label mb-4">{contract} — {spec.name}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total P&L</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total P&L</p>
             <p className={`font-display text-2xl font-bold tabular ${totalPnL>=0?'text-green-600 dark:text-green-400':'text-red-600 dark:text-red-400'}`}>
               {totalPnL>=0?'+$':'-$'}{fmt(Math.abs(totalPnL),2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Points Moved</p>
+            <p className="text-xs text-gray-500 mb-0.5">Points Moved</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">{fmt(pointsMoved,4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Per Tick Value</p>
+            <p className="text-xs text-gray-500 mb-0.5">Per Tick Value</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${spec.tickValue}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Per Point Value</p>
+            <p className="text-xs text-gray-500 mb-0.5">Per Point Value</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${spec.pointValue}</p>
           </div>
         </div>
@@ -1737,7 +1737,7 @@ export function FuturesTickCalc() {
             {label:'Point Value', val:'$'+spec.pointValue},
           ].map(i=>(
             <div key={i.label} className="bg-white dark:bg-gray-900 rounded-lg p-2.5 border border-gray-200 dark:border-gray-700 text-center">
-              <p className="text-gray-400">{i.label}</p>
+              <p className="text-gray-500">{i.label}</p>
               <p className="font-semibold text-gray-700 dark:text-gray-300 mt-0.5">{i.val}</p>
             </div>
           ))}
@@ -1778,32 +1778,32 @@ export function DividendYieldCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Share Price (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={sharePrice} onChange={e => setSharePrice(e.target.value)} step="0.01" placeholder="100" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Annual Dividend / Share</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={annualDiv} onChange={e => setAnnualDiv(e.target.value)} step="0.01" placeholder="4" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Quarterly × 4 = annual</p>
+          <p className="text-xs text-gray-500 mt-1">Quarterly × 4 = annual</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Investment Amount</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={investment} onChange={e => setInvestment(e.target.value)} placeholder="10000" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Purchase Price</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={purchasePrice} onChange={e => setPurchasePrice(e.target.value)} step="0.01" placeholder="Same as share price" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">For yield on cost</p>
+          <p className="text-xs text-gray-500 mt-1">For yield on cost</p>
         </div>
       </div>
 
@@ -1811,21 +1811,21 @@ export function DividendYieldCalc() {
         <p className="section-label mb-4">Dividend Income</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Dividend Yield</p>
+            <p className="text-xs text-gray-500 mb-0.5">Dividend Yield</p>
             <p className={`font-display text-3xl font-bold tabular ${yieldColor}`}>{fmt(yield_,2)}%</p>
-            <p className="text-xs text-gray-400 mt-0.5">current yield</p>
+            <p className="text-xs text-gray-500 mt-0.5">current yield</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Annual Income</p>
+            <p className="text-xs text-gray-500 mb-0.5">Annual Income</p>
             <p className="font-display text-2xl font-bold tabular text-green-600 dark:text-green-400">${fmt(annualInc,2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{shares} shares × ${div}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{shares} shares × ${div}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Monthly Income</p>
+            <p className="text-xs text-gray-500 mb-0.5">Monthly Income</p>
             <p className="font-display text-2xl font-bold tabular text-green-600 dark:text-green-400">${fmt(monthlyInc,2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Quarterly Income</p>
+            <p className="text-xs text-gray-500 mb-0.5">Quarterly Income</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">${fmt(quarterlyInc,2)}</p>
           </div>
         </div>
@@ -1894,23 +1894,23 @@ export function FundingRateCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Position Size (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={posSize} onChange={e => setPosSize(e.target.value)} placeholder="10000" min="0" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Notional value (leverage × margin)</p>
+          <p className="text-xs text-gray-500 mt-1">Notional value (leverage × margin)</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Funding Rate (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={fundingRate} onChange={e => setFundingRate(e.target.value)} step="0.001" placeholder="0.01" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Negative = shorts pay longs</p>
+          <p className="text-xs text-gray-500 mt-1">Negative = shorts pay longs</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of funding settlements</label>
           <input className="calc-input" type="number" value={periods} onChange={e => setPeriods(e.target.value)} step="1" min="1" placeholder="3" />
-          <p className="text-xs text-gray-400 mt-1">Daily projection uses the funding periods per day entered above.</p>
+          <p className="text-xs text-gray-500 mt-1">Daily projection uses the funding periods per day entered above.</p>
         </div>
       </div>
 
@@ -1918,19 +1918,19 @@ export function FundingRateCalc() {
         <p className={`text-xs font-semibold mb-4 ${resultColor}`}>{verdict} — {absRate}% per settlement</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Per Settlement</p>
+            <p className="text-xs text-gray-500 mb-0.5">Per Settlement</p>
             <p className={`font-display text-2xl font-bold tabular ${resultColor}`}>${fmt(Math.abs(feePerPeriod), 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total ({per} periods)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total ({per} periods)</p>
             <p className={`font-display text-2xl font-bold tabular ${resultColor}`}>${fmt(Math.abs(totalFee), 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Daily (selected frequency)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Daily (selected frequency)</p>
             <p className={`font-display text-2xl font-bold tabular ${resultColor}`}>${fmt(Math.abs(dailyFee), 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Weekly</p>
+            <p className="text-xs text-gray-500 mb-0.5">Weekly</p>
             <p className={`font-display text-2xl font-bold tabular ${resultColor}`}>${fmt(Math.abs(weeklyFee), 2)}</p>
           </div>
         </div>
@@ -1964,7 +1964,7 @@ export function SpreadCostCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Spread (pips)</label>
           <input className="calc-input" type="number" value={spread} onChange={e => setSpread(e.target.value)} step="0.1" min="0" placeholder="1.2" />
-          <p className="text-xs text-gray-400 mt-1">EUR/USD ECN ≈ 0.1–0.5</p>
+          <p className="text-xs text-gray-500 mt-1">EUR/USD ECN ≈ 0.1–0.5</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Lot Size</label>
@@ -1973,10 +1973,10 @@ export function SpreadCostCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip Value (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={pipValue} onChange={e => setPipValue(e.target.value)} step="0.1" min="0" placeholder="10" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">EUR/USD 1 lot = $10</p>
+          <p className="text-xs text-gray-500 mt-1">EUR/USD 1 lot = $10</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Trades per Day</label>
@@ -1994,9 +1994,9 @@ export function SpreadCostCalc() {
             { label: 'Per Year',   value: costPerYear,   note: '252 trading days' },
           ].map(item => (
             <div key={item.label}>
-              <p className="text-xs text-gray-400 mb-0.5">{item.label}</p>
+              <p className="text-xs text-gray-500 mb-0.5">{item.label}</p>
               <p className="font-display text-2xl font-bold tabular text-red-600 dark:text-red-400">${fmt(item.value, 2)}</p>
-              <p className="text-xs text-gray-400 mt-0.5">{item.note}</p>
+              <p className="text-xs text-gray-500 mt-0.5">{item.note}</p>
             </div>
           ))}
         </div>
@@ -2044,18 +2044,18 @@ export function ProfitFactorCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gross Profit (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={grossProfit} onChange={e => setGrossProfit(e.target.value)} placeholder="8200" min="0" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Sum of all winning trades</p>
+          <p className="text-xs text-gray-500 mt-1">Sum of all winning trades</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gross Loss (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={grossLoss} onChange={e => setGrossLoss(e.target.value)} placeholder="4100" min="0" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Sum of all losing trades</p>
+          <p className="text-xs text-gray-500 mt-1">Sum of all losing trades</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Winning Trades</label>
@@ -2071,21 +2071,21 @@ export function ProfitFactorCalc() {
         <p className={`text-xs font-semibold mb-4 ${rating.color}`}>Strategy Rating: {rating.label}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Profit Factor</p>
+            <p className="text-xs text-gray-500 mb-0.5">Profit Factor</p>
             <p className={`font-display text-3xl font-bold tabular ${rating.color}`}>{pf === Infinity ? '∞ (no losses)' : fmt(pf, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Net Profit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Net Profit</p>
             <p className={`font-display text-2xl font-bold tabular ${netProfit >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
               {netProfit >= 0 ? '+$' : '-$'}{fmt(Math.abs(netProfit), 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Win Rate</p>
+            <p className="text-xs text-gray-500 mb-0.5">Win Rate</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">{fmt(winRate, 1)}%</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Trades</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Trades</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">{totalTrades}</p>
           </div>
         </div>
@@ -2171,12 +2171,12 @@ export function AtrStopLossCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">ATR Value (pips)</label>
           <input className="calc-input" type="number" value={atr} onChange={e => setAtr(e.target.value)} step="1" min="0" placeholder="80" />
-          <p className="text-xs text-gray-400 mt-1">14-period ATR from chart</p>
+          <p className="text-xs text-gray-500 mt-1">14-period ATR from chart</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">ATR Multiplier</label>
           <input className="calc-input" type="number" value={multiplier} onChange={e => setMultiplier(e.target.value)} step="0.5" min="0.5" placeholder="2" />
-          <p className="text-xs text-gray-400 mt-1">1.5 tight · 2 standard · 3 wide</p>
+          <p className="text-xs text-gray-500 mt-1">1.5 tight · 2 standard · 3 wide</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Entry Price</label>
@@ -2193,29 +2193,29 @@ export function AtrStopLossCalc() {
         <div className="space-y-3">
           <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
             <div>
-              <p className="text-xs text-gray-400">Stop Loss ({fmt(mul,1)}× ATR)</p>
-              <p className="text-xs text-gray-400 mt-0.5">{fmt(stopDist, 1)} pips from entry</p>
+              <p className="text-xs text-gray-500">Stop Loss ({fmt(mul,1)}× ATR)</p>
+              <p className="text-xs text-gray-500 mt-0.5">{fmt(stopDist, 1)} pips from entry</p>
             </div>
             <p className={`font-display text-xl font-bold tabular ${slColor}`}>{fmt(sl, 4)}</p>
           </div>
           <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
             <div>
-              <p className="text-xs text-gray-400">Take Profit 1 (1R)</p>
-              <p className="text-xs text-gray-400 mt-0.5">{fmt(stopDist, 1)} pips from entry</p>
+              <p className="text-xs text-gray-500">Take Profit 1 (1R)</p>
+              <p className="text-xs text-gray-500 mt-0.5">{fmt(stopDist, 1)} pips from entry</p>
             </div>
             <p className={`font-display text-xl font-bold tabular ${tpColor}`}>{fmt(tp1, 4)}</p>
           </div>
           <div className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
             <div>
-              <p className="text-xs text-gray-400">Take Profit 2 ({rr}R)</p>
-              <p className="text-xs text-gray-400 mt-0.5">{fmt(stopDist * rr, 1)} pips from entry</p>
+              <p className="text-xs text-gray-500">Take Profit 2 ({rr}R)</p>
+              <p className="text-xs text-gray-500 mt-0.5">{fmt(stopDist * rr, 1)} pips from entry</p>
             </div>
             <p className={`font-display text-xl font-bold tabular ${tpColor}`}>{fmt(tp2, 4)}</p>
           </div>
           <div className="flex items-center justify-between p-3 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
             <div>
-              <p className="text-xs text-gray-400">Take Profit 3 (3R)</p>
-              <p className="text-xs text-gray-400 mt-0.5">{fmt(stopDist * 3, 1)} pips from entry</p>
+              <p className="text-xs text-gray-500">Take Profit 3 (3R)</p>
+              <p className="text-xs text-gray-500 mt-0.5">{fmt(stopDist * 3, 1)} pips from entry</p>
             </div>
             <p className={`font-display text-xl font-bold tabular ${tpColor}`}>{fmt(tp3, 4)}</p>
           </div>
@@ -2264,14 +2264,14 @@ export function StockProfitCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Buy Price (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={buyPrice} onChange={e => setBuyPrice(e.target.value)} step="0.01" placeholder="50" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Sell Price (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={sellPrice} onChange={e => setSellPrice(e.target.value)} step="0.01" placeholder="65" />
           </div>
         </div>
@@ -2284,15 +2284,15 @@ export function StockProfitCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Buy Commission (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={buyComm} onChange={e => setBuyComm(e.target.value)} step="0.01" min="0" placeholder="0" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Leave 0 for zero-commission brokers</p>
+          <p className="text-xs text-gray-500 mt-1">Leave 0 for zero-commission brokers</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Sell Commission (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={sellComm} onChange={e => setSellComm(e.target.value)} step="0.01" min="0" placeholder="0" />
           </div>
         </div>
@@ -2302,25 +2302,25 @@ export function StockProfitCalc() {
         <p className={`text-xs font-semibold mb-4 ${pnlColor}`}>{isGain ? '✓ Profitable Trade' : '✗ Losing Trade'}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Net Profit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Net Profit</p>
             <p className={`font-display text-2xl font-bold tabular ${pnlColor}`}>
               {isGain ? '+$' : '-$'}{fmt(Math.abs(netProfit), 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">ROI</p>
+            <p className="text-xs text-gray-500 mb-0.5">ROI</p>
             <p className={`font-display text-2xl font-bold tabular ${pnlColor}`}>
               {isGain ? '+' : ''}{fmt(roi, 2)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Invested</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Invested</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">
               ${fmt(totalCost, 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Commission</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Commission</p>
             <p className="font-display text-2xl font-bold tabular text-gray-500 dark:text-gray-400">
               ${fmt(totalComm, 2)}
             </p>
@@ -2374,7 +2374,7 @@ export function CryptoProfitCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Investment Amount (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={investment} onChange={e => setInvestment(e.target.value)} placeholder="1000" min="0" />
           </div>
         </div>
@@ -2382,23 +2382,23 @@ export function CryptoProfitCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Exchange Fee (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={fee} onChange={e => setFee(e.target.value)} step="0.01" min="0" placeholder="0.1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Binance 0.1% · Coinbase 0.5% · Kraken 0.26%</p>
+          <p className="text-xs text-gray-500 mt-1">Binance 0.1% · Coinbase 0.5% · Kraken 0.26%</p>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Buy Price (USD per coin)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={buyPrice} onChange={e => setBuyPrice(e.target.value)} placeholder="50000" min="0" />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Sell Price (USD per coin)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={sellPrice} onChange={e => setSellPrice(e.target.value)} placeholder="65000" min="0" />
           </div>
         </div>
@@ -2408,25 +2408,25 @@ export function CryptoProfitCalc() {
         <p className={`text-xs font-semibold mb-4 ${pnlColor}`}>{isGain ? '✓ Profitable Trade' : '✗ Losing Trade'}</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Net Profit</p>
+            <p className="text-xs text-gray-500 mb-0.5">Net Profit</p>
             <p className={`font-display text-2xl font-bold tabular ${pnlColor}`}>
               {isGain ? '+$' : '-$'}{fmt(Math.abs(netProfit), 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">ROI</p>
+            <p className="text-xs text-gray-500 mb-0.5">ROI</p>
             <p className={`font-display text-2xl font-bold tabular ${pnlColor}`}>
               {isGain ? '+' : ''}{fmt(roi, 2)}%
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Coins Bought</p>
+            <p className="text-xs text-gray-500 mb-0.5">Coins Bought</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">
               {fmt(coins, 6)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Fees</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Fees</p>
             <p className="font-display text-2xl font-bold tabular text-gray-500 dark:text-gray-400">
               ${fmt(totalFees, 2)}
             </p>
@@ -2486,7 +2486,7 @@ export function MartingaleCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Multiplier</label>
           <input className="calc-input" type="number" value={multiplier} onChange={e => setMultiplier(e.target.value)} step="0.1" min="1.1" placeholder="2" />
-          <p className="text-xs text-gray-400 mt-1">Classic = 2.0</p>
+          <p className="text-xs text-gray-500 mt-1">Classic = 2.0</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Levels</label>
@@ -2588,7 +2588,7 @@ export function LiquidationCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Entry Price (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={entryPrice} onChange={e => setEntryPrice(e.target.value)} placeholder="65000" min="0" />
           </div>
         </div>
@@ -2598,15 +2598,15 @@ export function LiquidationCalc() {
             <input className="calc-input pr-7" type="number" value={leverage} onChange={e => setLeverage(e.target.value)} step="1" min="1" max="125" placeholder="10" />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">x</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Max 125x on Binance Futures</p>
+          <p className="text-xs text-gray-500 mt-1">Max 125x on Binance Futures</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Maintenance Margin (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={maintMargin} onChange={e => setMaintMargin(e.target.value)} step="0.1" min="0" placeholder="0.5" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Binance ≈ 0.5% · Bybit ≈ 0.5%</p>
+          <p className="text-xs text-gray-500 mt-1">Binance ≈ 0.5% · Bybit ≈ 0.5%</p>
         </div>
       </div>
 
@@ -2614,25 +2614,25 @@ export function LiquidationCalc() {
         <p className={`text-xs font-semibold mb-4 ${riskColor}`}>{riskLabel} — {lev}x {side.toUpperCase()}</p>
         <div className="grid grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Liquidation Price</p>
+            <p className="text-xs text-gray-500 mb-0.5">Liquidation Price</p>
             <p className={`font-display text-2xl font-bold tabular ${side === 'long' ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
               ${fmt(liqPrice, 2)}
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">{side === 'long' ? 'below' : 'above'} entry</p>
+            <p className="text-xs text-gray-500 mt-0.5">{side === 'long' ? 'below' : 'above'} entry</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Distance from Entry</p>
+            <p className="text-xs text-gray-500 mb-0.5">Distance from Entry</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">
               {fmt(distancePct, 2)}%
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">${fmt(distancePips, 2)} move</p>
+            <p className="text-xs text-gray-500 mt-0.5">${fmt(distancePips, 2)} move</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Entry Price</p>
+            <p className="text-xs text-gray-500 mb-0.5">Entry Price</p>
             <p className="font-display text-2xl font-bold tabular text-gray-800 dark:text-gray-200">
               ${fmt(ep, 2)}
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">{lev}x leverage</p>
+            <p className="text-xs text-gray-500 mt-0.5">{lev}x leverage</p>
           </div>
         </div>
 
@@ -2674,12 +2674,12 @@ export function XauusdPipCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Lot Size</label>
           <input className="calc-input" type="number" value={lots} onChange={e => setLots(e.target.value)} step="0.01" min="0.01" placeholder="1" />
-          <p className="text-xs text-gray-400 mt-1">1 lot = 100 oz of gold</p>
+          <p className="text-xs text-gray-500 mt-1">1 lot = 100 oz of gold</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip Movement</label>
           <input className="calc-input" type="number" value={pips} onChange={e => setPips(e.target.value)} step="1" min="0" placeholder="100" />
-          <p className="text-xs text-gray-400 mt-1">1 pip = $0.01 price change in XAUUSD</p>
+          <p className="text-xs text-gray-500 mt-1">1 pip = $0.01 price change in XAUUSD</p>
         </div>
       </div>
 
@@ -2687,18 +2687,18 @@ export function XauusdPipCalc() {
         <p className="section-label mb-4">Gold Pip Calculation</p>
         <div className="grid grid-cols-2 gap-5 mb-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Pip Value (per pip)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Pip Value (per pip)</p>
             <p className="font-display text-2xl font-bold tabular text-amber-500 dark:text-amber-400">
               ${fmt(pipValue, 2)}
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">per pip at {lots} lot{parseFloat(lots) !== 1 ? 's' : ''}</p>
+            <p className="text-xs text-gray-500 mt-0.5">per pip at {lots} lot{parseFloat(lots) !== 1 ? 's' : ''}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total P&L ({pips} pips)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total P&L ({pips} pips)</p>
             <p className={`font-display text-2xl font-bold tabular ${totalPnL >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
               ${fmt(Math.abs(totalPnL), 2)}
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">for {pips} pip move</p>
+            <p className="text-xs text-gray-500 mt-0.5">for {pips} pip move</p>
           </div>
         </div>
 
@@ -2748,15 +2748,15 @@ export function RebateCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Lots per Month</label>
           <input className="calc-input" type="number" value={lotsPerMonth} onChange={e => setLotsPerMonth(e.target.value)} step="1" min="0" placeholder="100" />
-          <p className="text-xs text-gray-400 mt-1">Standard lots traded monthly</p>
+          <p className="text-xs text-gray-500 mt-1">Standard lots traded monthly</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rebate per Lot (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={rebatePerLot} onChange={e => setRebatePerLot(e.target.value)} step="0.10" min="0" placeholder="5" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">Typical range: $2–$8/lot</p>
+          <p className="text-xs text-gray-500 mt-1">Typical range: $2–$8/lot</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Trading Days / Month</label>
@@ -2768,19 +2768,19 @@ export function RebateCalc() {
         <p className="section-label mb-4">Rebate Earnings</p>
         <div className="grid grid-cols-3 gap-5 mb-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Daily</p>
+            <p className="text-xs text-gray-500 mb-0.5">Daily</p>
             <p className="font-display text-2xl font-bold tabular text-green-600 dark:text-green-400">${fmt(daily, 2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{fmt(lotsDay, 1)} lots/day</p>
+            <p className="text-xs text-gray-500 mt-0.5">{fmt(lotsDay, 1)} lots/day</p>
           </div>
           <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 border border-amber-200 dark:border-amber-800 -m-1">
-            <p className="text-xs text-gray-400 mb-0.5">Monthly</p>
+            <p className="text-xs text-gray-500 mb-0.5">Monthly</p>
             <p className="font-display text-2xl font-bold tabular text-amber-600 dark:text-amber-400">${fmt(monthly, 2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{lots} lots × ${rebate}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{lots} lots × ${rebate}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Annual</p>
+            <p className="text-xs text-gray-500 mb-0.5">Annual</p>
             <p className="font-display text-2xl font-bold tabular text-green-600 dark:text-green-400">${fmt(annual, 2)}</p>
-            <p className="text-xs text-gray-400 mt-0.5">monthly × 12</p>
+            <p className="text-xs text-gray-500 mt-0.5">monthly × 12</p>
           </div>
         </div>
 
@@ -2793,14 +2793,14 @@ export function RebateCalc() {
               <div key={r.broker} className="flex items-center justify-between text-sm bg-white dark:bg-gray-900 rounded-lg px-4 py-2.5 border border-gray-200 dark:border-gray-700">
                 <span className="text-gray-600 dark:text-gray-400">{r.broker}</span>
                 <div className="flex items-center gap-4">
-                  <span className="text-xs text-gray-400">${r.rate.toFixed(2)}/lot</span>
+                  <span className="text-xs text-gray-500">${r.rate.toFixed(2)}/lot</span>
                   <span className="font-semibold text-gray-800 dark:text-gray-200 tabular">${fmt(est, 2)}/mo</span>
                 </div>
               </div>
             );
           })}
         </div>
-        <p className="text-xs text-gray-400 mt-2">* Rates are approximate. Actual rebates vary by volume tier and account type.</p>
+        <p className="text-xs text-gray-500 mt-2">* Rates are approximate. Actual rebates vary by volume tier and account type.</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Rebates are conditional cost offsets. Check eligibility, spreads, commission, volume terms and intermediary conflicts; trading more to earn rebates can increase losses.</p>
     </CalculatorForm>
@@ -2877,7 +2877,7 @@ export function SwapCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Number of Nights</label>
           <input className="calc-input" type="number" value={days} onChange={e => setDays(e.target.value)} min="1" placeholder="3" />
-          <p className="text-xs text-gray-400 mt-1">Wednesday = 3 nights (triple swap)</p>
+          <p className="text-xs text-gray-500 mt-1">Wednesday = 3 nights (triple swap)</p>
         </div>
       </div>
 
@@ -2885,25 +2885,25 @@ export function SwapCalc() {
         <p className="section-label mb-4">Swap Result</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Total Swap ({d} nights)</p>
+            <p className="text-xs text-gray-500 mb-0.5">Total Swap ({d} nights)</p>
             <p className={`font-display text-3xl font-bold tabular ${isPositive ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
               {isPositive ? '+' : ''}{fmt(total, 2)} <span className="text-sm">USD</span>
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Per Night</p>
+            <p className="text-xs text-gray-500 mb-0.5">Per Night</p>
             <p className={`font-display text-2xl font-bold tabular ${perNight >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
               {perNight >= 0 ? '+' : ''}{fmt(perNight, 2)}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Swap Type</p>
+            <p className="text-xs text-gray-500 mb-0.5">Swap Type</p>
             <p className={`font-semibold text-lg ${isPositive ? 'text-green-600 dark:text-green-400' : 'text-gray-700 dark:text-gray-300'}`}>
               {isPositive ? '✓ Credit' : '✗ Debit'}
             </p>
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">
+        <p className="text-xs text-gray-500 mt-3">
           Swap rate for {pair} {direction}: {rate >= 0 ? '+' : ''}{fmt(rate, 2)} USD/lot/night · Rates are indicative and vary by broker.
         </p>
       </div>
@@ -2982,7 +2982,7 @@ export function PivotPointCalc() {
               key={t}
               onClick={() => setType(t)}
               className={`py-1.5 px-2 rounded-lg text-xs font-semibold border transition-colors capitalize ${type === t
-                ? 'bg-amber-500 text-white border-amber-500'
+                ? 'bg-amber-700 text-white border-amber-700'
                 : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700'}`}
             >
               {t}
@@ -3079,7 +3079,7 @@ export function FibonacciCalc() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-2">Highlighted = key levels</p>
+          <p className="text-xs text-gray-500 mt-2">Highlighted = key levels</p>
         </div>
 
         {/* Extension levels */}
@@ -3093,7 +3093,7 @@ export function FibonacciCalc() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-2">Use for take-profit targets</p>
+          <p className="text-xs text-gray-500 mt-2">Use for take-profit targets</p>
 
           {/* Range info */}
           <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
@@ -3138,10 +3138,10 @@ export function PipToDollarCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip Value per Std Lot (USD)</label>
           <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={pipVal} onChange={e => setPipVal(e.target.value)} step="0.01" placeholder="10" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">EUR/USD = $10 · USD/JPY ≈ $9.50</p>
+          <p className="text-xs text-gray-500 mt-1">EUR/USD = $10 · USD/JPY ≈ $9.50</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Lot Size</label>
@@ -3152,7 +3152,7 @@ export function PipToDollarCalc() {
       {/* Result */}
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Dollar Value</p>
-        <p className="font-display text-4xl font-bold text-amber-500 dark:text-amber-400 tabular mb-4">
+        <p className="font-display text-4xl font-bold text-amber-600 dark:text-amber-400 tabular mb-4">
           ${fmt(total, 2)}
         </p>
         <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -3160,7 +3160,7 @@ export function PipToDollarCalc() {
           <div className="grid grid-cols-3 gap-3">
             {LOT_TABLE.map(lt => (
               <div key={lt.label}>
-                <p className="text-xs text-gray-400">{lt.label}</p>
+                <p className="text-xs text-gray-500">{lt.label}</p>
                 <p className="font-semibold text-gray-700 dark:text-gray-300 tabular">${fmt(p * pv * lt.value, 2)}</p>
               </div>
             ))}
@@ -3182,7 +3182,7 @@ export function PipToDollarCalc() {
             <div key={r.label} className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
               <p className="font-bold text-amber-600 dark:text-amber-400 text-lg tabular">{r.val}</p>
               <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mt-0.5">{r.label}</p>
-              <p className="text-xs text-gray-400">{r.sub}</p>
+              <p className="text-xs text-gray-500">{r.sub}</p>
             </div>
           ))}
         </div>
@@ -3223,7 +3223,7 @@ export function PipToDollarCalc() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mt-2">Values for 1 standard lot. Mini lot = ÷10. Micro lot = ÷100. JPY pip value varies with exchange rate.</p>
+        <p className="text-xs text-gray-500 mt-2">Values for 1 standard lot. Mini lot = ÷10. Micro lot = ÷100. JPY pip value varies with exchange rate.</p>
       </div>
     </CalculatorForm>
   );
@@ -3270,7 +3270,7 @@ export function FuturesPositionSizeCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={account} onChange={e => setAccount(e.target.value)} placeholder="50000" />
           </div>
         </div>
@@ -3278,28 +3278,28 @@ export function FuturesPositionSizeCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Per Trade (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={risk} onChange={e => setRisk(e.target.value)} step="0.1" placeholder="1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Stop Loss (ticks)</label>
           <input className="calc-input" type="number" value={slTicks} onChange={e => setSlTicks(e.target.value)} placeholder="10" min="1" />
-          <p className="text-xs text-gray-400 mt-1">1 tick = {spec.tickSize} points = ${fmt(spec.tickValue, 2)} for {contract}</p>
+          <p className="text-xs text-gray-500 mt-1">1 tick = {spec.tickSize} points = ${fmt(spec.tickValue, 2)} for {contract}</p>
         </div>
       </div>
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Contracts to Trade</p>
-            <p className="font-display text-4xl font-bold text-amber-500 dark:text-amber-400 tabular">{contracts}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Max Dollar Risk</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Contracts to Trade</p>
+            <p className="font-display text-4xl font-bold text-amber-600 dark:text-amber-400 tabular">{contracts}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Max Dollar Risk</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(dollarRisk, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Actual Risk</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Actual Risk</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(actualRisk, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Risk Per Contract</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Risk Per Contract</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(riskPerContract, 2)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Stop = {sl} ticks x ${spec.tickValue}/tick = ${fmt(riskPerContract, 2)} per contract</p>
+        <p className="text-xs text-gray-500 mt-3">Stop = {sl} ticks x ${spec.tickValue}/tick = ${fmt(riskPerContract, 2)} per contract</p>
       </div>
     </CalculatorForm>
   );
@@ -3358,7 +3358,7 @@ export function FuturesPLCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Commission round-trip per contract ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={commission} onChange={e => setCommission(e.target.value)} step="0.5" />
           </div>
         </div>
@@ -3366,16 +3366,16 @@ export function FuturesPLCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Net P&L</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Net P&L</p>
             <p className={`font-display text-4xl font-bold tabular ${plColor}`}>{netPL >= 0 ? '+' : ''}${fmt(netPL, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Gross P&L</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Gross P&L</p>
             <p className={`font-display text-2xl font-bold tabular ${grossPL >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>${fmt(grossPL, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Move (ticks)</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Move (ticks)</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(ticks, 1)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Move (points)</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Move (points)</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(pointMove, 2)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Commission: ${fmt(totalComm, 2)} total | Tick value: ${spec.tickValue} per tick</p>
+        <p className="text-xs text-gray-500 mt-3">Commission: ${fmt(totalComm, 2)} total | Tick value: ${spec.tickValue} per tick</p>
       </div>
     </CalculatorForm>
   );
@@ -3414,16 +3414,16 @@ export function FuturesMarginCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Margin Requirements</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Initial Margin (total)</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(initTotal, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Maintenance Margin</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Initial Margin (total)</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(initTotal, 0)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Maintenance Margin</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(maintTotal, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Illustrative 20% Cushion</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Illustrative 20% Cushion</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(recommended, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Contract (initial)</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Contract (initial)</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(Number(initialMargin), 0)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Enter current broker margins above. Cushion example = initial margin + 20%; it is not a recommended account size.</p>
+        <p className="text-xs text-gray-500 mt-3">Enter current broker margins above. Cushion example = initial margin + 20%; it is not a recommended account size.</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Presets are hypothetical margin examples, not current exchange or broker requirements. Enter the actual initial and maintenance margin. The 20% cushion is illustrative and does not bound losses.</p>
     </CalculatorForm>
@@ -3490,17 +3490,17 @@ export function FuturesTPSLCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">R:R Ratio</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">R:R Ratio</p>
             <p className={`font-display text-4xl font-bold tabular ${rrColor}`}>{fmt(rr, 2)}:1</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Dollar Risk</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Dollar Risk</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(dollarRisk, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Dollar Reward</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Dollar Reward</p>
             <p className="font-display text-2xl font-bold text-green-600 dark:text-green-400 tabular">${fmt(dollarRew, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Stop Loss Price</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Stop Loss Price</p>
             <p className="font-semibold text-red-500 tabular">{fmt(slPrice, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Take Profit Price</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Take Profit Price</p>
             <p className="font-semibold text-green-600 dark:text-green-400 tabular">{fmt(tpPrice, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Min Win Rate</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Min Win Rate</p>
             <p className="font-semibold text-gray-700 dark:text-gray-300 tabular">{fmt(minWinRate, 1)}%</p></div>
         </div>
       </div>
@@ -3546,16 +3546,16 @@ export function FuturesContractValueCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Total Notional Value</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(notionalAll, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Contract</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Total Notional Value</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(notionalAll, 0)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Contract</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(notionalOne, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Effective Leverage</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Effective Leverage</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(leverage, 1)}:1</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Multiplier</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Multiplier</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${spec.multiplier}/pt</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Notional = Price x ${spec.multiplier} multiplier x {n} contracts</p>
+        <p className="text-xs text-gray-500 mt-3">Notional = Price x ${spec.multiplier} multiplier x {n} contracts</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Contract value uses the selected multiplier. Margin is manually supplied; it is collateral, not a maximum loss.</p>
     </CalculatorForm>
@@ -3615,16 +3615,16 @@ export function FuturesRollCostCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Total Roll Cost</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Total Roll Cost</p>
             <p className={`font-display text-3xl font-bold tabular ${costColor}`}>{rollCost > 0 ? '-' : '+'}${fmt(Math.abs(rollCost), 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Contract</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Contract</p>
             <p className={`font-display text-2xl font-bold tabular ${costColor}`}>{rollCostOne > 0 ? '-' : '+'}${fmt(Math.abs(rollCostOne), 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Spread (ticks)</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Spread (ticks)</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(spreadTicks, 1)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Market Structure</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Market Structure</p>
             <p className={`font-semibold ${spread > 0 ? 'text-red-500' : spread < 0 ? 'text-green-600 dark:text-green-400' : 'text-gray-500'}`}>{market}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">{rollCost > 0 ? 'Cost to roll' : 'Credit received on roll'} — Far: {far} vs Near: {near}</p>
+        <p className="text-xs text-gray-500 mt-3">{rollCost > 0 ? 'Cost to roll' : 'Credit received on roll'} — Far: {far} vs Near: {near}</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Signed difference in contract exposure when replacing the near contract with the far contract. This is not an immediate cash charge or a guaranteed realized loss/profit; commissions and slippage are additional.</p>
     </CalculatorForm>
@@ -3654,10 +3654,10 @@ export function FuturesCommissionCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Commission Per Side, Per Contract ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={commPerSide} onChange={e => setCommPerSide(e.target.value)} step="0.01" placeholder="1.50" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">IB: ~$0.85 | Tradovate: ~$0.10 | TD Ameritrade: ~$2.25</p>
+          <p className="text-xs text-gray-500 mt-1">IB: ~$0.85 | Tradovate: ~$0.10 | TD Ameritrade: ~$2.25</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contracts Per Trade</label>
@@ -3675,16 +3675,16 @@ export function FuturesCommissionCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Commission Costs</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Trade (round-trip)</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(roundTrip, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Day</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Trade (round-trip)</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(roundTrip, 2)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Day</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(dailyCost, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Week</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Week</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(weeklyCost, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Per Month</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Per Month</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(monthlyCost, 2)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Round-trip = ${cps}/side x 2 sides x {numC} contracts = ${fmt(roundTrip, 2)} per trade</p>
+        <p className="text-xs text-gray-500 mt-3">Round-trip = ${cps}/side x 2 sides x {numC} contracts = ${fmt(roundTrip, 2)} per trade</p>
       </div>
     </CalculatorForm>
   );
@@ -3717,7 +3717,7 @@ export function FuturesBreakEvenCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Commission Per Side ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={commPerSide} onChange={e => setCommPerSide(e.target.value)} step="0.01" />
           </div>
         </div>
@@ -3729,16 +3729,16 @@ export function FuturesBreakEvenCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Break-Even Point</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Break-Even Ticks</p>
-            <p className="font-display text-4xl font-bold text-amber-500 dark:text-amber-400 tabular">{fmt(beTicks, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Break-Even Points</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Break-Even Ticks</p>
+            <p className="font-display text-4xl font-bold text-amber-600 dark:text-amber-400 tabular">{fmt(beTicks, 2)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Break-Even Points</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(bePoints, 4)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Break-Even ($)</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Break-Even ($)</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(beDollars, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Total Round-Trip Cost</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Total Round-Trip Cost</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(roundTrip, 2)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">{contract} needs to move {fmt(beTicks, 2)} ticks to cover commissions. Tick value = ${spec.tickValue} per tick.</p>
+        <p className="text-xs text-gray-500 mt-3">{contract} needs to move {fmt(beTicks, 2)} ticks to cover commissions. Tick value = ${spec.tickValue} per tick.</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Minimum executable whole ticks needed to cover the entered round-trip commission. Spread, slippage and other fees are excluded.</p>
     </CalculatorForm>
@@ -3776,12 +3776,12 @@ export function FuturesRiskRewardCalc() {
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Stop Loss (ticks)</label>
           <input className="calc-input border-red-200 dark:border-red-900" type="number" value={slTicks} onChange={e => setSlTicks(e.target.value)} min="1" />
-          <p className="text-xs text-gray-400 mt-1">${fmt(sl * spec.tickValue, 2)} risk per contract</p>
+          <p className="text-xs text-gray-500 mt-1">${fmt(sl * spec.tickValue, 2)} risk per contract</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Take Profit (ticks)</label>
           <input className="calc-input border-green-200 dark:border-green-900" type="number" value={tpTicks} onChange={e => setTpTicks(e.target.value)} min="1" />
-          <p className="text-xs text-gray-400 mt-1">${fmt(tp * spec.tickValue, 2)} reward per contract</p>
+          <p className="text-xs text-gray-500 mt-1">${fmt(tp * spec.tickValue, 2)} reward per contract</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contracts</label>
@@ -3795,13 +3795,13 @@ export function FuturesRiskRewardCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">R:R Ratio</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">R:R Ratio</p>
             <p className={`font-display text-4xl font-bold tabular ${rrColor}`}>{fmt(rr, 2)}:1</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Dollar Risk</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Dollar Risk</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(dollarRisk, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Dollar Reward</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Dollar Reward</p>
             <p className="font-display text-2xl font-bold text-green-600 dark:text-green-400 tabular">${fmt(dollarReward, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Min Win Rate</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Min Win Rate</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(minWinRate, 1)}%</p></div>
         </div>
       </div>
@@ -3859,13 +3859,13 @@ export function PropFirmTrailingDrawdownCalc() {
         </>}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Peak Balance Reached ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={peak} onChange={e => setPeak(e.target.value)} />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Current Balance ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={current} onChange={e => setCurrent(e.target.value)} />
           </div>
         </div>
@@ -3873,7 +3873,7 @@ export function PropFirmTrailingDrawdownCalc() {
 
       {/* Risk meter */}
       <div>
-        <div className="flex justify-between text-xs text-gray-400 mb-1">
+        <div className="flex justify-between text-xs text-gray-500 mb-1">
           <span>Safe</span>
           <span className={pctUsed >= 80 ? 'text-red-500 font-semibold' : ''}>{fmt(pctUsed, 1)}% of drawdown used</span>
           <span>Breached</span>
@@ -3886,16 +3886,16 @@ export function PropFirmTrailingDrawdownCalc() {
       <div className={`rounded-xl p-5 border ${safe ? 'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-800' : 'bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700'}`}>
         <p className="section-label mb-4">Drawdown Status</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Drawdown Floor</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(floor, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Distance to Breach</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Drawdown Floor</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(floor, 0)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Distance to Breach</p>
             <p className={`font-display text-2xl font-bold tabular ${distance <= 0 ? 'text-red-500' : distance < maxLoss * 0.2 ? 'text-amber-500' : 'text-green-600 dark:text-green-400'}`}>${fmt(distance, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Max Allowed Loss</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Max Allowed Loss</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(maxLoss, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Starting Balance</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Starting Balance</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(startBal, 0)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Floor = Peak (${fmt(peakBal, 0)}) − Max Loss (${fmt(maxLoss, 0)}) = ${fmt(floor, 0)}. Trailing drawdown follows your peak balance.</p>
+        <p className="text-xs text-gray-500 mt-3">Floor = Peak (${fmt(peakBal, 0)}) − Max Loss (${fmt(maxLoss, 0)}) = ${fmt(floor, 0)}. Trailing drawdown follows your peak balance.</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Choose the model that matches your rules. Trailing mode has no floor lock or cap; use the qualifying high-water mark under your provider’s intraday or end-of-day policy. Equity includes open P&L and charges.</p>
     </CalculatorForm>
@@ -3941,7 +3941,7 @@ export function PropFirmDailyLossCalc() {
         </>}
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Losses So Far Today ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={lostToday} onChange={e => setLostToday(e.target.value)} placeholder="0" />
           </div>
         </div>
@@ -3949,7 +3949,7 @@ export function PropFirmDailyLossCalc() {
 
       {/* Risk meter */}
       <div>
-        <div className="flex justify-between text-xs text-gray-400 mb-1">
+        <div className="flex justify-between text-xs text-gray-500 mb-1">
           <span>Day Start</span>
           <span className={pctUsed >= 80 ? 'text-red-500 font-semibold' : ''}>{fmt(pctUsed, 1)}% used</span>
           <span>Daily Limit</span>
@@ -3962,17 +3962,17 @@ export function PropFirmDailyLossCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Today&apos;s Loss Room</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Remaining Room</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Remaining Room</p>
             <p className={`font-display text-4xl font-bold tabular ${remaining === 0 ? 'text-red-500' : remaining < dailyLimit * 0.3 ? 'text-amber-500' : 'text-green-600 dark:text-green-400'}`}>${fmt(remaining, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Daily Loss Limit</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Daily Loss Limit</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(dailyLimit, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Lost Today</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Lost Today</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(lost, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Rule</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Rule</p>
             <p className="font-semibold text-gray-700 dark:text-gray-300">{ddPct}% / day</p></div>
         </div>
         {pctUsed >= 80 && <p className="text-xs text-red-500 mt-3 font-medium">⚠ You are close to the daily limit. Consider stopping trading for today.</p>}
-        {pctUsed < 80 && <p className="text-xs text-gray-400 mt-3">Stop trading voluntarily at 50–60% of the daily limit to protect your account.</p>}
+        {pctUsed < 80 && <p className="text-xs text-gray-500 mt-3">Stop trading voluntarily at 50–60% of the daily limit to protect your account.</p>}
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Enter the loss already counted under your account’s rule, including open P&L and charges where required. This does not model resets, daily profit offsets or overall drawdown limits.</p>
     </CalculatorForm>
@@ -4033,7 +4033,7 @@ export function PropFirmProfitTargetCalc() {
         </>}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Earned So Far ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={earnedSoFar} onChange={e => setEarnedSoFar(e.target.value)} />
           </div>
         </div>
@@ -4043,7 +4043,7 @@ export function PropFirmProfitTargetCalc() {
         </div>
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Avg Daily Profit ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={avgDaily} onChange={e => setAvgDaily(e.target.value)} />
           </div>
         </div>
@@ -4051,7 +4051,7 @@ export function PropFirmProfitTargetCalc() {
 
       {/* Progress bar */}
       <div>
-        <div className="flex justify-between text-xs text-gray-400 mb-1">
+        <div className="flex justify-between text-xs text-gray-500 mb-1">
           <span>$0</span>
           <span>{fmt(pctDone, 1)}% complete</span>
           <span>${fmt(target, 0)} target</span>
@@ -4067,13 +4067,13 @@ export function PropFirmProfitTargetCalc() {
           <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${onTrack ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}`}>{onTrack ? '✓ On Track' : '✗ Behind Pace'}</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Profit Target</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(target, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Still Needed</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Profit Target</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(target, 0)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Still Needed</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(remaining, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Required Daily</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Required Daily</p>
             <p className={`font-display text-2xl font-bold tabular ${needPerDay > daily && daily > 0 ? 'text-red-500' : 'text-green-600 dark:text-green-400'}`}>${fmt(needPerDay, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Your Avg Daily</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Your Avg Daily</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(daily, 0)}</p></div>
         </div>
       </div>
@@ -4106,19 +4106,19 @@ export function PropFirmConsistencyCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Consistency Rule (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={rulePct} onChange={e => setRulePct(e.target.value)} step="5" placeholder="30" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Enter your account’s actual rule; definitions vary by product and start date.</p>
+          <p className="text-xs text-gray-500 mt-1">Enter your account’s actual rule; definitions vary by product and start date.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Total Profit Earned ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={totalProfit} onChange={e => setTotalProfit(e.target.value)} />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Best Single Day Profit ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={bestDay} onChange={e => setBestDay(e.target.value)} />
           </div>
         </div>
@@ -4130,13 +4130,13 @@ export function PropFirmConsistencyCalc() {
           <span className={`text-sm font-bold px-3 py-0.5 rounded-full ${passes ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>{passes ? '✓ PASS' : '✗ FAIL'}</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Max Allowed Best Day</p>
-            <p className="font-display text-3xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(maxAllowed, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Your Best Day</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Max Allowed Best Day</p>
+            <p className="font-display text-3xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(maxAllowed, 0)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Your Best Day</p>
             <p className={`font-display text-2xl font-bold tabular ${passes ? 'text-green-600 dark:text-green-400' : 'text-red-500'}`}>${fmt(best, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Best Day % of Total</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Best Day % of Total</p>
             <p className={`font-display text-2xl font-bold tabular ${passes ? 'text-green-600 dark:text-green-400' : 'text-red-500'}`}>{fmt(actualPct, 1)}%</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">More Profit Needed</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">More Profit Needed</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(moreNeeded, 0)}</p></div>
         </div>
         {!passes && <p className="text-xs text-red-600 dark:text-red-400 mt-3">Keep trading to earn ${fmt(moreNeeded, 0)} more so your best day (${fmt(best, 0)}) is under {rule}% of total profits (${fmt(minTotal, 0)} needed).</p>}
@@ -4203,13 +4203,13 @@ export function PropFirmPassRateCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Average Win ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={avgWin} onChange={e => setAvgWin(e.target.value)} />
           </div>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Average Loss ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={avgLoss} onChange={e => setAvgLoss(e.target.value)} />
           </div>
         </div>
@@ -4237,16 +4237,16 @@ export function PropFirmPassRateCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Simulation Results (500 runs × 30 days)</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Est. Pass Rate</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Est. Pass Rate</p>
             <p className={`font-display text-4xl font-bold tabular ${rateColor}`}>{fmt(passRate, 1)}%</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Expectancy / Trade</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Expectancy / Trade</p>
             <p className={`font-display text-2xl font-bold tabular ${ev >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500'}`}>{ev >= 0 ? '+' : ''}${fmt(ev, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">R:R Ratio</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">R:R Ratio</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(rr, 2)}:1</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Min Win Rate Needed</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Min Win Rate Needed</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{fmt(minWR, 1)}%</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">{ev < 0 ? '⚠ Negative expectancy — this system loses money long-term regardless of pass rate.' : ev === 0 ? 'Break-even system. Commissions will make it a loser.' : `Positive expectancy of $${fmt(ev, 2)}/trade. ${tpd} trades/day = ~$${fmt(ev * tpd, 0)} expected daily profit.`}</p>
+        <p className="text-xs text-gray-500 mt-3">{ev < 0 ? '⚠ Negative expectancy — this system loses money long-term regardless of pass rate.' : ev === 0 ? 'Break-even system. Commissions will make it a loser.' : `Positive expectancy of $${fmt(ev, 2)}/trade. ${tpd} trades/day = ~$${fmt(ev * tpd, 0)} expected daily profit.`}</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Illustrative seeded simulation: 500 paths, 30 days, independent fixed-dollar outcomes, fixed initial-capital loss floor, daily closed-P&L limit and target checked at day-end. Touching either loss limit fails. No costs, trailing floor, consistency rules or minimum-day rules. Results are reproducible estimates, not actual pass probabilities.</p>
     </CalculatorForm>
@@ -4299,7 +4299,7 @@ export function PropFirmPositionSizeCalc() {
         </>}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Losses So Far Today ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={lostToday} onChange={e => setLostToday(e.target.value)} placeholder="0" />
           </div>
         </div>
@@ -4307,9 +4307,9 @@ export function PropFirmPositionSizeCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Buffer (% of remaining room)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={bufferPct} onChange={e => setBufferPct(e.target.value)} step="5" min="10" max="100" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">This allocates a percentage of remaining daily room; apply your own smaller per-trade cap.</p>
+          <p className="text-xs text-gray-500 mt-1">This allocates a percentage of remaining daily room; apply your own smaller per-trade cap.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Stop Loss (pips or ticks)</label>
@@ -4317,25 +4317,25 @@ export function PropFirmPositionSizeCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Pip/Tick Value per Standard Lot ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={pipVal} onChange={e => setPipVal(e.target.value)} step="0.1" placeholder="10" />
           </div>
-          <p className="text-xs text-gray-400 mt-1">EUR/USD = $10 | GBP/USD = $10 | USD/JPY ≈ $9.10</p>
+          <p className="text-xs text-gray-500 mt-1">EUR/USD = $10 | GBP/USD = $10 | USD/JPY ≈ $9.10</p>
         </div>
       </div>
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Max Safe Position Size</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          <div><p className="text-xs text-gray-400 mb-0.5">Max Lots / Contracts</p>
-            <p className="font-display text-4xl font-bold text-amber-500 dark:text-amber-400 tabular">{fmt(maxLots, 2)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Riskable Room</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Max Lots / Contracts</p>
+            <p className="font-display text-4xl font-bold text-amber-600 dark:text-amber-400 tabular">{fmt(maxLots, 2)}</p></div>
+          <div><p className="text-xs text-gray-500 mb-0.5">Riskable Room</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(riskable, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Remaining Daily Room</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Remaining Daily Room</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">${fmt(remaining, 0)}</p></div>
-          <div><p className="text-xs text-gray-400 mb-0.5">Loss if Stopped Out</p>
+          <div><p className="text-xs text-gray-500 mb-0.5">Loss if Stopped Out</p>
             <p className="font-display text-2xl font-bold text-red-500 tabular">${fmt(lossIfHit, 0)}</p></div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">At {sl} pips SL × ${pv}/pip × {fmt(maxLots, 2)} lots = ${fmt(lossIfHit, 0)} max loss if stopped out ({fmt(buffer * 100, 0)}% of remaining daily room used).</p>
+        <p className="text-xs text-gray-500 mt-3">At {sl} pips SL × ${pv}/pip × {fmt(maxLots, 2)} lots = ${fmt(lossIfHit, 0)} max loss if stopped out ({fmt(buffer * 100, 0)}% of remaining daily room used).</p>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400">Daily-limit capacity only, rounded down to 0.01 lots. Also cap size by your per-trade budget, remaining overall loss allowance, other positions and costs. This is not a recommended trade size.</p>
     </CalculatorForm>
@@ -4366,7 +4366,7 @@ export function PropFirmAccountSizeFinderCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Monthly Income Target ($)</label>
-          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+          <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
             <input className="calc-input pl-7" type="number" value={monthlyTarget} onChange={e => setMonthlyTarget(e.target.value)} />
           </div>
         </div>
@@ -4374,23 +4374,23 @@ export function PropFirmAccountSizeFinderCalc() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Avg Monthly Return (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={monthlyReturn} onChange={e => setMonthlyReturn(e.target.value)} step="0.5" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Use a hypothetical return scenario; monthly profits are uncertain.</p>
+          <p className="text-xs text-gray-500 mt-1">Use a hypothetical return scenario; monthly profits are uncertain.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Payout Split (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={payoutSplit} onChange={e => setPayoutSplit(e.target.value)} step="5" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
-          <p className="text-xs text-gray-400 mt-1">Enter the payout percentage in your own agreement.</p>
+          <p className="text-xs text-gray-500 mt-1">Enter the payout percentage in your own agreement.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Per Trade (%)</label>
           <div className="relative">
             <input className="calc-input pr-8" type="number" value={riskPerTrade} onChange={e => setRiskPerTrade(e.target.value)} step="0.1" />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
           </div>
         </div>
       </div>
@@ -4398,9 +4398,9 @@ export function PropFirmAccountSizeFinderCalc() {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
         <p className="section-label mb-4">Hypothetical Account Size</p>
         <div className="mb-5">
-          <p className="text-xs text-gray-400 mb-0.5">Best Fit Account</p>
-          <p className="font-display text-5xl font-bold text-amber-500 dark:text-amber-400 tabular">{recommended ? `$${(recommended / 1000).toFixed(0)}K` : 'Above listed sizes'}</p>
-          <p className="text-xs text-gray-400 mt-1">Minimum calculated: ${fmt(requiredAccount, 0)}</p>
+          <p className="text-xs text-gray-500 mb-0.5">Best Fit Account</p>
+          <p className="font-display text-5xl font-bold text-amber-600 dark:text-amber-400 tabular">{recommended ? `$${(recommended / 1000).toFixed(0)}K` : 'Above listed sizes'}</p>
+          <p className="text-xs text-gray-500 mt-1">Minimum calculated: ${fmt(requiredAccount, 0)}</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {ACCOUNT_SIZES.map(size => {
@@ -4412,7 +4412,7 @@ export function PropFirmAccountSizeFinderCalc() {
               <div key={size} className={`rounded-lg p-3 border ${isRec ? 'border-amber-400 bg-amber-50 dark:bg-amber-900/20' : 'border-gray-200 dark:border-gray-700'}`}>
                 <p className={`text-xs font-bold mb-1 ${isRec ? 'text-amber-600 dark:text-amber-400' : 'text-gray-500'}`}>${(size / 1000).toFixed(0)}K {isRec ? '← Best Fit' : ''}</p>
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">${fmt(income, 0)}/mo income</p>
-                <p className="text-xs text-gray-400">${fmt(riskDollar, 0)} risk/trade at {riskPerTrade}%</p>
+                <p className="text-xs text-gray-500">${fmt(riskDollar, 0)} risk/trade at {riskPerTrade}%</p>
               </div>
             );
           })}

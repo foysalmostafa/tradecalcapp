@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Risk Tools */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500 mb-3">Risk Management</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">Risk Management</p>
             <ul className="space-y-2">
               {CALCULATORS.filter(c => c.category === 'risk' || c.category === 'position').slice(0, 5).map(c => (
                 <li key={c.slug}>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Profit Tools */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500 mb-3">Profit & Analysis</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">Profit & Analysis</p>
             <ul className="space-y-2">
               {CALCULATORS.filter(c => c.category === 'profit' || c.category === 'utility').slice(0, 5).map(c => (
                 <li key={c.slug}>
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Futures Tools */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500 mb-3">Futures Trading</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">Futures Trading</p>
             <ul className="space-y-2">
               {CALCULATORS.filter(c => c.category === 'futures').slice(0, 5).map(c => (
                 <li key={c.slug}>
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Prop Firm Tools */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500 mb-3">Prop Firm Tools</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">Prop Firm Tools</p>
             <ul className="space-y-2">
               {CALCULATORS.filter(c => c.category === 'propfirm').slice(0, 5).map(c => (
                 <li key={c.slug}>
@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-gray-400 dark:text-gray-500 mb-3">Company</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400 mb-3">Company</p>
             <ul className="space-y-2">
               <li>
                 <Link href="/calculators" className="text-sm text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
@@ -127,13 +127,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-100 dark:border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-400 dark:text-gray-500">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             © {year} {SITE.name} · For educational purposes only · Not financial advice.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-xs text-gray-400 dark:text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Privacy</Link>
-            <Link href="/contact" className="text-xs text-gray-400 dark:text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Contact</Link>
-            <Link href="/about" className="text-xs text-gray-400 dark:text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">About</Link>
+            <Link href="/privacy" className="text-xs text-gray-500 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Privacy</Link>
+            <Link href="/contact" className="text-xs text-gray-500 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Contact</Link>
+            <Link href="/about" className="text-xs text-gray-500 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">About</Link>
           </div>
         </div>
       </div>

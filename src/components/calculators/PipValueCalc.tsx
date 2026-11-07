@@ -60,7 +60,7 @@ export default function PipValueCalc() {
           <select className="calc-select" aria-label="Currency pair" value={pair} onChange={e => { setPair(e.target.value); setExRate(e.target.value.endsWith('/JPY') ? '150' : e.target.value === 'EUR/GBP' ? '0.8' : e.target.value === 'USD/CHF' ? '0.9' : e.target.value === 'USD/CAD' ? '1.35' : '1'); }}>
             {Object.keys(PAIRS).map(p => <option key={p} value={p}>{p}</option>)}
           </select>
-          <p className="text-xs text-gray-400 mt-1">{pairData.note}</p>
+          <p className="text-xs text-gray-500 mt-1">{pairData.note}</p>
         </div>
 
         <div>
@@ -84,7 +84,7 @@ export default function PipValueCalc() {
             placeholder="1.0850"
           />
           {!pairData.quoteIsUSD && (
-            <p className="text-xs text-gray-400 mt-1">Enter quote units per USD, not the pair price: JPY example 150; GBP example 0.80. These are hypothetical, not live quotes.</p>
+            <p className="text-xs text-gray-500 mt-1">Enter quote units per USD, not the pair price: JPY example 150; GBP example 0.80. These are hypothetical, not live quotes.</p>
           )}
         </div>
 
@@ -99,15 +99,15 @@ export default function PipValueCalc() {
         <p className="section-label mb-4">Results</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Value per 1 Pip</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(pipValueUSD, 4)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">Value per 1 Pip</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(pipValueUSD, 4)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Value for {numPips} Pips</p>
-            <p className="font-display text-2xl font-bold text-amber-500 dark:text-amber-400 tabular">${fmt(totalValue, 2)}</p>
+            <p className="text-xs text-gray-500 mb-0.5">Value for {numPips} Pips</p>
+            <p className="font-display text-2xl font-bold text-amber-600 dark:text-amber-400 tabular">${fmt(totalValue, 2)}</p>
           </div>
           <div>
-            <p className="text-xs text-gray-400 mb-0.5">Pip Size</p>
+            <p className="text-xs text-gray-500 mb-0.5">Pip Size</p>
             <p className="font-display text-2xl font-bold text-gray-700 dark:text-gray-300 tabular">{pairData.pipSize}</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function PipValueCalc() {
               const v = (pairData.pipSize * l.value * (pair === 'XAU/USD' ? 0.001 : 1)) / (pairData.quoteIsUSD ? 1 : rate);
               return (
                 <div key={l.value} className="text-xs">
-                  <span className="text-gray-400">{l.label.split(' ')[0]}</span>
+                  <span className="text-gray-500">{l.label.split(' ')[0]}</span>
                   <br />
                   <span className="font-semibold text-gray-700 dark:text-gray-300 tabular">${fmt(v, v < 0.01 ? 4 : 2)}/pip</span>
                 </div>

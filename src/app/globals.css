@@ -89,7 +89,7 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.5rem;
-    background-color: #f59e0b;
+    background-color: #b45309;
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem;
@@ -99,8 +99,8 @@
     transition: background-color 0.15s;
     text-decoration: none;
   }
-  .btn-primary:hover { background-color: #d97706; }
-  .btn-primary:active { background-color: #b45309; }
+  .btn-primary:hover { background-color: #92400e; }
+  .btn-primary:active { background-color: #78350f; }
 
   .btn-secondary {
     display: inline-flex;
@@ -141,9 +141,9 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #9ca3af;
+    color: #6b7280;
   }
-  .dark .section-label { color: #6b7280; }
+  .dark .section-label { color: #9ca3af; }
 
   .ad-slot {
     width: 100%;
