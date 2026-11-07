@@ -16,7 +16,6 @@ export default function AdSlot({ className = '' }: Props) {
   return (
     <div
       className={`ad-slot min-h-[90px] ${className}`}
-      aria-label="Advertisement"
     >
       {/* Replace with AdSense <ins> tag after approval */}
     </div>

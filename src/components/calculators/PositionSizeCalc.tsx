@@ -131,7 +131,7 @@ export default function PositionSizeCalc() {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Currency Pair
               </label>
-              <select className="calc-select" value={pair} onChange={e => setPair(e.target.value)}>
+              <select className="calc-select" aria-label="Currency pair" value={pair} onChange={e => setPair(e.target.value)}>
                 {PAIRS.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
             </div>

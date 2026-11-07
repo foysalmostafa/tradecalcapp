@@ -57,7 +57,7 @@ export default function PipValueCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Currency Pair</label>
-          <select className="calc-select" value={pair} onChange={e => { setPair(e.target.value); setExRate(e.target.value.endsWith('/JPY') ? '150' : e.target.value === 'EUR/GBP' ? '0.8' : e.target.value === 'USD/CHF' ? '0.9' : e.target.value === 'USD/CAD' ? '1.35' : '1'); }}>
+          <select className="calc-select" aria-label="Currency pair" value={pair} onChange={e => { setPair(e.target.value); setExRate(e.target.value.endsWith('/JPY') ? '150' : e.target.value === 'EUR/GBP' ? '0.8' : e.target.value === 'USD/CHF' ? '0.9' : e.target.value === 'USD/CAD' ? '1.35' : '1'); }}>
             {Object.keys(PAIRS).map(p => <option key={p} value={p}>{p}</option>)}
           </select>
           <p className="text-xs text-gray-400 mt-1">{pairData.note}</p>
@@ -65,7 +65,7 @@ export default function PipValueCalc() {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Lot Size</label>
-          <select className="calc-select" value={lotSize} onChange={e => setLotSize(e.target.value)}>
+          <select className="calc-select" aria-label="Lot size" value={lotSize} onChange={e => setLotSize(e.target.value)}>
             {LOT_SIZES.map(l => <option key={l.value} value={l.value}>{l.label}</option>)}
           </select>
         </div>

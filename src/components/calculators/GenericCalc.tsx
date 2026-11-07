@@ -34,7 +34,7 @@ export function MarginCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contract Size (units/lot)</label>
-          <select className="calc-select" value={contracts} onChange={e => setContracts(e.target.value)}>
+          <select className="calc-select" aria-label="Contract size" value={contracts} onChange={e => setContracts(e.target.value)}>
             <option value="100000">100,000 (Forex standard)</option>
             <option value="10000">10,000 (Forex mini)</option>
             <option value="1000">1,000 (Forex micro)</option>
@@ -675,13 +675,13 @@ export function CurrencyConverterCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">From</label>
-          <select className="calc-select" value={from} onChange={e => { setFrom(e.target.value); setManualRate(String(RATES[to] / RATES[e.target.value])); }}>
+          <select className="calc-select" aria-label="From currency" value={from} onChange={e => { setFrom(e.target.value); setManualRate(String(RATES[to] / RATES[e.target.value])); }}>
             {currencies.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">To</label>
-          <select className="calc-select" value={to} onChange={e => { setTo(e.target.value); setManualRate(String(RATES[e.target.value] / RATES[from])); }}>
+          <select className="calc-select" aria-label="To currency" value={to} onChange={e => { setTo(e.target.value); setManualRate(String(RATES[e.target.value] / RATES[from])); }}>
             {currencies.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
@@ -758,7 +758,7 @@ export function LeverageCalc() {
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contract Size</label>
-          <select className="calc-select" value={contracts} onChange={e => setContracts(e.target.value)}>
+          <select className="calc-select" aria-label="Contract size" value={contracts} onChange={e => setContracts(e.target.value)}>
             <option value="100000">100,000 (Forex standard)</option>
             <option value="10000">10,000 (Forex mini)</option>
             <option value="1000">1,000 (Forex micro)</option>
@@ -1691,7 +1691,7 @@ export function FuturesTickCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-input" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-input" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {Object.entries(CONTRACTS).map(([key, val]) => (
               <option key={key} value={key}>{key} — {val.name}</option>
             ))}
@@ -2850,7 +2850,7 @@ export function SwapCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Currency Pair</label>
-          <select className="calc-select" value={pair} onChange={e => { setPair(e.target.value); setSwapRate(String(SWAP_RATES[e.target.value][direction])); }}>
+          <select className="calc-select" aria-label="Currency pair" value={pair} onChange={e => { setPair(e.target.value); setSwapRate(String(SWAP_RATES[e.target.value][direction])); }}>
             {pairs.map(p => <option key={p} value={p}>{p}</option>)}
           </select>
         </div>
@@ -3264,7 +3264,7 @@ export function FuturesPositionSizeCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
@@ -3333,13 +3333,13 @@ export function FuturesPLCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Direction</label>
-          <select className="calc-select" value={direction} onChange={e => setDirection(e.target.value)}>
+          <select className="calc-select" aria-label="Direction" value={direction} onChange={e => setDirection(e.target.value)}>
             <option value="long">Long (Buy)</option>
             <option value="short">Short (Sell)</option>
           </select>
@@ -3402,7 +3402,7 @@ export function FuturesMarginCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => { setContract(e.target.value); const selected = FUTURES_CONTRACTS.find(c => c.value === e.target.value)!; setInitialMargin(String(selected.marginInit)); setMaintenanceMargin(String(selected.marginMaint)); }}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => { setContract(e.target.value); const selected = FUTURES_CONTRACTS.find(c => c.value === e.target.value)!; setInitialMargin(String(selected.marginInit)); setMaintenanceMargin(String(selected.marginMaint)); }}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
@@ -3459,13 +3459,13 @@ export function FuturesTPSLCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Direction</label>
-          <select className="calc-select" value={direction} onChange={e => setDirection(e.target.value)}>
+          <select className="calc-select" aria-label="Direction" value={direction} onChange={e => setDirection(e.target.value)}>
             <option value="long">Long (Buy)</option>
             <option value="short">Short (Sell)</option>
           </select>
@@ -3530,7 +3530,7 @@ export function FuturesContractValueCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
@@ -3588,13 +3588,13 @@ export function FuturesRollCostCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Position Direction</label>
-          <select className="calc-select" value={direction} onChange={e => setDirection(e.target.value)}>
+          <select className="calc-select" aria-label="Position direction" value={direction} onChange={e => setDirection(e.target.value)}>
             <option value="long">Long</option>
             <option value="short">Short</option>
           </select>
@@ -3711,7 +3711,7 @@ export function FuturesBreakEvenCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
@@ -3769,7 +3769,7 @@ export function FuturesRiskRewardCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Futures Contract</label>
-          <select className="calc-select" value={contract} onChange={e => setContract(e.target.value)}>
+          <select className="calc-select" aria-label="Futures contract" value={contract} onChange={e => setContract(e.target.value)}>
             {FUTURES_CONTRACTS.map(c => <option key={c.value} value={c.value}>{c.label}</option>)}
           </select>
         </div>
@@ -3843,7 +3843,7 @@ export function PropFirmTrailingDrawdownCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rule Profile / Account</label>
-          <select className="calc-select" value={firm} onChange={e => setFirm(e.target.value)}>
+          <select className="calc-select" aria-label="Rule profile / account" value={firm} onChange={e => setFirm(e.target.value)}>
             {PROP_FIRMS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
           </select>
         </div>
@@ -3925,7 +3925,7 @@ export function PropFirmDailyLossCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rule Profile / Account</label>
-          <select className="calc-select" value={firm} onChange={e => setFirm(e.target.value)}>
+          <select className="calc-select" aria-label="Rule profile / account" value={firm} onChange={e => setFirm(e.target.value)}>
             {PROP_FIRMS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
           </select>
         </div>
@@ -4008,14 +4008,14 @@ export function PropFirmProfitTargetCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rule Profile / Account</label>
-          <select className="calc-select" value={firm} onChange={e => setFirm(e.target.value)}>
+          <select className="calc-select" aria-label="Rule profile / account" value={firm} onChange={e => setFirm(e.target.value)}>
             {PROP_FIRMS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
           </select>
         </div>
         {firm !== 'custom' && (
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phase</label>
-            <select className="calc-select" value={phase} onChange={e => setPhase(e.target.value)}>
+            <select className="calc-select" aria-label="Phase" value={phase} onChange={e => setPhase(e.target.value)}>
               <option value="1">Phase 1 (Challenge)</option>
               <option value="2">Phase 2 (Verification)</option>
             </select>
@@ -4283,7 +4283,7 @@ export function PropFirmPositionSizeCalc() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Rule Profile / Account</label>
-          <select className="calc-select" value={firm} onChange={e => setFirm(e.target.value)}>
+          <select className="calc-select" aria-label="Rule profile / account" value={firm} onChange={e => setFirm(e.target.value)}>
             {PROP_FIRMS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
           </select>
         </div>

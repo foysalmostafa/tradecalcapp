@@ -116,9 +116,9 @@ export default function BlogIndexPage() {
             tick value. Written for forex, stocks, crypto, and futures traders at every level.
           </p>
           {/* E-E-A-T author signal */}
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-4">
+          <p className="text-xs text-gray-500 dark:text-gray-500 mt-4">
             Written by{' '}
-            <Link href="/about" className="text-amber-600 dark:text-amber-400 hover:underline font-medium">
+            <Link href="/about" className="text-amber-700 dark:text-amber-400 hover:underline font-medium">
               Foysal Mostafa
             </Link>
             , forex trader &amp; software developer — applying these concepts in live trading.
