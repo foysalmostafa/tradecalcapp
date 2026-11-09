@@ -2457,58 +2457,240 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 
   {
-    slug: 'best-risk-management-calculators-forex',
-    draft: true,
-    title: 'The 5 Best Risk Management Calculators for Forex Traders (2026)',
-    shortTitle: 'Best Risk Management Calculators',
-    description: 'The essential risk management calculators every forex trader needs: position size, risk/reward, drawdown, margin, and lot size tools reviewed and ranked for 2026.',
-    category: 'comparison',
-    tags: ['risk management', 'tool comparison', 'forex tools'],
-    keywords: ['best risk management calculators forex', 'forex risk calculator tools', 'position size risk reward calculator', 'trading risk management tools 2026', 'drawdown margin calculator forex'],
-    publishedAt: BLOG_DATE,
-    updatedAt: BLOG_DATE,
-    readingTimeMin: 6,
-    relatedCalculators: ['position-size-calculator', 'risk-reward-calculator', 'drawdown-calculator', 'margin-calculator', 'lot-size-calculator'],
-    relatedPosts: ['best-forex-position-size-calculators', 'free-vs-paid-trading-calculators', 'forex-risk-management-complete-guide'],
-    howToSteps: undefined,
-    faqs: [
-      { q: 'What is the most important risk management calculator for forex traders?', a: 'The position size calculator is the single most important tool because it determines the dollar risk on every trade before execution. Without it, all other risk management is impossible to implement accurately. After position sizing, risk/reward calculator is the second most important — it tells you whether a trade is worth taking before you size it.' },
-      { q: 'Do I need a separate calculator for each risk function?', a: 'No — a well-designed tool combines them. TradeCalc provides all five core risk management calculators (position size, risk/reward, drawdown, margin, lot size) in one place. Using them together as a pre-trade checklist takes 2–3 minutes and eliminates the most common risk management failures.' },
-      { q: 'How often should I use a drawdown calculator?', a: 'Check drawdown after every losing streak of 3 or more consecutive losses. Knowing your current drawdown percentage — and the recovery percentage required — provides important context for whether to reduce position size, take a break, or continue normally. Maximum drawdown should also be calculated monthly as a strategy health metric.' },
-      { q: 'What is the minimum risk management setup for a new forex trader?', a: "Minimum viable setup: (1) position size calculator — use before every single trade without exception, (2) risk/reward calculator — only take trades with R:R above 1.5:1, (3) a notebook or spreadsheet to track each trade's planned vs realized R:R. These three elements alone put you ahead of the majority of retail traders who manage risk by feel." },
+    "slug": "best-risk-management-calculators-forex",
+    "title": "The 5 Best Risk Management Calculators for Forex Traders (2026)",
+    "shortTitle": "Best Risk Management Calculators",
+    "description": "The 5 best risk management calculators for forex traders: position size, risk/reward, margin, drawdown and lot size, with worked $5,000 and $25,000 examples and a 2-minute audit.",
+    "category": "comparison",
+    "tags": [
+      "risk management",
+      "tool comparison",
+      "forex tools"
     ],
-    sections: [
-      {
-        heading: 'Why Risk Management Calculators Are Non-Optional',
-        body: [
-          'Trading without calculators is equivalent to building without measuring tools — you can do it, but the results are consistently worse than when you measure. Risk management in particular is a numerical discipline: position size, stop loss distance, risk/reward ratio, and margin requirements are all precise numbers that must be calculated correctly on every trade for your risk framework to function as designed.',
-          'The pattern in blown trading accounts is almost always the same: a trader with a positive-expectancy strategy loses discipline on a sequence of trades, deviates from position sizing rules during a losing streak, takes an oversized position on a "high conviction" trade, and suffers a catastrophic loss that erases weeks of gains. Risk management calculators act as a pre-trade checklist that forces deliberate thinking before capital is committed — they are the habit infrastructure that keeps good strategies from being destroyed by bad execution.',
-        ],
-      },
-      {
-        heading: 'The 5 Essential Risk Management Calculators (Ranked by Importance)',
-        body: [
-          "[#1 — Position Size Calculator](/calculators/position-size-calculator): The foundation of everything. Use before every trade: enter account balance, risk percentage, and stop distance, get the exact lot size. Without this number, your R:R ratio and P&L targets are meaningless because you do not know how much money is actually at stake. TradeCalc's position size calculator covers forex, stocks, and crypto with correct formulas for each.",
-          '[#2 — Risk/Reward Calculator](/calculators/risk-reward-calculator): Use after position sizing to confirm the trade is worth taking. Enter entry, stop, and target to get the R:R ratio and dollar amounts for both sides. Only take trades where R:R meets your minimum threshold (typically 1.5:1 or higher). A trade sized correctly but with a negative-expectancy R:R is still a bad trade.',
-          '[#3 — Margin Calculator](/calculators/margin-calculator): Use when opening positions with leverage. Calculate required margin before entering to confirm you have sufficient free margin for the position plus buffer against adverse moves. Knowing your margin level after the trade opens tells you how much the position can move against you before risking a margin call.',
-          '[#4 — Drawdown Calculator](/calculators/drawdown-calculator): Use weekly or after losing streaks. Track your current drawdown from the most recent equity high. Knowing you are in a 12% drawdown (requiring 13.6% recovery) changes your position sizing decision — it argues for reducing size, not increasing it to recover faster. Monitor drawdown to catch strategy deterioration early.',
-          "[#5 — Lot Size Calculator](/calculators/lot-size-calculator): Use as a companion to position size when you need to confirm lot size in different formats (standard/mini/micro) or when starting a new account tier and checking if your calculated lots fit within your broker's minimum lot requirements.",
-        ],
-      },
-      {
-        heading: 'Using All Five Together: A Pre-Trade Checklist',
-        body: [
-          'Professional risk management is a sequential process, not a single calculation. The recommended pre-trade workflow takes under 3 minutes: Step 1 — Identify entry and stop loss from chart analysis. Step 2 — Run the position size calculator to get your lot size. Step 3 — Run the risk/reward calculator with your target — if R:R is below your minimum, skip the trade. Step 4 — Run the margin calculator to confirm sufficient free margin. Step 5 — Place the trade at the calculated lot size.',
-          'After the trade is live: check your margin level once opened. If margin level drops below 200%, your position may be too large for your current account equity. Over time: run the [drawdown calculator](/calculators/drawdown-calculator) monthly. If maximum drawdown exceeds 15%, review your strategy and consider temporarily reducing position sizes by 50% until performance normalizes.',
-          'This five-step workflow takes longer to describe than to execute. With bookmarked calculators, the full sequence runs in under 3 minutes. Traders who implement this consistently report that it eliminates the most damaging category of trading mistakes — the impulsive, oversized, poorly-timed trades that happen when emotion overrides analysis. For the complete framework — stop loss strategy, drawdown limits, daily loss caps, and the six pillars of risk management — read the [complete forex risk management guide](/blog/forex-risk-management-complete-guide).',
-        ],
-      },
+    "keywords": [
+      "best risk management calculators forex",
+      "forex risk calculator tools",
+      "position size risk reward calculator",
+      "trading risk management tools 2026",
+      "drawdown margin calculator forex",
+      "forex risk management calculator",
+      "risk reward calculator forex",
+      "margin calculator forex",
+      "drawdown calculator trading",
+      "lot size calculator forex",
+      "position size calculator forex",
+      "break-even win rate",
+      "risk management tools for traders",
+      "free forex calculators",
+      "forex risk management tools",
+      "how to calculate risk reward ratio",
+      "how to avoid margin call",
+      "recovery percentage drawdown",
+      "round lot size down",
+      "forex pre-trade checklist",
+      "calculator audit forex",
+      "risk per trade percentage",
+      "margin level calculation",
+      "mt4 risk calculator",
+      "prop firm risk calculator",
+      "forex position sizing tool",
+      "best forex calculators 2026",
+      "trading calculators free",
+      "day trader risk tools",
+      "swing trader risk tools"
     ],
-    callToAction: {
-      text: 'Access all five risk management calculators — free, instant, no account needed.',
-      href: '/calculators',
-      label: 'Open Risk Management Calculators →',
-    },
+    "publishedAt": "2026-11-09",
+    "updatedAt": "2026-11-09",
+    "readingTimeMin": 11,
+    "relatedCalculators": [
+      "position-size-calculator",
+      "risk-reward-calculator",
+      "drawdown-calculator",
+      "margin-calculator",
+      "lot-size-calculator"
+    ],
+    "relatedPosts": [
+      "best-forex-position-size-calculators",
+      "forex-risk-management-complete-guide",
+      "how-to-calculate-risk-reward-ratio",
+      "how-to-calculate-drawdown-trading",
+      "how-to-calculate-forex-margin",
+      "lot-size-calculator-guide"
+    ],
+    "faqs": [
+      {
+        "q": "What is the most important risk management calculator for forex traders?",
+        "a": "The position size calculator is the most important because it determines the dollar risk on every trade before execution. Without it, risk/reward and margin figures describe a trade of unknown size. Use risk/reward second, to confirm the trade is worth taking before you size it."
+      },
+      {
+        "q": "Do I need a separate calculator for each risk function?",
+        "a": "No. A good site bundles them. TradeCalc offers position size, risk/reward, margin, drawdown and lot size calculators in one place. Used together as a pre-trade checklist, they take about 2–3 minutes per trade and prevent the most common sizing failures."
+      },
+      {
+        "q": "How often should I use a drawdown calculator?",
+        "a": "Check it weekly, and after every losing streak of three or more trades. Calculate maximum drawdown monthly as a health metric. A 15% drawdown needs a 17.65% gain to recover, so early detection is cheap and late detection is expensive."
+      },
+      {
+        "q": "What is the minimum risk management setup for a new forex trader?",
+        "a": "Use a position size calculator before every trade, take only trades with risk/reward of 1.5:1 or better, and keep a simple journal of planned versus actual results. These three habits put you ahead of most retail traders who size trades by feel."
+      },
+      {
+        "q": "What risk/reward ratio do I need to be profitable?",
+        "a": "It depends on your win rate. Break-even win rate equals 1 ÷ (1 + R:R). At 1.5:1 you need 40% winners, at 2:1 you need 33.3%, at 3:1 you need 25%. Add about 5 points of buffer for spread and variance."
+      },
+      {
+        "q": "How much of my account should I risk per trade?",
+        "a": "Most professionals risk 0.5–2% per trade. On a $5,000 account, 1% is $50. Beginners should start at 0.5–1%. Risking more than 2% makes a ten-trade losing streak, which happens regularly, a drawdown of 18% or worse."
+      },
+      {
+        "q": "Are free risk management calculators accurate?",
+        "a": "Yes, when the formulas are right. The arithmetic is identical to paid tools. Verify any calculator with the three-test audit: $10,000 at 1% on EUR/USD with a 25-pip stop must return exactly 0.40 lots, and doubling the balance must double the lots."
+      },
+      {
+        "q": "Which calculator tells me if my leverage is too high?",
+        "a": "The margin calculator. Required margin is (lots × 100,000 × price) ÷ leverage, and margin level is equity ÷ used margin × 100. If margin level on one idea falls below about 500%, the position is large for your account regardless of the stop."
+      },
+      {
+        "q": "Should I use an MT4 or MT5 risk calculator or a web calculator?",
+        "a": "Web calculators are ideal for swing and position traders who plan after the close. Platform panels help scalpers and day traders who place many trades a day. The formulas are the same, so verify either with the audit test."
+      },
+      {
+        "q": "What happens if my calculated lot size is below the broker minimum?",
+        "a": "The trade risks more than you planned. A $500 account risking $5 on a 100-pip stop needs 0.005 lots, but the minimum is 0.01, which risks $10 (2%). Widen the account, tighten the stop if the setup allows it, or skip the trade."
+      },
+      {
+        "q": "Can a risk calculator guarantee I will not lose money?",
+        "a": "No. A calculator controls the size of each loss; it cannot change whether a trade wins. Its job is to make sure no single loss, or losing streak, is large enough to end your trading. Losses remain a normal cost of trading."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What Are the Best Risk Management Calculators for Forex Traders?",
+        "body": [
+          "The **best risk management calculators for forex traders** are the five tools that turn a trade idea into controlled numbers before you click buy or sell: a **position size calculator**, a **risk/reward calculator**, a **margin calculator**, a **drawdown calculator** and a **lot size calculator**. Together they answer how much to trade, whether the trade is worth taking, whether the account can carry it, and whether your recent results justify trading at full size.",
+          "Most roundups rank individual products. This guide ranks the **functions**, because a trader who owns all five checks and uses them in the right order is safer than one who owns a single expensive panel and skips the rest. Every example below uses real prices, so you can reproduce each number by hand and confirm any tool you use, including ours."
+        ]
+      },
+      {
+        "heading": "How Do Forex Risk Management Calculators Work?",
+        "body": [
+          "Each calculator is a small piece of arithmetic that feeds the next one. The core formula is **Lot Size = Dollar Risk ÷ (Stop Distance in Pips × Pip Value per Lot)**. Dollar Risk is account balance times risk percentage. Pip value is $10 per standard lot on USD-quoted pairs such as EUR/USD and GBP/USD. Change any input and the lot size changes, which is why entering the stop first matters.",
+          "The other four tools reuse those outputs. **Risk/Reward = Reward Pips ÷ Risk Pips**. **Required Margin = (Lots × 100,000 × Price) ÷ Leverage**. **Drawdown % = (Peak Equity − Current Equity) ÷ Peak Equity**. **Recovery % = Drawdown ÷ (1 − Drawdown)**. If you understand these five lines, you can audit any calculator on the internet in about two minutes."
+        ]
+      },
+      {
+        "heading": "Which Risk Management Calculator Should You Use First?",
+        "body": [
+          "Use the **position size calculator** first, and use it only after you know where your stop belongs. It is ranked number one because it fixes the one number every other tool depends on: the money at risk. Enter balance, risk percentage, entry and stop, and it returns lots. Without it, risk/reward ratios and margin figures describe a trade of unknown size.",
+          "Our [position size calculator](/calculators/position-size-calculator) covers forex, stocks and crypto. For the full method, read [how to calculate position size in forex](/blog/how-to-calculate-position-size-forex). One rule from experience: **always round lot size down, never up**. A result of 0.1667 lots becomes 0.16, not 0.17, because rounding up quietly raises your risk above the limit you set."
+        ]
+      },
+      {
+        "heading": "How to Calculate Risk/Reward Ratio Before You Enter",
+        "body": [
+          "The **risk/reward calculator** is ranked second because it decides whether a trade deserves capital at all. Enter entry, stop and target; it returns the ratio and the dollar outcome on both sides. A 30-pip stop with a 75-pip target is **2.5:1**. On a $50 risk, the winning outcome is $125 and the losing outcome is $50, before spread and commission.",
+          "The ratio only means something next to your win rate. The break-even win rate is **1 ÷ (1 + R:R)**. At 1:1 you need 50% winners. At 1.5:1 you need 40%. At 2:1 you need 33.3%. At 3:1 you need only 25%. This is the insight most calculators skip: the right minimum R:R is not a fixed number, it is whatever your tracked win rate demands plus a safety buffer. See [how to calculate risk/reward ratio](/blog/how-to-calculate-risk-reward-ratio)."
+        ]
+      },
+      {
+        "heading": "Break-Even Win Rate by Risk/Reward Ratio",
+        "body": [
+          "Use this table to set your personal minimum R:R. Add 5 percentage points of safety to the break-even win rate to cover spread, slippage and the normal variation in a 50-trade sample.",
+          "| R:R ratio | Break-even win rate | Win rate with 5-point buffer | Expected profit per trade at buffer (risking $50) |\n|---|---|---|---|\n| 1:1 | 50.0% | 55.0% | $5.00 |\n| 1.5:1 | 40.0% | 45.0% | $6.25 |\n| 2:1 | 33.3% | 38.3% | $7.45 |\n| 3:1 | 25.0% | 30.0% | $10.00 |",
+          "The last column is the average result per trade: win rate × reward minus loss rate × risk. At 2:1 with a 38.3% win rate, that is 0.383 × $100 − 0.617 × $50 = **$7.45**, which matches the table and shows how thin the edge becomes near break-even. Read the table as a floor, and tighten it as your journal fills with real results."
+        ]
+      },
+      {
+        "heading": "How to Use a Margin Calculator to Avoid a Margin Call",
+        "body": [
+          "The **margin calculator** ranks third. It does not decide how much to risk; it confirms the account can hold the position. Required margin on 0.16 lots of EUR/USD at 1.0850 with 1:30 leverage is (0.16 × 100,000 × 1.0850) ÷ 30 = **$578.67**. At 1:100 leverage the same trade needs only $173.60, which is why high leverage feels safe and is not.",
+          "Margin never changes your loss; the stop does. What margin controls is survival. Check **margin level = equity ÷ used margin × 100**. On a $5,000 account holding that $578.67 position, margin level is about 864%, which is comfortable. Most brokers issue margin calls near 100% and close positions near 50%. Keep margin level above 500% on any single idea. See [how to calculate forex margin](/blog/how-to-calculate-forex-margin)."
+        ]
+      },
+      {
+        "heading": "How to Use a Drawdown Calculator After a Losing Streak",
+        "body": [
+          "The **drawdown calculator** ranks fourth because it works at account level rather than trade level. It tells you how far equity has fallen from its peak and what gain you need to get back. A $25,000 account that falls to $21,250 is in a **15% drawdown**, and it needs **17.65%** to recover, not 15%. At 30% drawdown the recovery requirement is 42.9%; at 50%, it is 100%.",
+          "Use it to set automatic rules. A simple version: at 5% drawdown, review the last 10 trades; at 10%, cut risk per trade in half; at 15%, stop trading for a week and audit the journal. Our [drawdown calculator](/calculators/drawdown-calculator) and the guide on [how to calculate drawdown](/blog/how-to-calculate-drawdown-trading) explain each step."
+        ]
+      },
+      {
+        "heading": "Lot Size Calculator vs Position Size Calculator: What Is the Difference?",
+        "body": [
+          "The **lot size calculator** ranks fifth because it overlaps most with the position size tool. Position sizing answers how many lots your risk allows. A lot size tool translates between formats: 1.00 standard lot is 100,000 units, 0.10 mini is 10,000 units, 0.01 micro is 1,000 units. It also checks that your answer respects the broker's minimum and step size.",
+          "This matters on small accounts. A $500 account risking 1% ($5) on a 25-pip stop needs 0.02 lots, which fits. Use a 100-pip stop and the answer is 0.005 lots, which most brokers cannot execute, so the real risk becomes $10 (2%). The [lot size calculator](/calculators/lot-size-calculator) flags this before you trade. See [forex lot sizes explained](/blog/forex-lot-sizes-explained)."
+        ]
+      },
+      {
+        "heading": "Risk Management Calculator Worked Example: $5,000 Account",
+        "body": [
+          "Take a **$5,000 account risking 1%**, which is $50. You plan to buy EUR/USD at 1.0850 with a stop at 1.0820 (30 pips) and a target at 1.0925 (75 pips). **Step 1, position size:** $50 ÷ (30 × $10) = 0.1667, rounded down to **0.16 lots**, which risks 0.16 × 30 × $10 = $48. **Step 2, risk/reward:** 75 ÷ 30 = **2.5:1**, so the target is worth $120 against $48 risked.",
+          "**Step 3, margin at 1:30:** $578.67 required, leaving a margin level of about 864%. **Step 4, drawdown check:** the account is at its equity peak, so no size reduction applies. **Step 5, lot check:** 0.16 is above the 0.01 minimum and a valid step. The trade passes all five checks in under three minutes. Total process cost: zero dollars and one browser tab."
+        ]
+      },
+      {
+        "heading": "Risk Management Calculator Worked Example: $25,000 Account",
+        "body": [
+          "Now a **$25,000 account risking 0.5%**, which is $125. You plan to buy GBP/USD at 1.2700, stop at 1.2650 (50 pips), target at 1.2825 (125 pips). **Position size:** $125 ÷ (50 × $10) = **0.25 lots**, exactly. **Risk/reward:** 125 ÷ 50 = **2.5:1**, so $312.50 potential against $125 risked.",
+          "**Margin at 1:30:** (0.25 × 100,000 × 1.2700) ÷ 30 = **$1,058.33**, a margin level of about 2,362%. **Drawdown:** suppose the account is at $23,750, which is 5% below its $25,000 peak. Under the rules above, you now review the last 10 trades and might trade this setup at 0.4% risk ($95), giving 0.19 lots. The calculator output changes because your situation changed, which is the point."
+        ]
+      },
+      {
+        "heading": "Best Risk Management Tools for Day Traders vs Swing Traders vs Position Traders",
+        "body": [
+          "Your trading style decides which calculator you touch most. The table below shows the usage pattern we recommend. Day traders benefit from saved presets and chart-integrated panels; swing and position traders are well served by free web tools used after the close, when there is no time pressure.",
+          "| Trader type | Trades per month | Most-used calculators | Drawdown check |\n|---|---|---|---|\n| Day trader / scalper | 100–400 | Position size (presets for 5, 10, 20-pip stops), margin | Daily |\n| Swing trader | 8–25 | Position size, risk/reward, margin | Weekly |\n| Position trader | 2–10 | Risk/reward, margin, lot size | Monthly |",
+          "A day-trading shortcut that costs nothing: before the session, calculate lot sizes for stops of 5, 10, 15, 20 and 30 pips at your standard risk. On a $10,000 account at 0.5% risk ($50) on EUR/USD, those are 1.00, 0.50, 0.33, 0.25 and 0.16 lots. Write them on a card and refer to it all day."
+        ]
+      },
+      {
+        "heading": "Common Risk Management Calculator Mistakes Traders Make",
+        "body": [
+          "**Mistake 1: Entering the stop after the lot size.** Choosing 0.5 lots first and fitting the stop to it reverses the logic. The stop belongs where the idea is wrong; lot size follows. **Mistake 2: Ignoring spread.** A 30-pip stop with a 1.5-pip spread loses about 31.5 pips when hit, 5% more than planned. Include it or accept slightly higher risk.",
+          "**Mistake 3: Trusting pip values on cross pairs.** EUR/GBP and GBP/JPY depend on a second exchange rate, and stale rates corrupt lot size. **Mistake 4: Rounding lots up.** Rounding 0.1667 up to 0.17 raises a $50 risk to $51, and on small lots the error can reach 10–20%. **Mistake 5: Skipping the drawdown check.** Sizing up after losses to recover faster is the fastest way to turn a 10% drawdown into 30%."
+        ]
+      },
+      {
+        "heading": "How Foysal Mostafa Uses These Calculators in Live Trading",
+        "body": [
+          "I am Foysal Mostafa, and I have traded forex for more than ten years. My first blown account came from not skipping the calculator but from skipping the **order**: I sized the trade, then moved the stop wider because the entry felt right. The position size was correct for the original stop and wrong for the new one, and a single trade cost 6% instead of 1%.",
+          "Today I run the sequence before every order: stop, size, risk/reward, margin, then one glance at drawdown. It takes about 90 seconds once the tabs are bookmarked. My rule is that if I change the stop, I rerun the size, no exceptions. That one habit removed more losses than any strategy tweak I made in ten years."
+        ]
+      },
+      {
+        "heading": "How to Audit Any Risk Calculator in Two Minutes",
+        "body": [
+          "Before you trust any tool, run three tests. **Test 1:** $10,000, 1% risk, EUR/USD, 25-pip stop must return exactly **0.40 lots**. **Test 2:** USD/JPY at 150.00, same inputs; pip value is about $6.67 per lot, so lots must be about **0.60**. **Test 3:** change the account to $20,000 and confirm lot size exactly doubles.",
+          "If a tool fails any test, stop using it for real trades. Repeat the audit each quarter and whenever you add a new instrument. Brokers change contract specifications, and a calculator that was right last year can be wrong now. This habit costs five minutes a year and protects every trade you will ever size."
+        ]
+      },
+      {
+        "heading": "Free vs Paid Risk Management Tools: What Do You Actually Need?",
+        "body": [
+          "For sizing, risk/reward, margin, drawdown and lot size, **free web calculators are enough**. The arithmetic is identical in a free and a paid tool. Paid products add speed (one-click chart panels), automation (automatic lot sizing in MetaTrader or cTrader) and journaling analytics. Those features are worth paying for only when you take more than about 50 trades a month.",
+          "A practical stack: **budget** ($0/month), TradeCalc calculators plus a spreadsheet journal; **intermediate**, add a journal with risk analytics once you pass 100 logged trades; **advanced**, add a platform panel only if manual entry slows you down. Compare options in our [best forex position size calculators](/blog/best-forex-position-size-calculators) and the [TradeCalc vs Myfxbook](/blog/tradecalc-vs-myfxbook-calculator) review."
+        ]
+      },
+      {
+        "heading": "Key Takeaways: Best Risk Management Calculators for Forex",
+        "body": [
+          "1. **Use the five calculators in order:** position size, risk/reward, margin, drawdown, lot size. 2. **Set the stop first**, then size the trade; rerun the size whenever the stop moves. 3. **Round lot size down**, never up. 4. **Set minimum R:R from your win rate**: 1.5:1 needs 40% winners, 2:1 needs 33.3%.",
+          "5. **Keep margin level above 500%** on any single idea. 6. **Cut risk in half at 10% drawdown**, and remember 15% drawdown needs 17.65% to recover. 7. **Audit every calculator** with the three-test check each quarter. Free tools are sufficient until your trade count makes speed worth paying for."
+        ]
+      },
+      {
+        "heading": "Next Steps and Related Resources",
+        "body": [
+          "Open the [position size calculator](/calculators/position-size-calculator) and rebuild a trade you took last week. Then run the [risk/reward calculator](/calculators/risk-reward-calculator) and [margin calculator](/calculators/margin-calculator) on the same trade. Fifteen minutes will show whether your real sizing matches your rules.",
+          "For depth, read the [complete forex risk management guide](/blog/forex-risk-management-complete-guide), [what a stop loss is in forex](/blog/what-is-a-stop-loss-in-forex), and the [Kelly criterion guide](/blog/kelly-criterion-trading-guide). Browse every tool at [tradecalcapp.com/calculators](/calculators)."
+        ]
+      }
+    ],
+    "callToAction": {
+      "text": "Access all five risk management calculators — free, instant, no account needed.",
+      "href": "/calculators",
+      "label": "Open Risk Management Calculators →"
+    }
   },
 
   // ══════════════════════════════════════════════════════════════════════════
