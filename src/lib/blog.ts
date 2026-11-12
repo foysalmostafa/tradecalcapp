@@ -3094,96 +3094,266 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 
   {
-    slug: 'forex-trading-math-complete-guide',
-    draft: true,
-    title: 'The Math of Forex Trading: Every Formula You Need (With Examples)',
-    shortTitle: 'Forex Trading Math',
-    description: 'Every forex calculation explained with formulas and worked examples: pip value, position size, P&L, margin, risk/reward, lot size, compounding, drawdown, break-even, and currency conversion.',
-    category: 'pillar',
-    tags: ['forex basics', 'trading formulas', 'education'],
-    keywords: ['forex trading math formulas', 'forex calculation guide', 'forex formulas explained', 'trading math complete guide', 'forex pip value position size formula'],
-    publishedAt: BLOG_DATE,
-    updatedAt: BLOG_DATE,
-    readingTimeMin: 14,
-    relatedCalculators: ['position-size-calculator', 'pip-value-calculator', 'profit-loss-calculator', 'margin-calculator', 'risk-reward-calculator', 'lot-size-calculator', 'compounding-calculator', 'drawdown-calculator'],
-    relatedPosts: ['how-to-calculate-position-size-forex', 'what-is-pip-value-how-to-calculate', 'how-to-calculate-profit-loss-forex', 'forex-risk-management-complete-guide', 'position-sizing-complete-guide'],
-    howToSteps: [
-      { name: 'Learn pip value first', text: 'Pip Value is the building block of all other forex calculations. Master it for USD-quoted pairs first ($10/pip standard lot), then for USD-base pairs, then cross pairs.' },
-      { name: 'Apply pip value to position sizing', text: 'Position Size (lots) = Dollar Risk ÷ (Stop Pips × Pip Value). This is the most important formula in forex risk management.' },
-      { name: 'Calculate P&L before and after trades', text: 'Gross P&L = Pip Move × Pip Value × Lots. Net P&L = Gross P&L − Commission − Spread − Swap. Always calculate before entry and verify after exit.' },
-      { name: 'Use margin formula to check leverage safety', text: 'Required Margin = (Lot Size × Contract Size × Exchange Rate) ÷ Leverage. Check Margin Level = (Equity ÷ Used Margin) × 100 stays above 200%.' },
-      { name: 'Apply risk/reward and compounding formulas', text: 'R:R = Reward Pips ÷ Risk Pips. Only trade when R:R ≥ 1.5. Compound growth = Balance × (1 + Monthly Return)^Months. Use both to evaluate strategy quality over time.' },
+    "slug": "forex-trading-math-complete-guide",
+    "title": "Forex Trading Math: Every Formula You Need (With Worked Examples)",
+    "shortTitle": "Forex Trading Math",
+    "description": "Forex trading math explained: pip value, position size, P&L, margin, risk/reward, expectancy, drawdown recovery and compounding, with worked examples on $5,000 and $25,000 accounts.",
+    "category": "pillar",
+    "tags": [
+      "forex basics",
+      "trading formulas",
+      "education"
     ],
-    faqs: [
-      { q: 'What is the most important formula in forex trading?', a: 'The position size formula: Lots = (Account Balance × Risk%) ÷ (Stop Loss Pips × Pip Value per Lot). This formula determines how much capital you risk on every trade. It is the bridge between risk management philosophy and execution — without it, every other calculation is disconnected from actual dollar risk. See our [complete position sizing guide](/blog/position-sizing-complete-guide) for every sizing strategy explained in depth.' },
-      { q: 'Do I need to memorize all these forex formulas?', a: 'You need to understand them, not memorize them. Understanding means knowing which inputs each formula requires and what the output represents — so you can spot when a result looks wrong. Memorization is handled by calculators. What you cannot outsource to a calculator is understanding whether the output makes sense for your specific situation.' },
-      { q: 'Why does the P&L formula differ for long and short trades?', a: 'For long trades, you profit when price rises: P&L = (Exit − Entry) × Lots × Pip Value. For short trades, you profit when price falls, so the formula inverts: P&L = (Entry − Exit) × Lots × Pip Value. The absolute value is the same for an equal pip move in the favorable direction — only the sign of the price difference changes.' },
-      { q: 'How are forex formulas different for stocks and crypto?', a: 'For stocks and crypto, pip-based calculations do not apply. Replace "Stop Loss Pips × Pip Value" with "Dollar Stop Distance per Share/Coin." Position Size becomes: Units = Dollar Risk ÷ (Entry Price − Stop Price). P&L becomes: (Exit − Entry) × Units. The underlying logic is identical — dollar risk divided by dollar loss per unit at stop — just without the forex pip conversion layer.' },
-      { q: 'What is the drawdown recovery formula?', a: 'Recovery Required = Drawdown % ÷ (1 − Drawdown as decimal). At 20% drawdown: 20% ÷ 0.80 = 25% gain needed. At 40%: 40% ÷ 0.60 = 66.7%. At 50%: 50% ÷ 0.50 = 100%. This asymmetry — where losses always require proportionally larger gains to recover — is the mathematical foundation of the argument for keeping drawdowns small.' },
+    "keywords": [
+      "forex trading math",
+      "forex trading math formulas",
+      "forex formulas",
+      "forex calculation guide",
+      "forex formulas explained",
+      "trading math complete guide",
+      "forex math for beginners",
+      "how to calculate pip value in forex",
+      "pip value formula",
+      "forex position size formula",
+      "how to calculate lot size in forex",
+      "forex profit and loss formula",
+      "forex margin formula",
+      "forex leverage calculation",
+      "effective leverage formula",
+      "risk reward ratio formula",
+      "break-even win rate formula",
+      "trade expectancy formula",
+      "forex expectancy calculator",
+      "drawdown recovery formula",
+      "losing streak probability trading",
+      "forex compounding formula",
+      "forex cheat sheet formulas",
+      "cross pair pip value",
+      "JPY pip value calculation",
+      "swap calculation forex",
+      "spread and commission cost in R",
+      "forex calculator formulas"
     ],
-    sections: [
-      {
-        heading: 'Formula 1: Pip Value — The Foundation of Everything Else',
-        body: [
-          "Pip value is the dollar amount of one pip's price movement at a given lot size. Every other forex calculation depends on it. Use the [pip value calculator](/calculators/pip-value-calculator) to skip the arithmetic for any pair. The formula varies by pair type: (A) USD-quoted pairs (EUR/USD, GBP/USD, AUD/USD, NZD/USD): Pip Value = 0.0001 × Lot Size. Standard lot: 0.0001 × 100,000 = $10 per pip. Mini lot: $1. Micro: $0.10. Fixed values regardless of market rate. (B) USD-base pairs (USD/JPY, USD/CAD, USD/CHF): Pip Value = (Pip Size ÷ Exchange Rate) × Lot Size. USD/JPY at 150.50: (0.01 ÷ 150.50) × 100,000 = $6.64 per pip standard lot. (C) Cross pairs (EUR/GBP, EUR/JPY): Calculate pip value in quote currency then convert to USD at current rate.",
-          'Worked example across pairs: Trading three positions simultaneously, all with a 30-pip stop, all at 0.5 standard lots. EUR/USD: risk = 30 × $10 × 0.5 = $150. USD/JPY: risk = 30 × $6.64 × 0.5 = $99.60. EUR/GBP standard lot pip value = 0.0001 × 100,000 × 1.27 = $12.70 per pip. So at 0.5 lots: 30 × $12.70 × 0.5 = $190.50. Three "identical" positions with the same pip stop and lot size produce $150, $99.60, and $190.50 in risk — dramatically different because of pip value differences.',
-          'The practical takeaway: always calculate pip value for the specific pair you are trading. EUR/USD assumptions ($10/pip standard lot) will understate your risk on EUR/GBP by 27% and overstate it on USD/JPY by 34%. These errors compound across every trade you take on non-EUR/USD pairs.',
-        ],
-      },
-      {
-        heading: 'Formula 2: Position Size — The Most Important Calculation in Trading',
-        body: [
-          'Position Size (lots) = (Account Balance × Risk%) ÷ (Stop Loss Pips × Pip Value per Lot). This formula converts your risk management philosophy into a specific lot number for every individual trade. Use the [position size calculator](/calculators/position-size-calculator) to get the correct lot instantly for forex, stocks, or crypto. Every variable is something you control or can precisely determine — the result is not an estimate.',
-          'Worked examples at different account sizes: $2,000 account, 1% risk ($20), 25-pip stop, EUR/USD micro lot ($0.10/pip): Lots = $20 ÷ (25 × $0.10) = $20 ÷ $2.50 = 8 micro lots (0.08 lots). $10,000 account, 1% risk ($100), 20-pip stop, GBP/USD standard lot ($10/pip): Lots = $100 ÷ (20 × $10) = 0.5 lots. $50,000 account, 1.5% risk ($750), 40-pip stop, USD/JPY at $6.64/pip: Lots = $750 ÷ (40 × $6.64) = $750 ÷ $265.60 = 2.82 lots, round down to 2.8 lots.',
-          'For stocks and crypto: Units = Dollar Risk ÷ (Entry Price − Stop Price). $15,000 account, 1% risk ($150), trading TSLA at $240 with stop at $234 ($6 per share stop): Shares = $150 ÷ $6 = 25 shares. Trading BTC at $65,000 with stop at $63,500 ($1,500 stop per BTC): BTC = $150 ÷ $1,500 = 0.10 BTC. The formula logic is identical — dollar risk divided by dollar loss per unit at stop.',
-        ],
-      },
-      {
-        heading: 'Formula 3: Profit & Loss — Calculating Results Before and After',
-        body: [
-          'Gross P&L (long trade) = (Exit Price − Entry Price) ÷ Pip Size × Lots × Pip Value per Lot. Gross P&L (short trade) = (Entry Price − Exit Price) ÷ Pip Size × Lots × Pip Value per Lot. For stocks and crypto: P&L = (Exit − Entry) × Units (long) or (Entry − Exit) × Units (short). Use the [profit & loss calculator](/calculators/profit-loss-calculator) to verify P&L for any trade before and after.',
-          'Worked examples: Long EUR/USD at 1.1000, exit 1.1060 (60-pip move), 1.0 standard lot, pip value $10: P&L = 60 × 1.0 × $10 = $600 gross profit. Short GBP/USD at 1.2700, cover at 1.2640 (60-pip decline in your favor), 0.5 lots, pip value $5/lot: P&L = 60 × 0.5 × $10 = $300 gross profit. Long AAPL at $185, sell at $197, 50 shares: P&L = (197 − 185) × 50 = $600 gross profit.',
-          'Net P&L = Gross P&L − Spread Cost − Commission − Swap. Realistic net for a EUR/USD ECN trade (1 standard lot, 30-pip winner): $300 gross − $10 spread − $7 commission = $283 net. If held overnight with −$1.50 swap: $281.50 net. Always calculate net P&L when evaluating whether a strategy is profitable — gross P&L systematically overstates returns by ignoring the costs that real accounts always incur.',
-        ],
-      },
-      {
-        heading: 'Formula 4: Margin — Know Before You Open',
-        body: [
-          'Required Margin = (Lot Size × Contract Size × Exchange Rate) ÷ Leverage. For EUR/USD at 1.1000, 1 standard lot, 30:1 leverage: (1 × 100,000 × 1.1000) ÷ 30 = $3,667. Use the [margin calculator](/calculators/margin-calculator) to check required margin for any pair and leverage level before entering a position.',
-          'Margin Level % = (Equity ÷ Used Margin) × 100. A $15,000 account with $5,000 used margin and no floating P&L: (15,000 ÷ 5,000) × 100 = 300% margin level. Healthy. The same account after a $3,000 floating loss (equity = $12,000): (12,000 ÷ 5,000) × 100 = 240%. Still healthy. After a $10,000 floating loss (equity = $5,000): (5,000 ÷ 5,000) × 100 = 100%. Margin call level at most brokers.',
-          'Free Margin = Equity − Used Margin. Free margin is the capital available to open new positions and absorb further losses. As positions move against you, floating losses reduce equity, which reduces free margin — this chain reaction is the mechanism behind margin calls. Always maintain enough free margin to absorb at least 50–100 pips of adverse movement on all open positions simultaneously.',
-        ],
-      },
-      {
-        heading: 'Formula 5: Risk/Reward — The Profitability Filter',
-        body: [
-          'R:R Ratio = Reward Pips ÷ Risk Pips (pip-based) or (Take Profit − Entry) ÷ (Entry − Stop Loss) (price-based, for longs). Use the [risk/reward calculator](/calculators/risk-reward-calculator) to run this instantly for any setup. A 2:1 R:R means potential profit = 2× potential loss. Minimum professional threshold: 1.5:1. At 1.5:1, you need only 41% win rate to be profitable long-term.',
-          'Expected Value per trade = (Win Rate × Average Reward) − (Loss Rate × Average Risk). At 50% win rate, 2:1 R:R: EV = (0.50 × 2) − (0.50 × 1) = +$0.50 per dollar risked. This means for every $100 you risk across many trades, you expect to net $50 in profit on average. Negative EV (below 0): the strategy loses money over time regardless of individual winners. EV is the ultimate quality test for any trading system.',
-          'The practical application: before entering any trade, calculate R:R using the pip-based formula. If it is below your minimum threshold, do not enter — regardless of how strong the setup looks visually. The R:R filter has eliminated more catastrophic trades than any technical indicator ever invented.',
-        ],
-      },
-      {
-        heading: 'Formula 6: Compounding — How Accounts Actually Grow',
-        body: [
-          'Future Account Value = Starting Balance × (1 + Monthly Return Rate)^Months. The power of this formula is in the exponent. At 5% monthly return: Month 1: $10,000 × 1.05 = $10,500. Month 6: $10,000 × (1.05)^6 = $13,401. Month 12: $10,000 × (1.05)^12 = $17,959. Month 24: $10,000 × (1.05)^24 = $32,251. Month 36: $10,000 × (1.05)^36 = $57,918. The account nearly sextuples in three years at a consistent 5% monthly return.',
-          'The compounding mechanism in trading works through position sizing. At 1% risk per trade on a $10,000 account, dollar risk = $100. After the account grows to $15,000, the same 1% risk = $150. The winning trades now earn $300 on a 2:1 R:R winner instead of $200 — 50% more profit for the same strategy with the same risk percentage. This automatic scaling is why fixed fractional position sizing combined with consistent profitability produces exponential rather than linear account growth.',
-          'Realistic compounding requires accurate input. Use your actual average monthly return across all months (including losing months), not your best month. A month where you lost 3% contributes a factor of 0.97 to the compound formula — this drag on growth is real and must be included in any honest projection. The [compounding calculator](/calculators/compounding-calculator) handles all this automatically and shows month-by-month projections from your real inputs.',
-        ],
-      },
-      {
-        heading: 'Formula 7: Drawdown Recovery — Why Prevention Beats Cure',
-        body: [
-          'Current Drawdown % = ((Peak Equity − Current Equity) ÷ Peak Equity) × 100. Recovery Required = Drawdown % ÷ (1 − Drawdown as decimal). Use the [drawdown calculator](/calculators/drawdown-calculator) to run both formulas and see the recovery percentage required from any drawdown level. These two formulas together reveal the asymmetry that makes large drawdowns so dangerous: Recovery needed at 10%: 11.1%. At 20%: 25.0%. At 30%: 42.9%. At 40%: 66.7%. At 50%: 100%. At 60%: 150%. At 75%: 300%.',
-          'Applied example: A trader with a $20,000 account uses 5% risk per trade and hits a 10-trade losing streak (not unusual for a 40%-win-rate strategy). Losses: $1,000, $950, $902, $857, $814, $773, $735, $698, $663, $630 = $8,022 total loss. New balance: $11,978. Drawdown: (20,000 − 11,978) ÷ 20,000 = 40.1%. Recovery required: 66.7% gain. At 5% monthly return, recovery takes over 10 months. Same scenario at 1% risk: drawdown ≈ 8.3%, recovery required 9.1%, takes under 2 months.',
-          'The drawdown formula is not just a retrospective measurement — it is a forward-looking risk model. Before choosing your risk percentage, run the drawdown calculation for a worst-case 10-trade losing streak at that risk level. If the resulting drawdown percentage would require more than a 25% gain to recover, consider reducing your risk percentage. The goal is a risk framework where even extreme losing streaks produce manageable drawdowns from which normal trading can realistically recover.',
-        ],
-      },
+    "publishedAt": "2026-11-12",
+    "updatedAt": "2026-11-12",
+    "readingTimeMin": 12,
+    "relatedCalculators": [
+      "position-size-calculator",
+      "pip-value-calculator",
+      "profit-loss-calculator",
+      "margin-calculator",
+      "risk-reward-calculator",
+      "lot-size-calculator",
+      "compounding-calculator",
+      "drawdown-calculator"
     ],
-    callToAction: {
-      text: "Use TradeCalc's free calculators to apply every formula in this guide to your own trades.",
-      href: '/calculators',
-      label: 'View All Calculators →',
-    },
+    "relatedPosts": [
+      "how-to-calculate-position-size-forex",
+      "what-is-pip-value-how-to-calculate",
+      "how-to-calculate-profit-loss-forex",
+      "how-to-calculate-risk-reward-ratio",
+      "how-to-calculate-forex-margin",
+      "how-to-calculate-drawdown-trading",
+      "forex-risk-management-complete-guide",
+      "forex-compounding-calculator-guide"
+    ],
+    "faqs": [
+      {
+        "q": "What is the most important formula in forex trading?",
+        "a": "The position size formula: Lots = (Account Balance × Risk %) ÷ (Stop Loss Pips × Pip Value per Lot). It converts your risk rule into an exact lot size for every trade, so a losing trade costs only the amount you planned."
+      },
+      {
+        "q": "How do you calculate pip value in forex?",
+        "a": "Pip Value = (Pip Size ÷ Exchange Rate) × Lot Units, in the quote currency, then converted to your account currency. On EUR/USD it is $10 per standard lot. On USD/JPY at 150.50 it is about $6.64."
+      },
+      {
+        "q": "How do you calculate lot size in forex?",
+        "a": "Divide your dollar risk by stop loss pips times pip value per lot. On a $5,000 account risking 1% ($50) with a 25-pip EUR/USD stop, lots = $50 ÷ (25 × $10) = 0.20 lots."
+      },
+      {
+        "q": "How do you calculate profit and loss in a forex trade?",
+        "a": "Multiply pips moved by pip value per lot by lots, then subtract commission and swap. Buying 0.40 lots EUR/USD for a 70-pip gain is 70 × $10 × 0.40 = $280 gross, or $277.20 after a $2.80 commission."
+      },
+      {
+        "q": "How is margin calculated in forex?",
+        "a": "Required Margin = (Lots × 100,000 × Exchange Rate) ÷ Leverage. One standard lot of EUR/USD at 1.0850 with 1:30 leverage requires about $3,617."
+      },
+      {
+        "q": "What win rate do I need to be profitable in forex?",
+        "a": "It depends on risk/reward. Break-even win rate = 1 ÷ (1 + R:R). At 1:1 you need 50%, at 2:1 you need 33.3%, and at 3:1 you need 25%, before costs."
+      },
+      {
+        "q": "What is trade expectancy and how do I calculate it?",
+        "a": "Expectancy is the average result per trade: (Win Rate × Average Win) − (Loss Rate × Average Loss). In R terms, a 40% win rate with 2R winners gives +0.20R per trade, worth $10 when risking $50."
+      },
+      {
+        "q": "How much gain do I need to recover from a drawdown?",
+        "a": "Recovery Required = Drawdown ÷ (1 − Drawdown). A 20% drawdown needs 25%, a 40% drawdown needs 66.7%, and a 50% drawdown needs 100%."
+      },
+      {
+        "q": "How many losing trades in a row should I expect?",
+        "a": "Probability of n consecutive losses = (1 − Win Rate)^n. At a 40% win rate, five losses in a row has a 7.8% chance, and across 100 trades a ten-loss streak occurs roughly one time in five."
+      },
+      {
+        "q": "Do forex formulas work for stocks and crypto?",
+        "a": "The logic is the same, but pips are replaced by price distance. Units = Dollar Risk ÷ (Entry − Stop), and P&L = (Exit − Entry) × Units for longs."
+      },
+      {
+        "q": "Do I need to memorize these forex formulas?",
+        "a": "No. Understand which inputs each one needs and what the output means so you can spot a wrong result, then use a calculator for speed."
+      }
+    ],
+    "howToSteps": [
+      {
+        "name": "Calculate pip value for your pair",
+        "text": "Pip Value = (Pip Size ÷ Rate) × Lot Units, converted to your account currency. EUR/USD is $10 per standard lot; USD/JPY at 150.50 is about $6.64."
+      },
+      {
+        "name": "Size the position from your risk",
+        "text": "Lots = (Balance × Risk %) ÷ (Stop Pips × Pip Value per Lot). A $5,000 account risking 1% with a 25-pip EUR/USD stop trades 0.20 lots."
+      },
+      {
+        "name": "Check margin and effective leverage",
+        "text": "Required Margin = (Lots × 100,000 × Rate) ÷ Leverage. Keep Notional ÷ Equity under about 10:1."
+      },
+      {
+        "name": "Filter with risk/reward and expectancy",
+        "text": "Break-even win rate = 1 ÷ (1 + R:R). Expectancy in R = (Win % × Avg Win) − (Loss % × Avg Loss)."
+      },
+      {
+        "name": "Stress-test drawdown and growth",
+        "text": "Balance after n losses = Start × (1 − Risk%)^n. Recovery needed = Drawdown ÷ (1 − Drawdown). Growth = Start × (1 + Return)^Months."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What Is Forex Trading Math?",
+        "body": [
+          "**Forex trading math** is the small set of formulas that convert a chart into dollars: pip value, position size, profit and loss, margin, risk/reward, expectancy, drawdown recovery and compounding. Every order you place depends on them. Get one wrong and your real risk differs from your planned risk, even if your analysis was perfect.",
+          "Most traders only need about ten formulas, and all of them are multiplication, division and one exponent. The difficulty is not the arithmetic. It is knowing which input goes where, and remembering that **pip value changes by pair**. This guide walks through each forex formula in the order you would use it on a real trade, with worked examples on a $5,000 and a $25,000 account.",
+          "The sequence matters. Pip value feeds position size. Position size feeds profit and loss and margin. Risk/reward and expectancy tell you whether the trade is worth taking at all. Drawdown and compounding tell you what a whole string of trades does to your account. Learn them in that order and each one becomes easier."
+        ]
+      },
+      {
+        "heading": "How Do You Calculate Pip Value in Forex?",
+        "body": [
+          "**Pip value** is the money one pip of movement is worth at your lot size. For any pair: **Pip Value = (Pip Size ÷ Exchange Rate) × Lot Units**, then converted to your account currency. Pip size is 0.0001 for most pairs and 0.01 for JPY pairs. A standard lot is 100,000 units, a mini lot 10,000 and a micro lot 1,000.",
+          "When USD is the quote currency (EUR/USD, GBP/USD, AUD/USD), the answer is fixed: **$10 per pip on a standard lot, $1 on a mini, $0.10 on a micro**. When USD is the base (USD/JPY, USD/CAD, USD/CHF), pip value moves with the rate. USD/JPY at 150.50 gives (0.01 ÷ 150.50) × 100,000 = **$6.64 per pip**. USD/CAD at 1.3600 gives (0.0001 ÷ 1.3600) × 100,000 = **$7.35 per pip**.",
+          "| Pair (sample rate) | Pip size | Pip value, 1 standard lot (USD account) |\n|---|---|---|\n| EUR/USD (1.0850) | 0.0001 | $10.00 |\n| USD/JPY (150.50) | 0.01 | $6.64 |\n| USD/CAD (1.3600) | 0.0001 | $7.35 |\n| EUR/GBP (GBP/USD 1.2700) | 0.0001 | $12.70 |\n| EUR/JPY (USD/JPY 150.50) | 0.01 | $6.64 |",
+          "Use the [pip value calculator](/calculators/pip-value-calculator) for live rates, and read [what is pip value and how to calculate it](/blog/what-is-pip-value-how-to-calculate) if the base and quote currency logic is new to you."
+        ]
+      },
+      {
+        "heading": "How to Calculate Pip Value on Cross Pairs and Non-USD Accounts",
+        "body": [
+          "Cross pairs do not involve USD, so you need two steps: find the pip value in the **quote currency**, then convert it to your account currency. For EUR/GBP, one pip on a standard lot is 0.0001 × 100,000 = **£10**. With GBP/USD at 1.2700, that is £10 × 1.2700 = **$12.70**. For EUR/JPY, one pip is ¥1,000, and dividing by USD/JPY at 150.50 gives **$6.64**.",
+          "The rule: **pip value is always earned in the quote currency, so convert from the quote currency to your account currency**. If your account is in EUR, GBP/USD pip value is $10 ÷ EUR/USD 1.0850 = **€9.22**. Traders who assume $10 per pip on every pair misstate their risk by 34% on JPY pairs and by 27% on EUR/GBP.",
+          "This is the quiet source of most oversized losses. A 30-pip stop at 0.5 lots risks $150 on EUR/USD, $99.60 on USD/JPY and $190.50 on EUR/GBP. Same stop, same lot size, three different risks."
+        ]
+      },
+      {
+        "heading": "How to Calculate Position Size in Forex",
+        "body": [
+          "The most important formula in forex: **Lots = (Account Balance × Risk %) ÷ (Stop Loss in Pips × Pip Value per Lot)**. It turns a percentage risk rule into an exact lot size for every trade. Fix the dollar risk first, measure the stop from the chart, then let the formula pick the size, never the other way around.",
+          "**Example 1, $5,000 account.** Risk 1% = $50. EUR/USD, 25-pip stop, $10 per pip per lot. Lots = $50 ÷ (25 × $10) = $50 ÷ $250 = **0.20 lots** (2 mini lots). If price hits the stop you lose $50, which is exactly 1% of the account.",
+          "**Example 2, $25,000 account.** Risk 1% = $250. USD/JPY, 30-pip stop, $6.64 per pip per lot. Lots = $250 ÷ (30 × $6.64) = $250 ÷ $199.20 = 1.255, rounded down to **1.25 lots**. The same account trading EUR/GBP with a 20-pip stop at $12.70 per pip gives $250 ÷ $254 = 0.98, so **0.98 lots**. Always round down, never up.",
+          "For stocks and crypto, replace pips with price distance: **Units = Dollar Risk ÷ (Entry − Stop)**. Risking $150 on TSLA at $240 with a $234 stop gives 25 shares. The [position size calculator](/calculators/position-size-calculator) does all of this instantly, and [how to calculate position size in forex](/blog/how-to-calculate-position-size-forex) breaks down each variable."
+        ]
+      },
+      {
+        "heading": "How to Calculate Profit and Loss in Forex",
+        "body": [
+          "**Gross P&L = Pips Moved × Pip Value per Lot × Lots.** For a long trade, pips moved = (Exit − Entry) ÷ Pip Size. For a short, reverse the subtraction. Net P&L subtracts commission and swap: **Net P&L = Gross P&L − Commission − Swap**. Spread is already inside your fill prices, so do not subtract it twice.",
+          "**Long example:** buy 0.40 lots EUR/USD at 1.0850, sell at 1.0920. Move = 70 pips. Gross = 70 × $10 × 0.40 = **$280**. With a $7 per lot round-turn commission ($2.80), net is **$277.20**. **Short example:** sell 0.50 lots USD/JPY at 151.20, cover at 150.10. Move = 110 pips. Gross = 110 × $6.64 × 0.50 ≈ **$365** (pip value drifts slightly with the rate).",
+          "**Swap** is charged per lot per night, tripled on the rollover day (usually Wednesday). At an illustrative −$6.50 per lot per night, holding 0.40 lots from Monday to Friday costs 0.40 × $6.50 × 6 nights-equivalent = **$15.60**. Use the [profit and loss calculator](/calculators/profit-loss-calculator) and the guide on [how to calculate profit and loss in forex](/blog/how-to-calculate-profit-loss-forex) to verify any trade."
+        ]
+      },
+      {
+        "heading": "How to Calculate Margin and Leverage in Forex",
+        "body": [
+          "**Required Margin = (Lots × 100,000 × Exchange Rate) ÷ Leverage**, for a pair quoted in your account currency. One standard lot of EUR/USD at 1.0850 has a notional value of $108,500. At 1:30 leverage, required margin is **$3,617**. At 1:500 it is **$217**. Higher leverage lowers the margin you post. It does not change what you lose per pip.",
+          "**Effective leverage = Total Notional ÷ Equity** is the number that actually measures risk. A $5,000 account holding 0.20 lots EUR/USD (notional $21,700) runs **4.3:1** effective leverage regardless of the 1:500 the broker offers. Most professional traders stay below 10:1.",
+          "**Margin Level % = (Equity ÷ Used Margin) × 100.** With $12,000 equity and $5,000 used margin, margin level is 240%. If equity falls to $5,000, it is 100%, and many brokers start closing positions near that area (the exact stop-out level varies by broker). See [how to calculate forex margin](/blog/how-to-calculate-forex-margin) and [what is leverage in forex](/blog/what-is-leverage-in-forex)."
+        ]
+      },
+      {
+        "heading": "Risk/Reward Ratio and Break-Even Win Rate Formula",
+        "body": [
+          "**Risk/Reward = Reward Distance ÷ Risk Distance.** Buy at 1.0850, stop at 1.0820 (30 pips), target 1.0910 (60 pips): R:R = 60 ÷ 30 = **2:1**. The related formula most guides skip is the break-even win rate: **Break-Even Win Rate = 1 ÷ (1 + R:R)**.",
+          "| Risk/Reward | Break-even win rate |\n|---|---|\n| 1:1 | 50.0% |\n| 1.5:1 | 40.0% |\n| 2:1 | 33.3% |\n| 3:1 | 25.0% |",
+          "This is why a trader winning only 40% of trades can be profitable at 2:1, while a 60% win rate at 0.5:1 loses money. Win rate alone tells you nothing. Pair it with R:R, and use the [risk/reward calculator](/calculators/risk-reward-calculator) and [how to calculate risk/reward ratio](/blog/how-to-calculate-risk-reward-ratio) for the details."
+        ]
+      },
+      {
+        "heading": "Trade Expectancy Formula: What Each Trade Is Worth on Average",
+        "body": [
+          "**Expectancy (in R) = (Win Rate × Average Win in R) − (Loss Rate × Average Loss in R).** Measuring in R, where 1R is your risk per trade, makes the result independent of account size. With a 40% win rate and a 2R average win: (0.40 × 2) − (0.60 × 1) = **+0.20R per trade**.",
+          "On a $5,000 account risking $50 per trade, 0.20R is **$10 per trade on average**. Over 100 trades that is $1,000, or 20% of the account. At $25,000 risking $250, the same edge is $50 per trade and $5,000 over 100 trades. Expectancy only becomes reliable over a large sample, so judge a strategy on at least 100 trades, not ten.",
+          "Negative expectancy cannot be fixed by position sizing. Betting more on a losing system only loses faster. Position sizing controls how bumpy the ride is, and expectancy decides where the ride ends."
+        ]
+      },
+      {
+        "heading": "Trading Costs as a Fraction of Your Stop: The Formula Most Guides Skip",
+        "body": [
+          "Spread, commission and slippage are usually quoted in pips or dollars, but what matters is **cost measured in R: Cost in R = Total Cost in Pips ÷ Stop Distance in Pips**. Take a 0.8-pip spread plus $7 per lot commission (0.7 pip on EUR/USD). Total cost is **1.5 pips per trade**.",
+          "On a 50-pip stop, that cost is 1.5 ÷ 50 = **0.03R**. A strategy with +0.20R gross expectancy keeps +0.17R net. On a 10-pip scalping stop, the same cost is 0.15R, leaving only **+0.05R**, a 75% cut to the edge. The identical entry signal can be comfortably profitable on a wider stop and nearly worthless on a tight one.",
+          "Check this before you tighten stops for better R:R. Tight stops raise R:R on paper while quietly raising your cost per R. If your cost exceeds about 10% of your stop, you need either a lower-spread account or a wider stop. Read [what is spread in forex](/blog/what-is-spread-in-forex) to see how spread varies by session and pair."
+        ]
+      },
+      {
+        "heading": "Losing Streak Probability and Drawdown Recovery Formula",
+        "body": [
+          "**Probability of n losses in a row = (1 − Win Rate)^n.** At a 40% win rate, five straight losses has probability 0.6^5 = **7.8%**, and ten straight is 0.6^10 = **0.6%** per starting trade. Across 100 trades, a ten-loss streak appears roughly one time in five. Plan for it before it happens.",
+          "**Balance after n losses = Start × (1 − Risk%)^n.** Ten straight losses at 1% risk leaves 0.99^10 = 90.4%, a **9.6% drawdown**. At 2% it is 18.3%. At 5% it is **40.1%**. Because losses compound, you cannot simply multiply risk by trades.",
+          "**Recovery Required = Drawdown ÷ (1 − Drawdown).**\n\n| Drawdown | Gain needed to recover |\n|---|---|\n| 10% | 11.1% |\n| 20% | 25.0% |\n| 30% | 42.9% |\n| 40% | 66.7% |\n| 50% | 100% |",
+          "On a $25,000 account at 5% risk, that ten-loss streak leaves about $14,968 and needs a 67% gain to recover. At 1%, the balance is about $22,610 and needs only 10.6%. See [how to calculate drawdown in trading](/blog/how-to-calculate-drawdown-trading)."
+        ]
+      },
+      {
+        "heading": "Forex Compounding Formula: How Accounts Grow",
+        "body": [
+          "**Future Balance = Starting Balance × (1 + Monthly Return)^Months.** At a steady 3% per month, $10,000 becomes $10,000 × 1.03^12 = **$14,258** after one year and 1.03^24 = **$20,328** after two. Notice year two adds $6,070, more than year one's $4,258, because gains earn gains.",
+          "Compounding in practice happens through position size: with 1% risk, a $10,000 account risks $100 per trade, and after growing to $14,258 it risks $142.58. Use your real average monthly return, including losing months, not your best month. A single −3% month multiplies the balance by 0.97 and drags the whole curve. Test inputs in the [compounding calculator](/calculators/compounding-calculator) and read the [forex compounding calculator guide](/blog/forex-compounding-calculator-guide)."
+        ]
+      },
+      {
+        "heading": "Forex Formula Cheat Sheet",
+        "body": [
+          "| Calculation | Formula |\n|---|---|\n| Pip value | (Pip Size ÷ Rate) × Lot Units, in quote currency, then convert |\n| Position size | (Balance × Risk %) ÷ (Stop Pips × Pip Value per Lot) |\n| Gross P&L | Pips × Pip Value per Lot × Lots |\n| Required margin | (Lots × 100,000 × Rate) ÷ Leverage |\n| Effective leverage | Total Notional ÷ Equity |\n| Risk/Reward | Reward Pips ÷ Risk Pips |\n| Break-even win rate | 1 ÷ (1 + R:R) |\n| Expectancy (R) | (Win % × Avg Win R) − (Loss % × Avg Loss R) |\n| Cost in R | Spread + Commission Pips ÷ Stop Pips |\n| Recovery required | Drawdown ÷ (1 − Drawdown) |\n| Compounding | Start × (1 + Return)^Periods |"
+        ]
+      },
+      {
+        "heading": "My Experience: The Formula Mistakes That Cost Me Real Money",
+        "body": [
+          "I have traded forex for over ten years, and the mistake I see most, and made myself early on, was using the EUR/USD shortcut of $10 per pip on every pair. On JPY pairs that overstates pip value by about a third, which quietly makes your position smaller than planned. On EUR/GBP it does the opposite and makes you bigger than planned.",
+          "What fixed it was a routine, not a better indicator. Before every order I write down three numbers: dollar risk, stop in pips and pip value for that exact pair. Only then do I let the formula choose the lot size. After I started tracking results in R, I could see that my tighter-stop trades were losing most of their edge to costs, which led me to widen stops and cut trade count."
+        ]
+      },
+      {
+        "heading": "Use TradeCalc's Free Calculators for Every Formula",
+        "body": [
+          "You do not need to do this arithmetic by hand on every trade. TradeCalc offers free calculators for [position size](/calculators/position-size-calculator), [pip value](/calculators/pip-value-calculator), [profit and loss](/calculators/profit-loss-calculator), [margin](/calculators/margin-calculator), [risk/reward](/calculators/risk-reward-calculator), [lot size](/calculators/lot-size-calculator), [compounding](/calculators/compounding-calculator) and [drawdown](/calculators/drawdown-calculator). Learn the formulas so you can spot a wrong answer, then let the calculator do the work in seconds."
+        ]
+      },
+      {
+        "heading": "Key Takeaways: Forex Trading Math",
+        "body": [
+          "1. **Pip value depends on the pair.** $10 per standard lot only holds when USD is the quote currency; USD/JPY is about $6.64 and EUR/GBP about $12.70.\n2. **Position size = (Balance × Risk %) ÷ (Stop Pips × Pip Value).** Choose the risk first and let the formula choose the lots.\n3. **Net P&L = Pips × Pip Value × Lots − Commission − Swap.** Spread is already in your fills.\n4. **Effective leverage = Notional ÷ Equity.** Keep it under about 10:1 whatever the broker offers.\n5. **Break-even win rate = 1 ÷ (1 + R:R).** At 2:1 you only need 33.3%.\n6. **Measure costs in R.** A 1.5-pip cost is 0.03R on a 50-pip stop but 0.15R on a 10-pip stop.\n7. **Drawdown recovery is asymmetric.** A 50% loss needs a 100% gain, so protect the account first."
+        ]
+      },
+      {
+        "heading": "Next Steps and Related Resources",
+        "body": [
+          "Start with [how to calculate position size in forex](/blog/how-to-calculate-position-size-forex) and the [pip value guide](/blog/what-is-pip-value-how-to-calculate), then read [forex risk management: the complete guide](/blog/forex-risk-management-complete-guide). For optimal sizing theory, see the [Kelly criterion guide](/blog/kelly-criterion-trading-guide).",
+          "This week, size your next ten trades with the formula, log each result in R, and compare the outcomes with the [lot size calculator guide](/blog/lot-size-calculator-guide). Ten honest data points will teach you more than any further reading."
+        ]
+      }
+    ],
+    "callToAction": {
+      "text": "Use TradeCalc's free calculators to apply every formula in this guide to your own trades.",
+      "href": "/calculators",
+      "label": "View All Calculators →"
+    }
   },
 
   // ── TIER 0 BEGINNER #1 ────────────────────────────────────────────────────
