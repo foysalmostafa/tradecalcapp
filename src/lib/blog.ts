@@ -258,10 +258,10 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Full guide to pip value in forex: what a pip is, the formula for all pair types, and why pip value is the most important number in risk management.',
     category: 'guide',
     tags: ['pip value', 'forex basics', 'risk management'],
-    keywords: ['what is pip value', 'how to calculate pip value', 'pip value formula forex', 'pip value major pairs', 'forex pip value guide'],
+    keywords: ['what is pip value', 'how to calculate pip value', 'pip value formula forex', 'pip value major pairs', 'forex pip value guide', 'pip value calculator 2026', 'pip value for USD account', 'pip value cross pairs', 'pip value gold XAUUSD', 'pip value vs pipette', 'how much is a pip worth per lot'],
     publishedAt: '2026-04-15',
-    updatedAt: '2026-04-15',
-    readingTimeMin: 9,
+    updatedAt: '2026-11-15',
+    readingTimeMin: 13,
     relatedCalculators: ['pip-value-calculator', 'pip-to-dollar-calculator', 'position-size-calculator'],
     relatedPosts: ['how-to-calculate-position-size-forex', 'pip-to-dollar-how-much-is-a-pip-worth', 'how-to-calculate-profit-loss-forex'],
     howToSteps: [
@@ -279,6 +279,12 @@ export const BLOG_POSTS: BlogPost[] = [
       { q: 'How is pip value used in position sizing?', a: 'Pip value is a required input in the position size formula: Lots = Dollar Risk ÷ (Stop Pips × Pip Value per Lot). Without the correct pip value, your lot size calculation will be wrong, meaning your actual dollar risk will differ from your target. This is especially important for non-EUR/USD pairs where the pip value is not simply $10.' },
       { q: 'What is the pip value for gold (XAU/USD) and crude oil?', a: "Commodities use different contract and tick sizes. Gold (XAU/USD): typically 1 lot = 100 troy ounces. Pip/tick = $0.01 movement per ounce = $1.00 per lot. A $1.00 move in gold = $100 per lot. Crude oil (USOIL): 1 lot = 1,000 barrels typically. A $0.01 tick = $10 per lot. These are very different from forex pip values — always check contract specifications for commodities in your broker's platform." },
       { q: 'How do I verify pip value is correct before trading?', a: "Three quick checks: (1) Place a demo order and check the P&L for a 1-pip move — it should match your calculated pip value. (2) Use the pip value calculator at [tradecalcapp.com](/calculators/pip-value-calculator) and cross-reference with your broker's MT4/MT5 \"Market Watch\" contract spec. (3) For USD-quoted pairs, confirm standard lot = $10, mini = $1, micro = $0.10 exactly. Any discrepancy means your contract size or pip size assumption is wrong." },
+      { q: "Does leverage change pip value?", a: "No. Leverage changes how much margin your broker requires, not what a pip is worth. Pip value depends only on the pair, the position size, and the exchange rate to your account currency. A 0.10 lot on EUR/USD is $1 per pip whether your leverage is 1:30 or 1:500. Higher leverage simply lets you open larger positions, and larger positions have larger pip values." },
+      { q: "How do I calculate pip value if my account is not in USD?", a: "Calculate the pip value in the quote currency of the pair, then convert it to your account currency using the current exchange rate. For example, with a EUR account trading GBP/USD, a standard lot is $10 per pip, which you convert to EUR by dividing by the EUR/USD rate. Most platforms do this automatically, but verifying it manually before large trades is good practice." },
+      { q: "What is the difference between a pip and a pipette?", a: "A pipette is one-tenth of a pip, shown as the fifth decimal place on most pairs (third on JPY pairs). If EUR/USD moves from 1.10500 to 1.10505, that is 0.5 pip or 5 pipettes. Pip value per pipette is one-tenth of the pip value, so a standard lot on EUR/USD is $1 per pipette. Always check whether your platform quotes stop distances in pips or points." },
+      { q: "How should I calculate pip value for a cross pair like EUR/GBP on a USD account?", a: "First find the pip value in the quote currency: 0.0001 x lot size gives GBP per pip. Then multiply by GBP/USD to convert to USD. A standard lot is 10 GBP per pip, so at GBP/USD 1.27 the pip value is about $12.70. Because two exchange rates are involved, cross pair pip values drift more than USD-quoted pairs, so recheck them before sizing." },
+      { q: "Is pip value the same for every broker?", a: "The math is identical, but contract specifications can differ. Most brokers define a standard lot as 100,000 units, but some offer cent accounts or fractional lots where the same lot number means a smaller exposure. Metals, indices, and crypto CFDs vary widely between brokers. Always read the contract specification in your platform before assuming a pip value." },
+      { q: "Why does pip value matter for prop firm challenges?", a: "Prop firm rules usually cap daily and total drawdown as a percentage of the account. Knowing exact pip value lets you size every trade so a stop-out costs a fixed, known fraction of that limit. Guessing pip value on non-USD-quoted pairs is a common cause of accidental rule breaches, because actual risk ends up higher than planned." },
     ],
     sections: [
       {
@@ -319,6 +325,33 @@ export const BLOG_POSTS: BlogPost[] = [
           'If the formulas seem abstract, start with the core intuition: pip value tells you "how much does each pip of price movement put in or take out of my account?" When you know this number, every chart becomes denominated in real dollars. A 30-pip stop is no longer a vague technical reference — it becomes a concrete dollar cost, immediately comparable to your risk budget.',
           "The simplest mental anchor: for EUR/USD on a standard lot, 1 pip = $10. If your broker offers 0.01 lot minimum (a micro lot), 1 pip = $0.10. Starting from these reference points, every other pair's pip value can be thought of as a multiplier. USD/JPY is roughly 0.66× of EUR/USD because of the exchange rate in the formula. GBP-denominated pairs trade near $12–13 per pip (standard) because GBP/USD is above 1.20.",
           'The most important practical habit: before trading a new pair, look up its pip value at your intended lot size. Never assume it is $10. Currency pairs with USD as the base or cross pairs without USD can be 30–50% lower or higher than EUR/USD pip values at the same lot size. Use the [pip value calculator](/calculators/pip-value-calculator) to confirm before you enter, and re-check if rates move significantly from your last reference point.',
+        ],
+      },
+      {
+        heading: "Pip Value on Non-USD Accounts: Converting Correctly",
+        body: [
+          "Most pip value guides assume a USD account, but many traders hold EUR, GBP, AUD, or other base currencies. The principle is the same: compute the pip value in the pair's quote currency, then convert it into your account currency at the current exchange rate. The only thing that changes is which conversion rate you need.",
+          "Consider a EUR account trading GBP/JPY. A standard lot has a pip value of 0.01 x 100,000 = 1,000 JPY per pip. To express that in euros you divide by the EUR/JPY rate. At EUR/JPY 160, that is about 6.25 EUR per pip. If you wrongly used a USD figure of $6.64, you would be off by the difference between the two currencies, and your real risk would not match your plan.",
+          "Many brokers display profit and loss in account currency, so the cleanest verification is a demo trade. Open the smallest lot, move the stop by one pip in the platform, and read the displayed value. Compare it to your manual calculation. If they match, you have both the formula and the conversion direction right.",
+          "A common mistake is multiplying when you should divide, or the reverse. Writing the conversion pair out in full, for example EUR/JPY, makes the direction obvious: an amount in the quote currency (JPY) is divided by the rate to get the base currency (EUR). Checking direction before you calculate prevents errors of the size of the exchange rate itself.",
+        ],
+      },
+      {
+        heading: "Pip Value for Gold, Indices, and Other CFDs",
+        body: [
+          "Pip value is a forex convention, and it does not transfer cleanly to other instruments. Gold (XAU/USD) is usually quoted to two decimals with a contract of 100 ounces per lot, so a 1.00 move equals $100 per lot and a 0.01 move equals $1 per lot. Some brokers call 0.10 a pip for gold, others call 0.01 a pip, so always specify your distance in dollars or points rather than pips when talking about metals.",
+          "Stock indices such as US30, NAS100, and GER40 are measured in index points. The value of one point per lot depends on the broker contract: it may be $1, $10, or a local currency amount. A 50-point stop on one broker can cost ten times more than the same stop on another broker, even at the same lot size.",
+          "Crypto CFDs add another variation, since contract sizes can be 1 coin, 0.1 coin, or fractional amounts. Spread and overnight financing can also be large relative to the pip-sized moves you expect, so your effective pip cost includes costs beyond the raw price movement.",
+          "The safe workflow for any non-forex instrument is the same: read the contract specification in your platform, note tick size, tick value, and contract size, then compute dollar risk as stop distance in ticks x tick value x lots. Confirm with a demo order before risking real money.",
+        ],
+      },
+      {
+        heading: "Common Pip Value Mistakes and How to Avoid Them",
+        body: [
+          "The most frequent error is assuming $10 per pip on every pair. That holds only for USD-quoted pairs on a USD account at one standard lot. On USD/JPY, USD/CAD, USD/CHF, and cross pairs the value differs, and the error flows straight into your lot size and your actual risk percentage.",
+          "The second error is mixing up pip and pipette distances. A stop of 150 on a five-digit platform may be 15 pips, not 150. Entering that into a position size formula without dividing by ten inflates your pip count tenfold and shrinks your position to a fraction of what you intended.",
+          "The third error is using stale exchange rates. For pairs where pip value depends on a live rate, a move of a few percent changes the dollar value of a pip noticeably. Recalculate when you add to a position, or when you size a swing trade that you plan to hold for weeks.",
+          "A simple checklist helps: confirm the pair, confirm the quote currency, confirm your account currency, confirm the lot size definition at your broker, and confirm that your stop is expressed in pips. Then run the numbers through the [pip value calculator](/calculators/pip-value-calculator) and compare with the broker platform. Doing this takes under a minute and removes the most common sources of hidden risk.",
         ],
       },
     ],
