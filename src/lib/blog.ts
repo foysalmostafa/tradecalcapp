@@ -1768,7 +1768,6 @@ export const BLOG_POSTS: BlogPost[] = [
       "forex-risk-management-complete-guide",
       "what-is-a-pip-in-forex",
       "forex-lot-sizes-explained",
-      "mt4-position-size-calculator",
       "what-is-a-stop-loss-in-forex",
       "what-is-spread-in-forex"
     ],
@@ -2242,7 +2241,6 @@ export const BLOG_POSTS: BlogPost[] = [
       "tradecalc-vs-myfxbook-calculator",
       "forex-risk-management-complete-guide",
       "what-is-pip-value-how-to-calculate",
-      "mt4-position-size-calculator",
       "how-to-calculate-position-size-forex",
       "kelly-criterion-trading-guide"
     ],
